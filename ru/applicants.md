@@ -196,7 +196,7 @@ doubles[].double | numeric | Идентификатор кандидата, оп
 vacancy | numeric | Да | Идентификатор [вакансии](vacancies.md)
 status | numeric | Да | [Этап подбора](dicts.md#vacancy_statuses) 
 comment | string | Нет | Произвольный комментарий
-files | array | Нет | Массив прикрепленных файлов к записи в истории
+files | array | Нет | Массив прикрепленных файлов к записи в истории (не больше 10)
 files[].id | numeric | Да | Идентификатор файла
 rejection_reason | numeric | Нет | Причина отказа (если статус `Отказ`)
 
