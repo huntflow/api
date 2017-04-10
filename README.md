@@ -31,4 +31,4 @@
 ### Работа с сервисом
 
 * [Вакансии](ru/vacancies.md)
-* [Кандидаты](ru/applicants .md)
+* [Кандидаты](ru/applicants.md)
