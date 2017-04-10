@@ -7,7 +7,7 @@
 <a name="vacancies"></a>
 ## Получение списка вакансий
 
-`GET /account/{organization_id}/vacancies` вернёт список вакансий компании.
+`GET /account/{account_id}/vacancies` вернёт список вакансий компании.
 
 Принимаемые параметры:
 
@@ -72,7 +72,7 @@
 <a name="vacancy"></a>
 ## Получение вакансии
 
-`GET /account/{organization_id}/vacancies/{vacancy_id}` вернёт вакансию с идентификатором `{vacancy_id}`
+`GET /account/{account_id}/vacancies/{vacancy_id}` вернёт вакансию с идентификатором `{vacancy_id}`
 
 ```json
 {

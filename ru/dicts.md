@@ -7,7 +7,7 @@
 <a name="vacancy_statuses"></a>
 ## Этапы подбора
 
-`GET /account/{organization_id}/vacancy/statuses` вернёт список этапов подбора компании.
+`GET /account/{account_id}/vacancy/statuses` вернёт список этапов подбора компании.
 
 ```json
 {
@@ -49,7 +49,7 @@
 <a name="applicant_sources"></a>
 ## Источники резюме
 
-`GET /account/{organization_id}/applicant/sources` вернёт список источников резюме компании.
+`GET /account/{account_id}/applicant/sources` вернёт список источников резюме компании.
 
 ```json
 {
