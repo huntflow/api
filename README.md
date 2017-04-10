@@ -16,6 +16,7 @@
 <a name="general"></a>
 ### Общая информация
 
+* [Основная информация](ru/general.md)
 * [Авторизация](ru/authorization.md)
 * [Персональный токен](ru/personal_token.md)
 * [Ошибки и коды ответов](ru/errors.md)
