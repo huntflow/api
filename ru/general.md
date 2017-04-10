@@ -5,7 +5,7 @@
 * Все данные доступны только в формате JSON.
 * Базовый URL — `https://api.huntflow.ru/`
 * <a name="date-format"></a> Даты форматируются в соответствии с
-  [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601): `YYYY-MM-DDThh:mm:ss±hhmm`.
+  [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601): `YYYY-MM-DDThh:mm:ss±hh:mm`.
 
 
 <a name="request_requirements"></a>
