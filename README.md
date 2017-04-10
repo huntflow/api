@@ -30,5 +30,6 @@
 <a name="service"></a>
 ### Работа с сервисом
 
+* [Загрузка и распознавание файлов](ru/upload.md)
 * [Вакансии](ru/vacancies.md)
 * [Кандидаты](ru/applicants.md)
