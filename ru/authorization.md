@@ -155,7 +155,6 @@ grant_type=refresh_token&refresh_token={refresh_token}
 GET /me HTTP/1.1
 User-Agent: App/1.0 (incaseoffire@example.com)
 Host: api.huntflow.ru
-Accept: */*
 Authorization: Bearer <access_token>
 ```
 
