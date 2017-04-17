@@ -103,7 +103,7 @@ grant_type=authorization_code&client_id={client_id}&client_secret={client_secret
     "error_description": "..."
 }
 ```
-где:
+
 * `error` будет иметь одно из значений,
   [описанных в стандарте RFC 6749](http://tools.ietf.org/html/rfc6749#section-5.2).
   Например, `invalid_request`, если какой либо из обязательных параметров не был передан.
@@ -137,8 +137,8 @@ grant_type=refresh_token&refresh_token={refresh_token}
 `refresh_token` можно использовать только один раз и только по истечению
 срока действия `access_token`.
 
-После получения новой пары access и refresh токенов, их необходимо использовать
-в дальнейших запросах в api и запросах на продление токена.
+После получения новой пары `access_token` и `refresh_token`, их необходимо использовать
+в дальнейших запросах в API и запросах на продление токена.
 
 
 <a name="oauth_check_access_token"></a>
