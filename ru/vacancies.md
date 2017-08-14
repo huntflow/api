@@ -21,10 +21,7 @@
     "deadline": "2017-09-03",
     "vacancy_request": null,
     "priority": 1,
-    "account_division": {
-        "id": 6,
-        "name": "Development"
-    },
+    "account_division": [6],
     "selected": false,
     "coworkers": [1],
     "body": "<p>Some text</p>",
@@ -43,7 +40,7 @@
  deadline | date | Нет | Дата дедлайна по вакансии
  vacancy_request | number | Нет | Идентификатор заявки на вакансию, из которой вакансия была создана
  priority | number | Нет | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий))
- account_division | object | Нет | account_division
+ account_division | array | Нет | Список идентификаторов подразделений (если подразделения подключены)
  hidden | bool | Нет | Скрыта ли вакансия от коллег
  state | string | Да | [состояние вакансии](#vacancy-states)
  files | array | Нет | Список файлов, прикрепленных к вакансии
