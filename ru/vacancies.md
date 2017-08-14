@@ -3,12 +3,13 @@
 * [Добавление вакансии в базу](#add)
 * [Список вакансий](#vacancies)
 * [Получение вакансии](#vacancy)
+* [Удаление вакансии](#delete)
 * [Состояние вакансии](#vacancy-states)
 
 <a name="add"></a>
 ## Добавление вакансии в базу
 
-`POST /account/{account_id}/applicants` 
+`POST /account/{account_id}/vacancies` 
 
 В теле запроса необходимо передать JSON вида:
 
@@ -67,6 +68,36 @@ id | number | Идентификатор вакансии
 created | string | Дата+время создания вакансии
 removed | bool | флаг удаления
 source | string | source
+
+<a name="edit"></a>
+## Редактирование вакансии
+
+`PUT /account/{account_id}/vacancies/{vacancy_id}` 
+
+### Поля запроса
+Тело запроса аналогично телу в запросе на создание вакансии.
+
+### Поля ответа
+Ответ аналогичен ответу на запрос на создание вакансии.
+
+<a name="delete"></a>
+# Удаление вакансии
+
+`DELETE /account/{account_id}/vacancies/{vacancy_id}`
+
+### Поля запроса
+Тело запроса должно быть пустым
+
+# Поля ответа
+```json
+{
+    "status": true
+}
+```
+
+Имя | Тип | Описание
+--- | --- | ---
+status | bool | Флаг успешной операции
 
 <a name="vacancies"></a>
 ## Получение списка вакансий
