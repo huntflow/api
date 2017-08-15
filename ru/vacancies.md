@@ -26,7 +26,7 @@
     "body": "<p>Some text</p>",
     "state": "OPEN",
     "hidden": false,
-    "files": [1, 2, 3],
+    "files": [1, 2, 3]
 }
 ```
 
