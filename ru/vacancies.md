@@ -23,7 +23,6 @@
     "vacancy_request": null,
     "priority": 1,
     "account_division": 6,
-    "selected": false,
     "coworkers": [1],
     "body": "<p>Some text</p>",
     "state": "OPEN",
@@ -42,6 +41,7 @@
  vacancy_request | number | Нет | Идентификатор заявки на вакансию, из которой вакансия была создана
  priority | number | Нет | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий))
  account_division | number | Нет | Идентификатор подразделения (если подразделения подключены)
+ coworkers | array | Нет | Список пользователей, работающий над вакансией
  hidden | bool | Нет | Скрыта ли вакансия от коллег
  state | string | Да | [состояние вакансии](#vacancy-states)
  files | array | Нет | Список файлов, прикрепленных к вакансии
