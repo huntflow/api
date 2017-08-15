@@ -24,8 +24,8 @@
     "account_division": 6,
     "coworkers": [1],
     "body": "<p>Some text</p>",
-    "state": "OPEN",
     "hidden": false,
+    "state": "OPEN",
     "files": [1, 2, 3]
 }
 ```
