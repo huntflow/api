@@ -25,7 +25,8 @@
     "coworkers": [1],
     "body": "<p>Some text</p>",
     "state": "OPEN",
-    "hidden": false
+    "hidden": false,
+    "files": [1, 2, 3],
 }
 ```
 
@@ -39,9 +40,10 @@
  deadline | date | Нет | Дата дедлайна по вакансии
  priority | number | Нет | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий))
  account_division | number | Нет | Идентификатор подразделения (если подразделения подключены)
- coworkers | array | Нет | Список пользователей, работающих над вакансией
+ coworkers | array | Нет | Список рекрутеров, работающих над вакансией
+ body | string | Нет | Описание вакансии в формате HTML. Доступные теги: "ul", "ol", "li", "p", "br", "a", "strong", "em", "u", "b", "i"
  hidden | bool | Нет | Скрыта ли вакансия от коллег
- state | string | Да | [Состояние вакансии](#vacancy-states)
+ state | string | Нет | [Состояние вакансии](#vacancy-states). По умолчанию `OPEN`
  files | array | Нет | Список файлов, прикрепленных к вакансии
 
 ### Поля ответа
