@@ -64,7 +64,13 @@
                 "first_name": "Иванов",
                 "last_name": "Иван",
                 "middle_name": "Инванович",
-                "birthday": "1970-01-01"
+                "birthday": "1970-01-01",
+                "photo": {                    
+                    "id": 1307833, 
+                    "content_type": "image/png", 
+                    "name": "477233672.png",
+                    "url": "https://store.huntflow.ru/uploads/named/4/8/5/485cc4914d214065784507b1275fc143.png/477233672.png?s=7hq2usgld1uqC9k5-AcwkA&e=1504005423"
+                }
             },
         "vacancy": {
             "id": 1,
@@ -94,7 +100,8 @@
     },
     "author": {
         "id": 4,
-        "name": "Валентин Сергеев"
+        "name": "Валентин Сергеев",
+        "email" "sergeev@example.com"
     },
     "account": {
         "id": 6,
@@ -115,6 +122,7 @@
 | event.applicant.last_name | string | Фамилия кандидата | 
 | event.applicant.middle_name | string | Отчество кандидата |
 | event.applicant.birthday | string | Дата рождения кандидата |
+| event.applicant.photo.url | string | Сссылка на фотографию кандидата |
 | event.vacancy.id | number | Идентификатор вакансии |
 | event.vacancy.position | string | Название вакансии (должности) |
 | event.vacancy.company | string | Отдел, подразделение (`null`, если подключены подразделения) |
@@ -134,6 +142,7 @@
 | event.created | date+time	| Дата и время создания события |
 | author.id | number | Идентификатор автора действия |
 | author.name | string | Имя автора действия |
+| author.email | string | Email автора действия |
 | account.id | number | Идентификатор организации |
 | account.name | string | Название организации |
 
