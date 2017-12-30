@@ -148,3 +148,107 @@ changed | string | Дата изменения статуса
 
 * `count`, `page` — [параметры постраничного вывода](general.md#pagination).
 
+Пример ответа:
+
+```json
+{
+  "count": 2,
+  "items": [
+    {
+      "last_name": "Иванов",
+      "links": [
+        {
+          "status": 2,
+          "updated": "2017-12-19T21:48:12+03:00",
+          "changed": "2017-12-19T21:48:12+03:00",
+          "vacancy": 1,
+          "id": 172
+        }
+      ],
+      "money": "",
+      "id": 290,
+      "first_name": "Александр",
+      "middle_name": null,
+      "photo": 385,
+      "photo_url": "https://store.huntflow.ru/uploads/5/7/0/5700c66c07a23f2e80a0acc0bc3ef6c8.jpeg",
+      "email": "hello@mail.ru",
+      "company": "Save Factory",
+      "phone": "+79511234567",
+      "birthday": "1979-06-20",
+      "external": [
+        {
+          "auth_type": "HH",
+          "account_source": 2,
+          "updated": "2017-12-19T21:48:12+03:00",
+          "applicant": 290,
+          "id": 290
+        }
+      ],
+      "doubles": [],
+      "created": "2017-12-19T21:48:12+03:00",
+      "position": "Artist"
+    },
+    {
+      "last_name": "Петров",
+      "links": [
+        {
+          "status": 2,
+          "updated": "2017-12-19T21:35:09+03:00",
+          "changed": "2017-12-19T21:35:09+03:00",
+          "vacancy": 1,
+          "id": 171
+        }
+      ],
+      "money": "30000 RUR",
+      "id": 289,
+      "first_name": "Виталий",
+      "middle_name": "Иванович",
+      "photo": 384,
+      "photo_url": "https://store.huntflow.ru/uploads/5/7/0/5700c66c07a23f2e80a0acc0bc3ef6c8.jpeg",
+      "email": "test@mail.ru",
+      "company": "Краснодеревщик,ЗАО",
+      "phone": "+79639801000",
+      "birthday": "1975-01-26",
+      "external": [
+        {
+          "auth_type": "HH",
+          "account_source": 2,
+          "updated": "2017-12-19T21:35:09+03:00",
+          "applicant": 289,
+          "id": 289
+        }
+      ],
+      "doubles": [],
+      "created": "2017-12-19T21:35:09+03:00",
+      "position": "Фотограф"
+    }
+  ],
+  "total": 120,
+  "page": 1,
+  "total_items": 240
+}
+
+```
+
+Путь |  Описание
+---- | --------
+last_name | Фамилия
+first_name | Имя
+middle_name | Отчество
+phone | Телефон
+email | Электронная почта
+position | Кем работает
+company | Где работает
+money | Зарплатные ожидания
+birthday | Дата рождения
+photo | Фото кандидата (идентификатор загруженного файла), информация о загрузке файлов доступна [здесь](upload.md)
+photo_url | Ссылка на фото кандидата
+external | Резюме кандидатов
+external[].auth_type | Формат резюме
+external[].account_source | Источник резюме
+external[].updated | Дата и время обновления резюме
+links | Вакансии, по которым проходит кандидат
+links[].status | Этап подбора кандидата
+links[].vacancy | Вакансия
+links[].updated | Дата обновления по кандидату на вакансии
+links[].changed | Дата последнего изменения этапа подбора
