@@ -32,6 +32,7 @@
 
 ## Типы событий
  - APPLICANT — действия над кандидатом
+ - VACANCY — действия по вакансиям 
  - PING — проверка на доступность вебхука
 
 
@@ -102,7 +103,7 @@
     "author": {
         "id": 4,
         "name": "Валентин Сергеев",
-        "email" "sergeev@example.com"
+        "email": "sergeev@example.com"
     },
     "account": {
         "id": 6,
@@ -157,4 +158,88 @@
 | VACANCY-ADD | Добавление кандидата на вакансию |
 | STATUS | Изменение этапа подбора кандидата |
 | COMMENT | Комментарий по кандидату |
+
+
+### VACANCY
+
+```json
+{
+    "event": {
+        "vacancy": {
+            "created": "2017-10-19",
+            "money": null,
+            "company": null,
+            "priority": 0,
+            "state": "OPEN",
+            "deadline": null,
+            "account_division": {
+                "id": 1,
+                "name": "name"
+            },
+            "grade": {
+                "foreign": "202301", 
+                "id": 7, 
+                "name": "1.2"
+            },
+            "position": "Разработчик интерфейсов",
+            "hidden": false,
+            "id": 28
+        },
+        "type": "EDIT",
+        "id": 972,
+        "created": "2018-01-11T09:54:15+03:00"
+    },
+    "account": {
+          "id": 2,
+          "name": "Хантфлоу"
+    }
+}
+```
+
+- a.b обозначает объект a с ключом b
+ 
+
+|  Имя | Тип | Описание |
+| --- | --- | -------- |
+| event.id | number | Идентификатор действия |
+| event.type | string | [Тип действия](#vacancy-action-types) |
+| event.applicant.id | number | Идентификатор кандидата |
+| event.applicant.first_name | string | Имя кандидата |
+| event.applicant.last_name | string | Фамилия кандидата | 
+| event.applicant.middle_name | string | Отчество кандидата |
+| event.applicant.birthday | string | Дата рождения кандидата |
+| event.applicant.photo.url | string | Сссылка на фотографию кандидата |
+| event.vacancy.id | number | Идентификатор вакансии |
+| event.vacancy.position | string | Название вакансии (должности) |
+| event.vacancy.company | string | Отдел, подразделение (`null`, если подключены подразделения) |
+| event.vacancy.money | string | Зарплата |
+| event.vacancy.state | string | Статус вакансии |
+| event.vacancy.hidden | bool | Скрыта ли вакансия от коллег |
+| event.vacancy.priority | number | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий)) |
+| event.vacancy.deadline | date | Дата дедлайна по вакансии |
+| event.vacancy.account_division.id | number | Идентификатор подразделения (если подразделения подключены) |
+| event.vacancy.account_division.name | string | Название подразделения (если подразделения подключены) |
+| event.vacancy.grade | object | Пример внедренного дополнительного поля вакансии типа элемент справочника
+| event.vacancy.grade.id | number | Идентификатор значения из справочника |
+| event.vacancy.grade.name | string | Название значения из справочника |
+| event.vacancy.grade.foreign | string | Идентификатор значения во внешней системе (может быть `null`) |
+| event.vacancy.created | string | Дата+время создания вакансии |
+| event.created | date+time	| Дата и время создания события |
+| account.id | number | Идентификатор организации |
+| account.name | string | Название организации |
+
+<a name="vacancy-action-types"></a>
+
+##### Типы действий по вакансиям
+
+| Тип | Описание |
+| --- | -------- |
+| CREATED | Вакансия создана |
+| OPEN | Вакансия открыта / переоткрыта |
+| CLOSED | Вакансия закрыта |
+| HOLD | Работа по вакансии приостановлена |
+| RESUME | Работа по вакансии возобновлена (после присотановки) |
+| EDIT | Вакансия отредактирована |
+| JOIN | Пользователь присоединился к работе по вакансии (к событию будет добавлено поле `user`) |
+| LEAVE | Пользователь перестал работать по вакансии (к событию будет добавлено поле `user`) |
 
