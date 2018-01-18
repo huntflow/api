@@ -24,6 +24,8 @@
     "account_division": 6,
     "coworkers": [1],
     "body": "<p>Some text</p>",
+    "requirements": "<p>Another text</p>",
+    "conditions": "<p>Different text</p>",
     "hidden": false,
     "state": "OPEN",
     "files": [1, 2, 3]
