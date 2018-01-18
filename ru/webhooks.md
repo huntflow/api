@@ -17,7 +17,7 @@
 3. Добавьте вебхук, указав URL, секретный ключ (опционально) и выбрав события,
 на которые вы хотите подписаться. Обратите внимание, что при добавлении вебхука
 система проверяет его на доступность. Для прохождения этой проверки, удаленный
-сервер должен ответить кодом `200` или `204` на запрос с типом PING. 
+сервер должен ответить кодом `200` или `204` на запрос с типом PING.
 
 ![API](img/screenshot_02.png)
 
@@ -32,7 +32,7 @@
 
 ## Типы событий
  - APPLICANT — действия над кандидатом
- - VACANCY — действия по вакансиям 
+ - VACANCY — действия по вакансиям
  - PING — проверка на доступность вебхука
 
 
@@ -67,9 +67,9 @@
                 "last_name": "Иван",
                 "middle_name": "Инванович",
                 "birthday": "1970-01-01",
-                "photo": {                    
-                    "id": 1307833, 
-                    "content_type": "image/png", 
+                "photo": {
+                    "id": 1307833,
+                    "content_type": "image/png",
                     "name": "477233672.png",
                     "url": "https://store.huntflow.ru/uploads/named/4/8/5/485cc4914d214065784507b1275fc143.png/477233672.png?s=7hq2usgld1uqC9k5-AcwkA&e=1504005423"
                 }
@@ -113,7 +113,7 @@
 ```
 
 - a.b обозначает объект a с ключом b
- 
+
 
 |  Имя | Тип | Описание |
 | --- | --- | -------- |
@@ -121,7 +121,7 @@
 | event.type | string | [Тип действия](#action-types) |
 | event.applicant.id | number | Идентификатор кандидата |
 | event.applicant.first_name | string | Имя кандидата |
-| event.applicant.last_name | string | Фамилия кандидата | 
+| event.applicant.last_name | string | Фамилия кандидата |
 | event.applicant.middle_name | string | Отчество кандидата |
 | event.applicant.birthday | string | Дата рождения кандидата |
 | event.applicant.photo.url | string | Сссылка на фотографию кандидата |
@@ -177,11 +177,14 @@
                 "name": "name"
             },
             "grade": {
-                "foreign": "202301", 
-                "id": 7, 
+                "foreign": "202301",
+                "id": 7,
                 "name": "1.2"
             },
             "position": "Разработчик интерфейсов",
+            "body": "<p>Обязанности</p>",
+            "requirements": "<p>Требования</p>",
+            "conditions": "<p>Условия</p>",
             "hidden": false,
             "id": 28
         },
@@ -197,7 +200,7 @@
 ```
 
 - a.b обозначает объект a с ключом b
- 
+
 
 |  Имя | Тип | Описание |
 | --- | --- | -------- |
@@ -205,7 +208,7 @@
 | event.type | string | [Тип действия](#vacancy-action-types) |
 | event.applicant.id | number | Идентификатор кандидата |
 | event.applicant.first_name | string | Имя кандидата |
-| event.applicant.last_name | string | Фамилия кандидата | 
+| event.applicant.last_name | string | Фамилия кандидата |
 | event.applicant.middle_name | string | Отчество кандидата |
 | event.applicant.birthday | string | Дата рождения кандидата |
 | event.applicant.photo.url | string | Сссылка на фотографию кандидата |
@@ -219,6 +222,9 @@
 | event.vacancy.deadline | date | Дата дедлайна по вакансии |
 | event.vacancy.account_division.id | number | Идентификатор подразделения (если подразделения подключены) |
 | event.vacancy.account_division.name | string | Название подразделения (если подразделения подключены) |
+| event.vacancy.body | string | Обязанности в формате HTML |
+| event.vacancy.requirements | string | Требования в формате HTML |
+| event.vacancy.conditions | string | Условия в формате HTML |
 | event.vacancy.grade | object | Пример внедренного дополнительного поля вакансии типа элемент справочника
 | event.vacancy.grade.id | number | Идентификатор значения из справочника |
 | event.vacancy.grade.name | string | Название значения из справочника |
@@ -242,4 +248,3 @@
 | EDIT | Вакансия отредактирована |
 | JOIN | Пользователь присоединился к работе по вакансии (к событию будет добавлено поле `user`) |
 | LEAVE | Пользователь перестал работать по вакансии (к событию будет добавлено поле `user`) |
-
