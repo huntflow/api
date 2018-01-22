@@ -10,7 +10,7 @@
 <a name="add"></a>
 ## Добавление вакансии в базу
 
-`POST /account/{account_id}/vacancies` 
+`POST /account/{account_id}/vacancies`
 
 В теле запроса необходимо передать JSON вида:
 
@@ -24,6 +24,8 @@
     "account_division": 6,
     "coworkers": [1],
     "body": "<p>Some text</p>",
+    "requirements": "<p>Another text</p>",
+    "conditions": "<p>Different text</p>",
     "hidden": false,
     "state": "OPEN",
     "files": [1, 2, 3]
@@ -33,7 +35,7 @@
 ### Поля запроса
 
 Имя | Тип | Обязательный | Описание
- --- | --- | --- | --- 
+ --- | --- | --- | ---
  position | string | Да | Название вакансии (должности)
  company | string | Нет | Отдел, подразделение (игнорируется, если подключены подразделения)
  money | string | Нет | Зарплата
@@ -41,7 +43,9 @@
  priority | number | Нет | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий))
  account_division | number | Нет | Идентификатор подразделения (если подразделения подключены)
  coworkers | array | Нет | Список рекрутеров, работающих над вакансией
- body | string | Нет | Описание вакансии в формате HTML. Доступные теги: **ul**, **ol**, **li**, **p**, **br**, **a**, **strong**, **em**, **u**, **b**, **i**
+ body | string | Нет | Обязанности в формате HTML. Доступные теги: **ul**, **ol**, **li**, **p**, **br**, **a**, **strong**, **em**, **u**, **b**, **i**
+ requirements | string | Нет | Требования в формате HTML. Доступные теги: **ul**, **ol**, **li**, **p**, **br**, **a**, **strong**, **em**, **u**, **b**, **i**
+ conditions | string | Нет | Условия работы в формате HTML. Доступные теги: **ul**, **ol**, **li**, **p**, **br**, **a**, **strong**, **em**, **u**,**b**, **i**
  hidden | bool | Нет | Скрыта ли вакансия от коллег
  state | string | Нет | [Состояние вакансии](#vacancy-states). По умолчанию `OPEN`
  files | array | Нет | Список файлов, прикрепленных к вакансии ([загрузка файлов](upload.md))
@@ -66,7 +70,7 @@ created | string | Дата+время создания вакансии
 <a name="edit"></a>
 ## Редактирование вакансии
 
-`PUT /account/{account_id}/vacancies/{vacancy_id}` 
+`PUT /account/{account_id}/vacancies/{vacancy_id}`
 
 ### Поля запроса
 Тело запроса аналогично телу в запросе на создание вакансии.
@@ -176,10 +180,12 @@ status | bool | Флаг успешной операции
     "hidden": false,
     "state": "OPEN",
     "body": "<p>Пишу я вам, чего же <strong>боле</strong></p>",
+    "requirements": "<p>Что я могу ещё <strong>сказать</strong></p>",
+    "conditions": "<p>Теперь я знаю в вашей воле <strong>воле</strong></p>",
     "files": [
         {
             "id": 15808,
-            "name": "Снимок экрана 2017-04-10 в 11.00.13.png",            
+            "name": "Снимок экрана 2017-04-10 в 11.00.13.png",
             "content_type": "image/png",
             "url": "https://store.huntflow.ru/uploads/f/f/h/ffhov94xuqytbl16u8b9l3oeewdjpyoc.png"
         }
@@ -191,7 +197,9 @@ status | bool | Флаг успешной операции
 
 Имя | Тип | Описание
  --- | --- | ---
- body | string | Чистовое описание вакансии в формате HTML
+ body | string | Обязанности в формате HTML
+ requirements | string | Требования в формате HTML
+ conditions | string | Условия работы в формате HTML
  files | array | Список файлов, прикрепленных к вакансии
 
 
