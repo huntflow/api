@@ -30,6 +30,7 @@
             "data": {
                 "body": "Текст резюме\nТакой текст"
             },
+            "auth_type": "NATIVE",
             "files": [
                 {
                     "id": 12430
