@@ -20,6 +20,7 @@
     "company": "Tesla",
     "money": "$100k",
     "deadline": "2017-09-03",
+    "applicants_to_hire": 2,
     "priority": 1,
     "account_division": 6,
     "coworkers": [1],
