@@ -122,6 +122,7 @@ status | bool | Флаг успешной операции
             "company": "Отдел продаж",
             "money": "30 000 + 3% от продаж",
             "deadline": "2017-04-27",
+            "applicants_to_hire": 1,
             "created": "2017-03-22T18:16:27+03:00",
             "vacancy_request": null,
             "priority": 0,
@@ -134,6 +135,7 @@ status | bool | Флаг успешной операции
             "company": "Отдел разработки",
             "money": "80 000 руб",
             "deadline": null,
+            "applicants_to_hire": 1,
             "created": "2017-03-22T18:16:27+03:00",
             "vacancy_request": null,
             "priority": 0,
@@ -156,6 +158,7 @@ status | bool | Флаг успешной операции
  company | string | Отдел, подразделение
  money | string | Зарплата
  deadline | date | Дата дедлайна по вакансии
+ applicants_to_hire | number | Количество кандидатов к найму
  created | date+time | Дата и время создания вакансии
  vacancy_request | number | Идентификатор заявки на вакансию, из которой вакансия была создана
  priority | number | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий))
@@ -175,6 +178,7 @@ status | bool | Флаг успешной операции
     "company": "Отдел продаж",
     "money": "30 000 + 3% от продаж",
     "deadline": "2017-04-27",
+    "applicants_to_hire": 1,
     "created": "2017-03-22T18:16:27+03:00",
     "vacancy_request": null,
     "priority": 0,
