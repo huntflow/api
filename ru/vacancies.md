@@ -1,18 +1,18 @@
 # Работа с вакансиями
 
-* [Добавление вакансии в базу](#add)
-* [Редактирование вакансии](#edit)
-* [Список вакансий](#vacancies)
-* [Получение вакансии](#vacancy)
-* [Удаление вакансии](#delete)
-* [Состояние вакансии](#vacancy-states)
+* [Adding a vacancy to the base](#add)
+* [Editing a vacancy](#edit)
+* [The list of vacancies](#vacancies)
+* [Getting a vacancy](#vacancy)
+* [Deleting a vacancy](#delete)
+* [The state of a vacancy](#vacancy-states)
 
 <a name="add"></a>
-## Добавление вакансии в базу
+## Adding a vacancy to the base
 
 `POST /account/{account_id}/vacancies`
 
-В теле запроса необходимо передать JSON вида:
+Add a JSON to the body of the request:
 
 ```json
 {
@@ -33,28 +33,28 @@
 }
 ```
 
-### Поля запроса
+### Request fields
 
-Имя | Тип | Обязательный | Описание
+Name | Type | Required | Description
  --- | --- | --- | ---
- position | string | Да | Название вакансии (должности)
- company | string | Нет | Отдел, подразделение (игнорируется, если подключены подразделения)
- money | string | Нет | Зарплата
- applicants_to_hire | number | Нет | Сколько человек нужно нанять (>= 1)
- deadline | date | Нет | Дата дедлайна по вакансии
- priority | number | Нет | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий))
- account_division | number | Нет | Идентификатор подразделения (если подразделения подключены)
- coworkers | array | Нет | Список рекрутеров, работающих над вакансией
- body | string | Нет | Обязанности в формате HTML. Доступные теги: **ul**, **ol**, **li**, **p**, **br**, **a**, **strong**, **em**, **u**, **b**, **i**
- requirements | string | Нет | Требования в формате HTML. Доступные теги: **ul**, **ol**, **li**, **p**, **br**, **a**, **strong**, **em**, **u**, **b**, **i**
- conditions | string | Нет | Условия работы в формате HTML. Доступные теги: **ul**, **ol**, **li**, **p**, **br**, **a**, **strong**, **em**, **u**,**b**, **i**
- hidden | bool | Нет | Скрыта ли вакансия от коллег
- state | string | Нет | [Состояние вакансии](#vacancy-states). По умолчанию `OPEN`
- files | array | Нет | Список файлов, прикрепленных к вакансии ([загрузка файлов](upload.md))
+ position | string | Yes | The name of the vacancy (occupation)
+ company | string | No | Department (igored if the DEPARTMENTS are enabled)
+ money | string | No | Salary
+ applicants_to_hire | number | No | How many people to hire (>= 1)
+ deadline | date | No | Due date for a vacancy
+ priority | number | No | The priority of a vacancy (0 for usual or 1 for high)
+ account_division | number | No | Department identifier (if the DEPARTMENTS are enabled)
+ coworkers | array | No | The list of recruiters working with a vacancy
+ body | string | No | The responsibilities of a vacancy in HTML format. Enabled tags: **ul**, **ol**, **li**, **p**, **br**, **a**, **strong**, **em**, **u**, **b**, **i**
+ requirements | string | No | The requiremetns for a vacancy in HTML format. Enabled tags: **ul**, **ol**, **li**, **p**, **br**, **a**, **strong**, **em**, **u**, **b**, **i**
+ conditions | string | No | The conditions for a vacancy in HTML format. Enabled tags: **ul**, **ol**, **li**, **p**, **br**, **a**, **strong**, **em**, **u**,**b**, **i**
+ hidden | bool | No | Is the vacancy hidden from the colleagues?
+ state | string | No | [The state of a vacancy](#vacancy-states). `OPEN`by default
+ files | array | No | The list of files attached to a vacancy ([file upload](upload.md))
 
-### Поля ответа
+### Response fields
 
-Дополнительно к полям запроса также будут добавлены поля:
+In addition to the request fields the following fields are added:
 
 ```json
 {
@@ -64,64 +64,62 @@
 }
 ```
 
-Имя | Тип | Описание
+Name | Type | Description
 --- | --- | ---
-id | number | Идентификатор вакансии
-created | string | Дата+время создания вакансии
+id | number | Vacancy ID 
+created | string | Date and time of creating a vacancy
 
 <a name="edit"></a>
-## Редактирование вакансии
+## Editing a vacancy
 
 `PUT /account/{account_id}/vacancies/{vacancy_id}`
 
-### Поля запроса
-Тело запроса аналогично телу в запросе на создание вакансии.
-
-### Поля ответа
-Ответ аналогичен ответу на запрос на создание вакансии.
-
+### Request fields
+The body of the request is similar to the one of creating a vacancy.
+### Response fields
+The response is similar to the one returning for the request of creating a vacancy. 
 <a name="delete"></a>
-# Удаление вакансии
+# Deleting a vacancy
 
 `DELETE /account/{account_id}/vacancies/{vacancy_id}`
 
-### Поля запроса
-Тело запроса должно быть пустым
+### Request fields
+The body of the request shall be empty
 
-# Поля ответа
+# Response fields
 ```json
 {
     "status": true
 }
 ```
 
-Имя | Тип | Описание
+Name | Type | Description
 --- | --- | ---
-status | bool | Флаг успешной операции
+status | bool | Indicator of a successful operation
 
 <a name="vacancies"></a>
-## Получение списка вакансий
+## Getting the list of vacancies
 
-`GET /account/{account_id}/vacancies` вернёт список вакансий компании.
+`GET /account/{account_id}/vacancies` returns the list of vancancies of a company. 
 
-Принимаемые параметры:
+Accepeted parameters:
 
-* `mine` — логическое поле.
-Если передается, то вернутся только вакансии, над которыми работает текущий пользователь.
+* `mine` — logical field.
+If passed, only the vacancies the current user is working with will return. 
 
-* `opened` — логическое поле.
-Если передается, то вернутся только открытые вакансии
+* `opened` — logical field.
+If passed, only the open vacancies will return.
 
-* `count`, `page` — [параметры постраничного вывода](general.md#pagination).
+* `count`, `page` — [parameters of page by page output](general.md#pagination).
 
 ```json
 {
     "items": [
         {
             "id": 4531,
-            "position": "Менеджер по продажам",
-            "company": "Отдел продаж",
-            "money": "30 000 + 3% от продаж",
+            "position": "Sales manager",
+            "company": "Sales department",
+            "money": "$65K",
             "deadline": "2017-04-27",
             "applicants_to_hire": 1,
             "created": "2017-03-22T18:16:27+03:00",
@@ -132,9 +130,9 @@ status | bool | Флаг успешной операции
         },
         {
             "id": 4530,
-            "position": "Программист Python",
-            "company": "Отдел разработки",
-            "money": "80 000 руб",
+            "position": "Python developer",
+            "company": "DEV department",
+            "money": "$112K",
             "deadline": null,
             "applicants_to_hire": 1,
             "created": "2017-03-22T18:16:27+03:00",
@@ -152,32 +150,32 @@ status | bool | Флаг успешной операции
 
 <a name="vacancies-result"></a>
 
-Имя | Тип | Описание
+Name | Type | Description
  --- | --- | ---
- id |  number | Идентификатор вакансии
- position | string | Название вакансии (должности)
- company | string | Отдел, подразделение
- money | string | Зарплата
- deadline | date | Дата дедлайна по вакансии
- applicants_to_hire | number | Количество кандидатов к найму
- created | date+time | Дата и время создания вакансии
- vacancy_request | number | Идентификатор заявки на вакансию, из которой вакансия была создана
- priority | number | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий))
- hidden | bool | Скрыта ли вакансия от коллег
- state | string | [состояние вакансии](#vacancy-states)
+ id |  number | Vacancy ID
+ position | string | The name of the vacancy (occupation)
+ company | string | Department
+ money | string | Salary
+ deadline | date | Due date for a vacancy
+ applicants_to_hire | number | How many people to hire
+ created | date+time | Date and time of creating a vacancy
+ vacancy_request | number | The ID of a request for a vacancy that the vacancy was created from.
+ priority | number | The priority of a vacancy (0 for usual or 1 for high)
+ hidden | bool | Is the vacancy hidden from the colleagues?
+ state | string | [The state of a vacancy](#vacancy-states)
 
 
 <a name="vacancy"></a>
-## Получение вакансии
+## Getting a vacancy
 
-`GET /account/{account_id}/vacancies/{vacancy_id}` вернёт вакансию с идентификатором `{vacancy_id}`
+`GET /account/{account_id}/vacancies/{vacancy_id}` returns a vacancy with an ID `{vacancy_id}`
 
 ```json
 {
     "id": 4531,
-    "position": "Менеджер по продажам",
-    "company": "Отдел продаж",
-    "money": "30 000 + 3% от продаж",
+    "position": "Sales manager",
+    "company": "Sales department",
+    "money": "$65K",
     "deadline": "2017-04-27",
     "applicants_to_hire": 1,
     "created": "2017-03-22T18:16:27+03:00",
@@ -185,13 +183,13 @@ status | bool | Флаг успешной операции
     "priority": 0,
     "hidden": false,
     "state": "OPEN",
-    "body": "<p>Пишу я вам, чего же <strong>боле</strong></p>",
-    "requirements": "<p>Что я могу ещё <strong>сказать</strong></p>",
-    "conditions": "<p>Теперь я знаю в вашей воле <strong>воле</strong></p>",
+    "body": "<p>Some important text</p>",
+    "requirements": "<p>And some more</p>",
+    "conditions": "<p>Sand some more</strong></p>",
     "files": [
         {
             "id": 15808,
-            "name": "Снимок экрана 2017-04-10 в 11.00.13.png",
+            "name": "Screenshot 2017-04-10 at 11.00.13.png",
             "content_type": "image/png",
             "url": "https://store.huntflow.ru/uploads/f/f/h/ffhov94xuqytbl16u8b9l3oeewdjpyoc.png"
         }
@@ -199,21 +197,21 @@ status | bool | Флаг успешной операции
 }
 ```
 
-Поля с результатом аналогичны данным из [списка вакансий](#vacancies-result) плюс поля:
+The returned fields are similar to data from [the list of vancancies](#vacancies-result) with added fields:
 
-Имя | Тип | Описание
+Name | Type | Description
  --- | --- | ---
- body | string | Обязанности в формате HTML
- requirements | string | Требования в формате HTML
- conditions | string | Условия работы в формате HTML
- files | array | Список файлов, прикрепленных к вакансии
+ body | string | The responsibilities of a vacancy in HTML format
+ requirements | string | The requiremetns for a vacancy in HTML format
+ conditions | string | The conditions for a vacancy in HTML format
+ files | array | The list of files attached to a vacancy
 
 
 <a name="vacancy-states"></a>
-## Состояние вакансии
+## The state of a vacancy
 
-Идентификатор | Описание
+Identifier | Description
  --- | ---
- OPEN | Вакансия открыта
- CLOSED | Вакансия закрыта
- HOLD | Работа над вакансией приостановлена
+ OPEN | The vacancy is open
+ CLOSED | The vacancy is closed
+ HOLD | The work on a vacancy is paused
