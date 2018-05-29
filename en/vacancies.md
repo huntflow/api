@@ -1,4 +1,4 @@
-# Работа с вакансиями
+# Work with vacancies
 
 * [Adding a vacancy to the base](#add)
 * [Editing a vacancy](#edit)
