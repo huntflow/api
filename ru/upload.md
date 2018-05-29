@@ -64,16 +64,16 @@ photo | object | Object with a photo file if one was found in the recognized fil
 fields | object | Object with recognized fields (fields description below) 
 
  
-### Поля из системы распознавания
+### Recognition system fields
 
-Любое из указанных полей может отсутствовать
+Any of the fields stated below can be missing
  
-Имя | Тип | Описание
+Name | Type | Description
 --- | --- | ---
-name | объект | Объект с полями ФИО
-position | строка | Желаемая должность
-email | строка | Адрес электронной почты
-salary | число | Размер заработной платы
-phones | массив | Массив телефонов
-birthdate | объект | Объект даты рождения. В поле `precision` указывается точность определения возраста.
-experience | массив | Массив с опытом работы кандидата
+name | object | Object with fields of first name, last name and middle name
+position | string | Desired occupation
+email | string | Email address
+salary | number | Salary
+phones | array | Array of phone numbers
+birthdate | object | Object of the birth date. The field `precision` denotes the precision of the age recognition.
+experience | array | Array with candidate's work experience.
