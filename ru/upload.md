@@ -1,19 +1,19 @@
-# Загрузка и распознавание файлов
+# Files upload and recognition
 <a name="parsing"></a>
 
 `POST /account/{account_id}/upload` 
 
-Для загрузки файла необходимо отправить запрос `multipart/form-data` c файлом в параметре `file`.
+To upload a file send a request `multipart/form-data` with a file in parameter `file`.
 
-Для того, чтобы файл также был обработан системой распознавания полей, необходимо передать заголовок `X-File-Parse: true`. В этом случае, в ответе будут присутствовать поля `text`, `photo`, `fields`. 
+To make sure that the file will be processed by the system of field recognition, one has to pass a header `X-File-Parse: true`. In this case the response will contain the fields `text`, `photo`, `fields`. 
 
 ```json
 {
     "id": 1329115,
-    "name": "Глибин Виталий Николаевич.pdf",
+    "name": "John Doe.pdf",
     "content_type": "application/pdf",
     "url": "https://store.huntflow.ru/uploads/t/f/9/tf96318hrjj5w9o5m9xuvwwwzbgbgave.pdf",
-    "text": "Текст резюме",
+    "text": "Resume text",
     "photo": {
         "id": 1352599,
         "name": "image1.png",
@@ -21,13 +21,13 @@
         "content_type": "image/png"
     },
     "fields": {
-        "position": "Ведущий frontend разработчик (team lead)",
-        "email": "glibin.v@gmail.com",
+        "position": "Front-end team lead",
+        "email": "doe@gmail.com",
         "salary": 200000,
         "name": {
-            "middle": "Николаевич",
-            "last": "Глибин",
-            "first": "Виталий"
+            "middle": "Michael",
+            "last": "Doe",
+            "first": "John"
         },
         "phones": [
             "+7 (926) 073-17-78"
@@ -40,7 +40,7 @@
         },
         "experience": [
             {
-                "position": "Team lead команды мобильного сайта",
+                "position": "Mobile Team lead",
                 "company": "HeadHunter"
             },
             {
@@ -53,15 +53,15 @@
 ```
 
 
-Имя | Тип | Описание
+Name | Type | Description
 --- | --- | ---
-id | число | Идентификатор загруженного файла
-name | строка | Название загруженного файла
-content_type | строка | Тип файла
-url | строка | Прямая ссылка на файл в Хантфлоу
-text | строка | Текстовое представление файла (если резюме имеет текстовый формат) 
-photo | объект | Объект с файлом-фотографией, если такая нашлась в распознаваемом файле иначе `null` 
-fields | объект | Объект с распознаными данными (описание полей ниже) 
+id | number | Uploaded file ID
+name | string | The name of the uploaded file
+content_type | string | File type
+url | string | Direct link to the file in Huntflow
+text | string | Text file representation (if the resume is formated as a text)
+photo | object | Object with a photo file if one was found in the recognized file, otherwise returns `null` 
+fields | object | Object with recognized fields (fields description below) 
 
  
 ### Поля из системы распознавания
