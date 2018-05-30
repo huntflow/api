@@ -39,11 +39,11 @@
 
 Name | Type | Description
  --- | --- | ---
- id | number | Stage identifier
- type | string | Status type (user – made by a manager, trash – system stage 'declined')
+ id | number | Stage ID
+ type | string | Status type (`user` – made by a manager, `trash` – system stage `rejected`)
  order | number | Sort order
  name | string | The name of a stage
- removed | date+time | If stated means that the stage was deleted. The stage is saved only as a history of candidate workflow. The candidate can’t be transfered to this stage.
+ removed | date+time | If stated means that the stage was deleted. The stage is saved only as a history of a workflow on a candidate. The candidate can’t be transfered to this stage.
 
 
 <a name="applicant_sources"></a>
