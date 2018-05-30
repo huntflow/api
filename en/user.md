@@ -27,7 +27,7 @@
  position | string | User occupation
  email | string | Email adress
  phone | string | Phone number
- locale | string | The user's locale ([the guide on locale]s) ([справочник локалей](dicts.md#locale))
+ locale | string | The user's locale ([the guide on locales](dicts.md#locale))
 
 
 <a name="organizations"></a>
@@ -60,5 +60,5 @@ Name | Type | Description
  id | number | Organization ID (used for organization data requests)
  name | string | The name of the organization
  nick | string | Short organization name (used on the website, e.g. /my/tellur)
- member_type | string | The role in the organization (the description of roles: [the guide on roles])(dicts.md#member_type))
+ member_type | string | The role in the organization (the description of roles: [the guide on roles](dicts.md#member_type))
  
