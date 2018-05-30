@@ -44,8 +44,8 @@ Add a JSON to the body of the request:
 
 ### Request fields
 
-* `[]` denotes that the value of the key is n array
-* `a.b` denotes and object "a" with a "b" key
+* `[]` denotes that the value of the key is an array
+* `a.b` denotes an object "a" with a "b" key
 
 Path | Type | Required | Description
 ---- | -------- | ------------ | --------
@@ -53,17 +53,17 @@ last_name | string | Yes | Last name
 first_name | string | Yes | First name
 middle_name | string | No | Middle name
 phone | string | No | Phone number
-email | string | No | Email adress
+email | string | No | Email address
 position | string | No | Candidate’s occupation
 company | string | No | Candidate’s place of work
 money | string | No | Salary expectation
 birthday_day | number | No | Day of birth
 birthday_month | number | No | Month of birth
 birthday_year | number | No | Year of birth
-photo | number | No | Candidate’s photo (uploaded file identifier), the information about uploading files is [here](upload.md)
+photo | number | No | Candidate’s photo (uploaded file ID), the information about uploading files is [here](upload.md)
 externals[].data.body | string | No | Resume text
-externals[].files.id | number | No | Uploaded resume file identifier
-externals[].account_source | number | No | Resume source identifier ([guide](dicts.md#applicant_sources))
+externals[].files.id | number | No | Uploaded resume file ID
+externals[].account_source | number | No | Resume source ID ([guide](dicts.md#applicant_sources))
 
 ### Response fields
 
@@ -134,7 +134,7 @@ In addition to the request fields the following fields are added:
 Name | Type | Description
 --- | --- | ---
 id | numeric | Binding ID
-changed | string | The date of status change
+changed | string | The date of headhunting stage change
 
 <a name="applicants"></a>
 ## Getting a list of candidates
@@ -143,9 +143,9 @@ changed | string | The date of status change
 
 Accepted parameters:
 
-* `status` — the stage of headhunting. If passed only the candidated at a certain stage ofheadhunting will return.
+* `status` — the stage of headhunting. If passed only the candidated at a certain stage of headhunting will return.
 
-* `vacancy` — vacancy. Used additionally to "status" for filtering the candidated at a certain stage of headhunting.
+* `vacancy` — vacancy. Used additionally to "status" for filtering the candidates at a certain stage of headhunting.
 
 * `count`, `page` — [parameters of page by page output](general.md#pagination).
 
@@ -242,7 +242,7 @@ position | Candidate’s occupation
 company | Candidate’s place of work
 money | Salary expectation
 birthday | Date of birth
-photo |Candidate’s photo (uploaded file identifier), the information about uploading files is [here](upload.md)
+photo | Candidate’s photo (uploaded file ID), the information about uploading files is [here](upload.md)
 photo_url | A link to a candidate’s photo
 external | Candidate’s resume
 external[].auth_type | The format of resume
