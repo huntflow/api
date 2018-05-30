@@ -45,7 +45,7 @@ Name | Type | Required | Description
  priority | number | No | The priority of a vacancy (0 for usual or 1 for high)
  account_division | number | No | Department identifier (if the DEPARTMENTS are enabled)
  coworkers | array | No | The list of recruiters working with a vacancy
- body | string | No | The responsibilities of a vacancy in HTML format. Enabled tags: **ul**, **ol**, **li**, **p**, **br**, **a**, **strong**, **em**, **u**, **b**, **i**
+ body | string | No | The responsibilities for a vacancy in HTML format. Enabled tags: **ul**, **ol**, **li**, **p**, **br**, **a**, **strong**, **em**, **u**, **b**, **i**
  requirements | string | No | The requiremetns for a vacancy in HTML format. Enabled tags: **ul**, **ol**, **li**, **p**, **br**, **a**, **strong**, **em**, **u**, **b**, **i**
  conditions | string | No | The conditions for a vacancy in HTML format. Enabled tags: **ul**, **ol**, **li**, **p**, **br**, **a**, **strong**, **em**, **u**,**b**, **i**
  hidden | bool | No | Is the vacancy hidden from the colleagues?
