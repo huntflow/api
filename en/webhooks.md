@@ -219,9 +219,9 @@ Technically, webhook is a POST request, that out system sends to your remote ser
 | event.vacancy.body | string | Responsibilities in HTML format|
 | event.vacancy.requirements | string | Requirements in HTML format |
 | event.vacancy.conditions | string | Conditions in HTML format |
-| event.vacancy.grade | object | The example of implemented additional vacancy field of the guide value type |
-| event.vacancy.grade.id | number | The ID of the value from the guide |
-| event.vacancy.grade.name | string | The name of the value from a guide |
+| event.vacancy.grade | object | The example of implemented additional vacancy field of the directory value type |
+| event.vacancy.grade.id | number | The ID of the value from the directory |
+| event.vacancy.grade.name | string | The name of the value from a directory |
 | event.vacancy.grade.foreign | string | Value ID in the external system (can be `null`) |
 | event.vacancy.created | string | Date and time of creating a vacancy |
 | event.created | date+time	| Date and time of creating an event |
