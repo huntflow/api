@@ -5,7 +5,9 @@
 * [The list of candidates](#applicants)
 
 <a name="add"></a>
-## Adding a candidate to the baseAdd a JSON to the body of the request:
+## Adding a candidate to the base
+
+Add a JSON to the body of the request:
 
 `POST /account/{account_id}/applicants` 
 
