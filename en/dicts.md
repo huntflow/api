@@ -1,4 +1,4 @@
-# Guides
+# Directories
 
 * [Stages of headhunting](#vacancy_statuses)
 * [Sources of resumes](#applicant_sources)
