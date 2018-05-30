@@ -237,7 +237,7 @@ Technically, webhook is a POST request, that out system sends to your remote ser
 | CREATED | The vacancy is created |
 | OPEN | The vacancy is opened or reopened |
 | CLOSED | The vacancy is closed |
-| HOLD | The vacancy is put on hold |
+| HOLD | The work on the vacancy is paused |
 | RESUME | The work on vacancy was resumed (after pause) |
 | EDIT | The vacancy is edited |
 | JOIN | The user has joined the work on vacancy (event will have a field `user` added) |
