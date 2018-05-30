@@ -1,7 +1,7 @@
 # Guides
 
-* [The stages of headhunting](#vacancy_statuses)
-* [The sources of resumes](#applicant_sources)
+* [Stages of headhunting](#vacancy_statuses)
+* [Sources of resumes](#applicant_sources)
 
 
 <a name="vacancy_statuses"></a>
