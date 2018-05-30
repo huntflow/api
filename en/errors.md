@@ -2,7 +2,7 @@
 
 API uses reporting by HTTP response codes that the application should process adequately. 
 
-Apart of the response code the body the response contains additional information, 
+Apart from the response code, the body of the response contains additional information 
 that helps the developer undestand the reason of an error. 
 
 Errors are passed as:
@@ -42,7 +42,7 @@ can contain the object `fields` with human friendly information about the error:
 
 ## System error
 
-If the service cannot process the request, `500 Internal Server Error` will return and the `type` field will contain
+If the service cannot process the request, `500 Internal Server Error` will return. The `type` field will contain
 `server_error`.
 
 Rarely the errors with 5xx codes will return without valid JSON in the body. 
@@ -70,7 +70,7 @@ More about [authorization](authorization.md).
 ### Authorization usage errors
 
 If the authorized [request is made](authorization.md#oauth_check_access_token) to the API and the authorization is invalid, 
-the error with the `type` and `oauth` will return with one of the following `values`:
+the error with the `type` and `oauth` and one of the following `values` will return:
 
 HTTP code | type | value | description
 ----------|------|-------|-----------
