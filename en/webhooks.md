@@ -219,26 +219,26 @@ Technically, webhook is a POST request, that out system sends to your remote ser
 | event.vacancy.body | string | Responsibilities in HTML format|
 | event.vacancy.requirements | string | Requirements in HTML format |
 | event.vacancy.conditions | string | Conditions in HTML format |
-| event.vacancy.grade | object | Пример внедренного дополнительного поля вакансии типа элемент справочника
-| event.vacancy.grade.id | number | Идентификатор значения из справочника |
-| event.vacancy.grade.name | string | Название значения из справочника |
-| event.vacancy.grade.foreign | string | Идентификатор значения во внешней системе (может быть `null`) |
-| event.vacancy.created | string | Дата+время создания вакансии |
-| event.created | date+time	| Дата и время создания события |
-| account.id | number | Идентификатор организации |
-| account.name | string | Название организации |
+| event.vacancy.grade | object | The example of implemented additional vacancy field of the guide value type |
+| event.vacancy.grade.id | number | The ID of the value from the guide |
+| event.vacancy.grade.name | string | The name of the value from a guide |
+| event.vacancy.grade.foreign | string | Value ID in the external system (can be `null`) |
+| event.vacancy.created | string | Date and time of creating a vacancy |
+| event.created | date+time	| Date and time of creating an event |
+| account.id | number | Company ID |
+| account.name | string | Company name |
 
 <a name="vacancy-action-types"></a>
 
-##### Типы действий по вакансиям
+##### Vacancy action types
 
-| Тип | Описание |
+| Type | Description |
 | --- | -------- |
-| CREATED | Вакансия создана |
-| OPEN | Вакансия открыта / переоткрыта |
-| CLOSED | Вакансия закрыта |
-| HOLD | Работа по вакансии приостановлена |
-| RESUME | Работа по вакансии возобновлена (после присотановки) |
-| EDIT | Вакансия отредактирована |
-| JOIN | Пользователь присоединился к работе по вакансии (к событию будет добавлено поле `user`) |
-| LEAVE | Пользователь перестал работать по вакансии (к событию будет добавлено поле `user`) |
+| CREATED | The vacancy is created |
+| OPEN | The vacancy is opened or reopened |
+| CLOSED | The vacancy is closed |
+| HOLD | The vacancy is put on hold |
+| RESUME | The work on vacancy was resumed (after pause) |
+| EDIT | The vacancy is edited |
+| JOIN | The user has joined the work on vacancy (event will have a field `user` added) |
+| LEAVE | The user stopped working on a vacancy (event will have a field `user` added) |
