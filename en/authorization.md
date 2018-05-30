@@ -13,24 +13,24 @@ https://huntflow.ru/oauth/authorize?response_type=code&client_id={client_id}&sta
 
 Required parameters:
 
-* `response_type=code` — stating a type of getting an authorization using an authorization code
+* `response_type=code` — states a type of getting an authorization using an authorization code
 * `client_id={client_id}` — application ID
 
 Optional parameters:
 
-* `state={state}` — f stated will be added to the response. That elliminates the chance of hacking 
+* `state={state}` — if stated will be added to the response. That elliminates the chance of being hacked 
 by cross-site request forgery ([RFC 6749. Section 10.12](http://tools.ietf.org/html/rfc6749#section-10.12))
 
-* `redirect_uri={redirect_uri}` — The address of user redirection after authorization. 
+* `redirect_uri={redirect_uri}` — The address for user redirection after authorization. 
 The address from the application settings are used by default.
 
 <a name="oauth_process"></a>
 ### Authorization process
 
-If a user is not authentificated at the website, he will be shown a login form. After authentification 
-the user will get a form with the application request of access to the user’s data.
+If a user is not authentificated at the website, they will be shown a login form. After authentification 
+the user will get a form with the application access request to the user’s data.
 
-If a user declines an access request, the user will be redirected to the stated  redirect_uriс ?error=access_denied и state={state} 
+If a user declines an access request, the user will be redirected to the stated redirect_uriс ?error=access_denied и state={state} 
 (if it was stated).
 
 
@@ -48,7 +48,7 @@ If the user is authentificated at the website and got the access to the applicat
 will return (without showing login form and authorization). 
 
 <a name="oauth_tokens"></a>
-### Access to acquisition and refresh tokens
+### Getting an access and refresh tokens
 
 After getting an `authorization_code` the application has to make a server to server POST-request 
 to `https://huntflow.ru/oauth/token` to exchange the `authorization_code` to the `access_token` 
@@ -59,9 +59,9 @@ The request should contain:
 grant_type=authorization_code&client_id={client_id}&client_secret={client_secret}&code={authorization_code}&redirect_uri={redirect_uri}
 ```
 
-If at `authorization_code` acquisition `redirect_uri` was stated, the request must pass this value (the lines are compared), otherwise this parameter is not necessary. If the `redirect_uri` is not stated while requesting `/oauth/authorize`,  then if it is passed in the second request  (`/oauth/token`) the server will return an error.
+If at `authorization_code` acquisition `redirect_uri` was stated, the request must pass this value (the lines are compared), otherwise this parameter is not necessary. If the `redirect_uri` is not stated while requesting `/oauth/authorize`,  then when it is passed in the second request  (`/oauth/token`) the server will return an error.
 
-The request body should be passed in a stabdard `application/x-www-form-urlencoded` with a relevant header `Content-Type`. 
+The request body should be passed in a standard `application/x-www-form-urlencoded` with a relevant header `Content-Type`. 
 
 The following JSON will return:
 
@@ -86,7 +86,7 @@ If the `authorization_code` exchange failed, the return will be `400 Bad Request
 ```
 
 * `error` error will get  one of the values [described in RFC 6749 standard](http://tools.ietf.org/html/rfc6749#section-5.2).
- For instance, `invalid_request`, if one of the compulsory parameters was not passed. 
+ For instance, `invalid_request`, if one of the required parameters was not passed. 
 * `error_description` will contain additional description of an error.
 
 
@@ -103,7 +103,7 @@ POST https://huntflow.ru/oauth/token
 grant_type=refresh_token&refresh_token={refresh_token}
 ```
 
-The response will be identical to the one when the tocken is given for the first time:
+The response will be identical to the one when the token is given for the first time:
 
 ```json
 {
