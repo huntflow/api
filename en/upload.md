@@ -74,8 +74,7 @@ Any of the fields stated below can be missing
 
   
 Name | Type | Description
-
- --- | --- | ---
+--- | --- | ---
 name | object | Object with fields of first name, last name and middle name
 position | string | Desired occupation
 email | string | Email address
