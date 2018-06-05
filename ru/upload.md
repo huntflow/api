@@ -1,19 +1,19 @@
-# Files upload and recognition
+# Загрузка и распознавание файлов
 <a name="parsing"></a>
 
 `POST /account/{account_id}/upload` 
 
-To upload a file send a request `multipart/form-data` with a file in parameter `file`.
+Для загрузки файла необходимо отправить запрос `multipart/form-data` c файлом в параметре `file`.
 
-To make sure that the file will be processed by the system of field recognition, one has to pass a header `X-File-Parse: true`. In this case the response will contain the fields `text`, `photo`, `fields`. 
+Для того, чтобы файл также был обработан системой распознавания полей, необходимо передать заголовок `X-File-Parse: true`. В этом случае, в ответе будут присутствовать поля `text`, `photo`, `fields`. 
 
 ```json
 {
     "id": 1329115,
-    "name": "John Doe.pdf",
+    "name": "Глибин Виталий Николаевич.pdf",
     "content_type": "application/pdf",
     "url": "https://store.huntflow.ru/uploads/t/f/9/tf96318hrjj5w9o5m9xuvwwwzbgbgave.pdf",
-    "text": "Resume text",
+    "text": "Текст резюме",
     "photo": {
         "id": 1352599,
         "name": "image1.png",
@@ -21,13 +21,13 @@ To make sure that the file will be processed by the system of field recognition,
         "content_type": "image/png"
     },
     "fields": {
-        "position": "Front-end team lead",
-        "email": "doe@gmail.com",
+        "position": "Ведущий frontend разработчик (team lead)",
+        "email": "glibin.v@gmail.com",
         "salary": 200000,
         "name": {
-            "middle": "Michael",
-            "last": "Doe",
-            "first": "John"
+            "middle": "Николаевич",
+            "last": "Глибин",
+            "first": "Виталий"
         },
         "phones": [
             "+7 (926) 073-17-78"
@@ -40,7 +40,7 @@ To make sure that the file will be processed by the system of field recognition,
         },
         "experience": [
             {
-                "position": "Mobile Team lead",
+                "position": "Team lead команды мобильного сайта",
                 "company": "HeadHunter"
             },
             {
@@ -53,27 +53,27 @@ To make sure that the file will be processed by the system of field recognition,
 ```
 
 
-Name | Type | Description
+Имя | Тип | Описание
 --- | --- | ---
-id | number | Uploaded file ID
-name | string | The name of the uploaded file
-content_type | string | File type
-url | string | Direct link to the file in Huntflow
-text | string | Text file representation (if the resume is formated as a text)
-photo | object | Object with a photo file if one was found in the recognized file, otherwise returns `null` 
-fields | object | Object with recognized fields (fields description below) 
+id | число | Идентификатор загруженного файла
+name | строка | Название загруженного файла
+content_type | строка | Тип файла
+url | строка | Прямая ссылка на файл в Хантфлоу
+text | строка | Текстовое представление файла (если резюме имеет текстовый формат) 
+photo | объект | Объект с файлом-фотографией, если такая нашлась в распознаваемом файле иначе `null` 
+fields | объект | Объект с распознаными данными (описание полей ниже) 
 
  
-### Recognition system fields
+### Поля из системы распознавания
 
-Any of the fields stated below can be missing
+Любое из указанных полей может отсутствовать
  
-Name | Type | Description
+Имя | Тип | Описание
 --- | --- | ---
-name | object | Object with fields of first name, last name and middle name
-position | string | Desired occupation
-email | string | Email address
-salary | number | Salary
-phones | array | Array of phone numbers
-birthdate | object | Object of the birth date. The field `precision` denotes the precision of the age recognition.
-experience | array | Array with candidate's work experience.
+name | объект | Объект с полями ФИО
+position | строка | Желаемая должность
+email | строка | Адрес электронной почты
+salary | число | Размер заработной платы
+phones | массив | Массив телефонов
+birthdate | объект | Объект даты рождения. В поле `precision` указывается точность определения возраста.
+experience | массив | Массив с опытом работы кандидата
