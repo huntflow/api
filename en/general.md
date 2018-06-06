@@ -26,7 +26,7 @@ The data in the body of the request has to meet the following requiremetns:
 
 * Valid JSON (minimal variant is allowed as well as pretty print variant with additional spaces and line wrapping).
 * UTF-8 code usage is recommended without additional screening
-  (`{"name": "John Doe"}`).
+  (`{"name": "Иван Иванов"}`).
 * Also ascii code is allowed with the screening
   (`{"name": "\u0418\u0432\u0430\u043d\u043e\u0432 \u0418\u0432\u0430\u043d"}`).
 * Some data types in certain fields have additional requirements, described in every specific method. JSON data types are `string`,
