@@ -103,12 +103,10 @@
 {
     "items": [
         {
-            "applicant": 3,
             "tag": 4,
             "id": 16
         },
         {
-            "applicant": 3,
             "tag": 5,
             "id": 17
         }
@@ -120,7 +118,6 @@
  --- | --- | ---
  id |  number | Идентификатор метки кандидата
  tag | number | Идентификатор [метки](#account-tags-list)
- applicant | number | Идентификатор кандидата
  
 <a name="applicant-tags-edit"></a>
 ## Назначение меток кандидату
