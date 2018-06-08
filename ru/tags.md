@@ -1,9 +1,12 @@
 # Работа с метками
 
 * [Получение меток организации](#account-tags-list)
-* [Создание/редактирование меток организации](#account-tags-edit)
+* [Информация о метки организации](#account-tags-view)
+* [Создание меток организации](#account-tags-create)
+* [Редактирование меток организации](#account-tags-edit)
 * [Удаление меток организации](#account-tags-delete)
 * [Получение меток кандидата](#applicant-tags-list)
+* [Информация о метки кандидата](#applicant-tags-view)
 * [Назначение меток кандидату](#applicant-tags-edit)
 * [Удаление меток кандидата](#applicant-tags-delete)
 
@@ -39,34 +42,36 @@
  id |  number | Идентификатор метки
  color | string | Цвет метки в формате hex
  name | string | Название метки
+ 
+<a name="account-tags-view"></a>
+## Информация о метки организации
 
-<a name="account-tags-edit"></a>
-## Создание/редактирование меток организации
+`GET /account/{account_id}/tag/{tag_id}` вернёт метку компании.
+
+```json
+{
+    "color": "000000",
+    "id": 185,
+    "name": "Черный список"
+}
+```
+
+<a name="account-tags-create"></a>
+## Создание метки организации
 
 `POST /account/{account_id}/tag`
 В теле запроса необходимо передать JSON вида:
 
 ```
-[
-    {
-        "color": "000000",
-        "name": "Черный список"
-    },
-    {
-        "color": "d7b100",
-        "name": "Резерв"
-    },
-    {
-        "color": "00ad3b",
-        "name": "Рекомендация"
-    }
-]
+{
+    "color": "d7b100",
+    "name": "Резерв"
+}
 ```
 
 ## Поля запроса
 Имя | Тип | Обязательный | Описание
  --- | --- | --- | ---
- id | number | Нет | Идентификатор метки (при наличии, соответствующая метка будет отредактирована)
  color | string | Да | Цвет метки в формате hex
  name | string | Да | Название метки
 
@@ -82,17 +87,26 @@
  --- | --- | ---
  id |  number | Идентификатор метки
  
-<a name="account-tags-delete"></a>
-## Удаление меток организации
+<a name="account-tags-edit"></a>
+## Редактирование метки организации
 
-`POST /account/{account_id}/tag`
+`PUT /account/{account_id}/tag/{tag_id}`
 В теле запроса необходимо передать JSON вида:
 
 ```
 {
-    "items": []
+    "color": "d7b500",
+    "name": "Измененный резерв"
 }
 ```
+
+## Поля запроса
+См. описание полей в [запросе создания метки организации](#account-tags-create)
+ 
+<a name="account-tags-delete"></a>
+## Удаление метки организации
+
+`DELETE /account/{account_id}/tag/{tag_id}`
  
 <a name="applicant-tags-list"></a>
 ## Получение меток кандидата
@@ -119,24 +133,29 @@
  id |  number | Идентификатор метки кандидата
  tag | number | Идентификатор [метки](#account-tags-list)
  
+ <a name="applicant-tags-view"></a>
+## Информация о метки кандидата
+
+`GET /account/{account_id}/applicants/{applicant_id}/tag/{tag_id}` вернёт информацию о метки кандидата.
+
+```
+{
+    "tag": 4,
+    "id": 16
+}
+```
+
+ 
 <a name="applicant-tags-edit"></a>
 ## Назначение меток кандидату
 
-`POST /account/{account_id}/tag`
+`POST /account/{account_id}/applicants/{applicant_id}/tag`
 В теле запроса необходимо передать JSON вида:
 
 ```
-[
-    {
-        "tag": 11
-    },
-    {
-        "tag": 12
-    },
-    {
-        "tag": 13
-    }
-]
+{
+    "tag": 11
+}
 ```
 ## Поля запроса
 Имя | Тип | Обязательный | Описание
@@ -149,11 +168,4 @@
 <a name="applicant-tags-delete"></a>
 ## Удаление меток организации
 
-`POST /account/{account_id}/applicants/{applicant_id}/tag`
-В теле запроса необходимо передать JSON вида:
-
-```
-{
-    "items": []
-}
-```
+`DELETE /account/{account_id}/applicants/{applicant_id}/tag/{tag_id}`
