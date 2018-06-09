@@ -130,13 +130,13 @@
 
 Имя | Тип | Описание
  --- | --- | ---
- id |  number | Идентификатор метки кандидата
+ id |  number | Идентификатор метки кандидата <a name="applicant-tag-id"></a>
  tag | number | Идентификатор [метки](#account-tags-list)
  
  <a name="applicant-tags-view"></a>
 ## Информация о метки кандидата
 
-`GET /account/{account_id}/applicants/{applicant_id}/tag/{tag_id}` вернёт информацию о метки кандидата.
+`GET /account/{account_id}/applicants/{applicant_id}/tag/{applicant_tag_id}` вернёт информацию о метке кандидата, где applicant_tag_id — [идентификатор метки кандидата](#applicant-tag-id)
 
 ```
 {
@@ -168,4 +168,4 @@
 <a name="applicant-tags-delete"></a>
 ## Удаление меток организации
 
-`DELETE /account/{account_id}/applicants/{applicant_id}/tag/{tag_id}`
+`DELETE /account/{account_id}/applicants/{applicant_id}/tag/{applicant_tag_id}`, где applicant_tag_id — [идентификатор метки кандидата](#applicant-tag-id)
