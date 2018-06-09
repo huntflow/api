@@ -1,12 +1,12 @@
 # Работа с метками
 
 * [Получение меток организации](#account-tags-list)
-* [Информация о метки организации](#account-tags-view)
+* [Информация о метке организации](#account-tags-view)
 * [Создание меток организации](#account-tags-create)
 * [Редактирование меток организации](#account-tags-edit)
 * [Удаление меток организации](#account-tags-delete)
 * [Получение меток кандидата](#applicant-tags-list)
-* [Информация о метки кандидата](#applicant-tags-view)
+* [Информация о метке кандидата](#applicant-tags-view)
 * [Назначение меток кандидату](#applicant-tags-edit)
 * [Удаление меток кандидата](#applicant-tags-delete)
 
@@ -44,7 +44,7 @@
  name | string | Название метки
  
 <a name="account-tags-view"></a>
-## Информация о метки организации
+## Информация о метке организации
 
 `GET /account/{account_id}/tag/{tag_id}` вернёт метку компании.
 
@@ -134,7 +134,7 @@
  tag | number | Идентификатор [метки](#account-tags-list)
  
  <a name="applicant-tags-view"></a>
-## Информация о метки кандидата
+## Информация о метке кандидата
 
 `GET /account/{account_id}/applicants/{applicant_id}/tag/{applicant_tag_id}` вернёт информацию о метке кандидата, где applicant_tag_id — [идентификатор метки кандидата](#applicant-tag-id)
 
@@ -166,6 +166,6 @@
 Поля ответа идентичны полям запроса.
 
 <a name="applicant-tags-delete"></a>
-## Удаление меток организации
+## Удаление меток кандидата
 
 `DELETE /account/{account_id}/applicants/{applicant_id}/tag/{applicant_tag_id}`, где applicant_tag_id — [идентификатор метки кандидата](#applicant-tag-id)
