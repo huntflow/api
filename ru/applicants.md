@@ -77,12 +77,6 @@ externals[].account_source | number | Нет | Идентификатор ист
         {
             "double": 123320
         }
-    ],
-    "tags": [
-        {
-            "tag": 1,
-            "id": 1
-        }
     ]
 }
 ```
@@ -92,8 +86,6 @@ externals[].account_source | number | Нет | Идентификатор ист
 id | number | Идентификатор кандидата
 created | string | Дата+время создания кандидата
 doubles[].double | number | Идентификатор кандидата, определенного как дубликат
-tags[].id | number | Идентификатор метки кандидата
-tags[].tag | number | Идентификатор метки
 
 
 <a name="vacancy_applicant"></a>
@@ -181,6 +173,7 @@ changed | string | Дата изменения статуса
       "photo": 385,
       "photo_url": "https://store.huntflow.ru/uploads/5/7/0/5700c66c07a23f2e80a0acc0bc3ef6c8.jpeg",
       "email": "hello@mail.ru",
+      "tags": [],
       "company": "Save Factory",
       "phone": "+79511234567",
       "birthday": "1979-06-20",
@@ -215,6 +208,12 @@ changed | string | Дата изменения статуса
       "photo": 384,
       "photo_url": "https://store.huntflow.ru/uploads/5/7/0/5700c66c07a23f2e80a0acc0bc3ef6c8.jpeg",
       "email": "test@mail.ru",
+      "tags": [
+          {
+              "tag": 1,
+              "id": 1
+          }
+      ],
       "company": "Краснодеревщик,ЗАО",
       "phone": "+79639801000",
       "birthday": "1975-01-26",
@@ -261,3 +260,5 @@ links[].status | Этап подбора кандидата
 links[].vacancy | Вакансия
 links[].updated | Дата обновления по кандидату на вакансии
 links[].changed | Дата последнего изменения этапа подбора
+tags[].id | Идентификатор метки кандидата
+tags[].tag | Идентификатор метки
