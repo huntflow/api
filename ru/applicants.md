@@ -77,6 +77,12 @@ externals[].account_source | number | Нет | Идентификатор ист
         {
             "double": 123320
         }
+    ],
+    "tags": [
+        {
+            "tag": 1,
+            "id": 1
+        }
     ]
 }
 ```
@@ -85,7 +91,9 @@ externals[].account_source | number | Нет | Идентификатор ист
 --- | --- | ---
 id | number | Идентификатор кандидата
 created | string | Дата+время создания кандидата
-doubles[].double | number | Идентификатор кандидата, определенного как дубликат 
+doubles[].double | number | Идентификатор кандидата, определенного как дубликат
+tags[].id | number | Идентификатор метки кандидата
+tags[].tag | number | Идентификатор метки
 
 
 <a name="vacancy_applicant"></a>
