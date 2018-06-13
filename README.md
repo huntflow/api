@@ -36,3 +36,4 @@
 * [Загрузка и распознавание файлов](ru/upload.md)
 * [Вакансии](ru/vacancies.md)
 * [Кандидаты](ru/applicants.md)
+* [Метки](ru/tags.md)
