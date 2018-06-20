@@ -233,6 +233,12 @@
 id | Идентификатор резюме
 auth_type | Тип резюме
 files[].id | Идентификатор файла загруженного резюме
+files[].name | Имя файла резюме
+files[].url | URL файла резюме
+files[].content_type | MIME-тип файла резюме
+portfolio[].small | URL уменьшенного изображения портфолио
+portfolio[].medium | URL изображения среднего размера
+portfolio[].description | Описание изображения портфолио
 updated | Дата последнего редактирования резюме
 created | Дата создания резюме
 account_source | Идентификатор [источника резюме](dicts.md#applicant_sources)
