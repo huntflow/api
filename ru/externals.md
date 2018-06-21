@@ -255,12 +255,14 @@ auth_type | Формат резюме
 NATIVE | Текстовый формат
 SJ | [SuperJob](https://api.superjob.ru/client/#resume_descr)
 HH | [HeadHunter](https://github.com/hhru/api/blob/master/docs/resumes.md#item)
-LI | LinkedIn (формат аналогичен [HeadHunter](https://github.com/hhru/api/blob/master/docs/resumes.md#item))
+LI | LinkedIn (формат аналогичен [HeadHunter](https://github.com/hhru/api/blob/master/docs/resumes.md#item))*
 VK | VK
 MK | [Moi Krug](https://moikrug.ru/info/api#q1.4)
 ZPRU | [Zarplata.ru](http://api.zp.ru/v1/)
-WORKUA | Work Ua (формат аналогичен [HeadHunter](https://github.com/hhru/api/blob/master/docs/resumes.md#item))
-RABOTAUA | Rabota Ua (формат аналогичен [HeadHunter](https://github.com/hhru/api/blob/master/docs/resumes.md#item))
-GITHUB | Github (формат аналогичен [HeadHunter](https://github.com/hhru/api/blob/master/docs/resumes.md#item))
-FACEBOOK | Facebook (формат аналогичен [HeadHunter](https://github.com/hhru/api/blob/master/docs/resumes.md#item))
-AVITO | Avito (формат аналогичен [HeadHunter](https://github.com/hhru/api/blob/master/docs/resumes.md#item))
+WORKUA | Work Ua (формат аналогичен [HeadHunter](https://github.com/hhru/api/blob/master/docs/resumes.md#item))*
+RABOTAUA | Rabota Ua (формат аналогичен [HeadHunter](https://github.com/hhru/api/blob/master/docs/resumes.md#item))*
+GITHUB | Github (формат аналогичен [HeadHunter](https://github.com/hhru/api/blob/master/docs/resumes.md#item))*
+FACEBOOK | Facebook (формат аналогичен [HeadHunter](https://github.com/hhru/api/blob/master/docs/resumes.md#item))*
+AVITO | Avito (формат аналогичен [HeadHunter](https://github.com/hhru/api/blob/master/docs/resumes.md#item))*
+
+\* Форматы, аналогичные HeadHunter являются справочными и могут измениться в будущем
