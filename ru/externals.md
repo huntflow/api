@@ -245,7 +245,7 @@ created | Дата создания резюме
 account_source | Идентификатор [источника резюме](dicts.md#applicant_sources)
 foreign | Внешний идентификатор резюме
 data | Объект резюме (формат зависит от auth_type)
-data.body | Текст резюме (для резюме с auth_type == 'NATIVE')
+data.body | Текст резюме (для резюме с auth_type = NATIVE)
 
 
 <a name="auth_types"></a>
