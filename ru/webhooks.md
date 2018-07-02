@@ -102,7 +102,7 @@
             "status": "confirmed",
             "attendees": [
                 {
-                    "displayName": "111112",
+                    "displayName": "Zach Braff",
                     "responseStatus": "needsAction",
                     "email": "za@za.za"
                 }
@@ -111,7 +111,7 @@
             "event_type": "interview",
             "created": "2018-06-29T10:31:57+03:00",
             "description": "Ссылка на кандидата: http://127.0.0.1:8400/my/zazzaza#vacancy/48594/filter/workon/id/8224\n\n***\n\n",
-            "creator": {"self": true, "displayName": null, "email": "za@za.za"},
+            "creator": {"self": true, "displayName": "Zach Braff", "email": "za@za.za"},
             "reminders": [{"minutes": 15, "method": "popup"}],
             "all_day": false,
             "foreign": "20180629T103157_HF_8224_48594_true_165",
