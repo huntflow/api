@@ -14,8 +14,8 @@
 {
     "auth_type": "HH",
     "files": [],
-    "updated": "2018-05-15 12:49:03",
-    "created": "2018-05-15 12:49:03",
+    "updated": "2018-05-15T12:49:03+03:00",
+    "created": "2018-05-15T12:49:03+03:00",
     "account_source": 2,
     "foreign": "580ab9e3ff02cd5e710039ed1f74593273674e",
     "portfolio": [],
@@ -245,7 +245,7 @@ created | Дата создания резюме
 account_source | Идентификатор [источника резюме](dicts.md#applicant_sources)
 foreign | Внешний идентификатор резюме
 data | Объект резюме (формат зависит от auth_type)
-data.body | Текст резюме (для резюме с auth_type == 'NATIVE')
+data.body | Текст резюме (для резюме с auth_type = NATIVE)
 
 
 <a name="auth_types"></a>
