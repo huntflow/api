@@ -111,14 +111,14 @@
             "event_type": "interview",
             "created": "2018-06-29T10:31:57+03:00",
             "description": "Ссылка на кандидата: http://127.0.0.1:8400/my/zazzaza#vacancy/48594/filter/workon/id/8224\n\n***\n\n",
-            "creator": {"self": True, "displayName": None, "email": "za@za.za"},
+            "creator": {"self": true, "displayName": null, "email": "za@za.za"},
             "reminders": [{"minutes": 15, "method": "popup"}],
-            "all_day": False,
+            "all_day": false,
             "foreign": "20180629T103157_HF_8224_48594_true_165",
             "recurrence": [],
             "start": "2018-06-29T11:00:00+03:00",
             "etag": "1530258908289",
-            "location": None,
+            "location": null,
             "transparency": "busy",
             "timezone": "Europe/Moscow",
             "name": "Интервью: Кораллов Михаил – Менеджер по продажам"
@@ -176,7 +176,7 @@
 | event.calendar_event.attendees | list | Участники события |
 | event.calendar_event.attendees.displayName | string | Имя участника события |
 | event.calendar_event.attendees.email | string | Email участника события |
-| event.calendar_event.attendees.responseStatus | string | Статус участника события |
+| event.calendar_event.attendees.responseStatus | string | [Статус участника события](#event-status) |
 | event.calendar_event.created | datetime | Дата + время создания события |
 | event.calendar_event.creator.displayName | string | Имя создателя события |
 | event.calendar_event.creator.email | string | Email создателя события |
@@ -186,10 +186,10 @@
 | event.calendar_event.reminders.minutes | number | За сколько минут до начала события сработает напоминание |
 | event.calendar_event.all_day | boolean | Флаг указывающий на то, что событие запланировано на весь день |
 | event.calendar_event.foreign | string | Внешний уникальный идентификатор события |
-| event.calendar_event.recurrence | list | Список повторений RFC 5545 |
+| event.calendar_event.recurrence | list | Список повторений [RFC 5545](https://tools.ietf.org/html/rfc5545) |
 | event.calendar_event.etag | string | ETag события |
 | event.calendar_event.location | string | Географическое местоположение события |
-| event.calendar_event.transparency | string | Доступность события |
+| event.calendar_event.transparency | string | [Доступность события](#event-transparency) |
 | event.created | date+time	| Дата и время создания события |
 | author.id | number | Идентификатор автора действия |
 | author.name | string | Имя автора действия |
@@ -228,7 +228,8 @@
 | interview | Интервью
 | other | Другое
 
-
+<a name="event-reminder-method"></a>
+ 
 ##### Способы напоминаний
 
 | Тип | Описание |
@@ -236,6 +237,14 @@
 | sms | Интервью
 | other | Другое
 
+<a name="event-transparency"></a>
+ 
+##### Типы доступности
+
+| Тип | Описание |
+| --- | -------- |
+| free | Свободен
+| budy | Занят
 
 ### VACANCY
 
