@@ -29,7 +29,8 @@
     "conditions": "<p>Different text</p>",
     "hidden": false,
     "state": "OPEN",
-    "files": [1, 2, 3]
+    "files": [1, 2, 3],
+    "vacancy_request": 11
 }
 ```
 
@@ -51,6 +52,7 @@
  hidden | bool | Нет | Скрыта ли вакансия от коллег
  state | string | Нет | [Состояние вакансии](#vacancy-states). По умолчанию `OPEN`
  files | array | Нет | Список файлов, прикрепленных к вакансии ([загрузка файлов](upload.md))
+ vacancy_request | number | Нет | Идентификатор [заявки на вакансию](vacancy_requests.md)
 
 ### Поля ответа
 
