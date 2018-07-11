@@ -34,6 +34,7 @@
 ### Работа с сервисом
 
 * [Загрузка и распознавание файлов](ru/upload.md)
+* [Заявки на вакансии](ru/vacancy_requests.md)
 * [Вакансии](ru/vacancies.md)
 * [Кандидаты](ru/applicants.md)
 * [Резюме](ru/externals.md)
