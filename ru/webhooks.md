@@ -148,7 +148,7 @@
 | event.applicant.first_name | string | Имя кандидата |
 | event.applicant.last_name | string | Фамилия кандидата |
 | event.applicant.middle_name | string | Отчество кандидата |
-| event.applicant.birthday | string | Дата рождения кандидата |
+| event.applicant.birthday | date | Дата рождения кандидата |
 | event.applicant.photo.url | string | Сссылка на фотографию кандидата |
 | event.vacancy.id | number | Идентификатор вакансии |
 | event.vacancy.position | string | Название вакансии (должности) |
@@ -157,10 +157,10 @@
 | event.vacancy.state | string | Статус вакансии |
 | event.vacancy.hidden | bool | Скрыта ли вакансия от коллег |
 | event.vacancy.priority | number | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий)) |
-| event.vacancy.deadline | string | Дата дедлайна по вакансии |
+| event.vacancy.deadline | date | Дата дедлайна по вакансии |
 | event.vacancy.account_division.id | number | Идентификатор подразделения (если подразделения подключены) |
 | event.vacancy.account_division.name | string | Название подразделения (если подразделения подключены) |
-| event.vacancy.created | string | Дата и время создания вакансии |
+| event.vacancy.created | datetime | Дата и время создания вакансии |
 | event.status.id | number | Идентификатор этапа подбора |
 | event.status.name | string | Название этапа подбора |
 | event.rejection_reason.id | number | Идентификатор причины отказа |
@@ -170,14 +170,14 @@
 | event.calendar_event.description | string | Описание события |
 | event.calendar_event.status | string | [Статус события](#event-status) |
 | event.calendar_event.event_type | string | [Тип события](#event-type) |
-| event.calendar_event.start | string | Дата и время начала события |
-| event.calendar_event.end | string | Дата и время окончания события |
+| event.calendar_event.start | datetime | Дата и время начала события |
+| event.calendar_event.end | datetime | Дата и время окончания события |
 | event.calendar_event.timezone | string | Название часового пояса события |
 | event.calendar_event.attendees | list | Участники события |
 | event.calendar_event.attendees.displayName | string | Имя участника события |
 | event.calendar_event.attendees.email | string | Email участника события |
 | event.calendar_event.attendees.responseStatus | string | [Статус участника события](#event-status) |
-| event.calendar_event.created | string | Дата и время создания события |
+| event.calendar_event.created | datetime | Дата и время создания события |
 | event.calendar_event.creator.displayName | string | Имя создателя события |
 | event.calendar_event.creator.email | string | Email создателя события |
 | event.calendar_event.creator.self | boolean | Флаг указывающий на то, что вы создатель события |
@@ -190,7 +190,7 @@
 | event.calendar_event.etag | string | ETag события |
 | event.calendar_event.location | string | Географическое местоположение события |
 | event.calendar_event.transparency | string | [Доступность события](#event-transparency) |
-| event.created | string	| Дата и время создания события |
+| event.created | datetime	| Дата и время создания события |
 | author.id | number | Идентификатор автора действия |
 | author.name | string | Имя автора действия |
 | author.email | string | Email автора действия |
@@ -296,7 +296,7 @@
 | event.applicant.first_name | string | Имя кандидата |
 | event.applicant.last_name | string | Фамилия кандидата |
 | event.applicant.middle_name | string | Отчество кандидата |
-| event.applicant.birthday | string | Дата рождения кандидата |
+| event.applicant.birthday | date | Дата рождения кандидата |
 | event.applicant.photo.url | string | Сссылка на фотографию кандидата |
 | event.vacancy.id | number | Идентификатор вакансии |
 | event.vacancy.position | string | Название вакансии (должности) |
@@ -305,7 +305,7 @@
 | event.vacancy.state | string | Статус вакансии |
 | event.vacancy.hidden | bool | Скрыта ли вакансия от коллег |
 | event.vacancy.priority | number | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий)) |
-| event.vacancy.deadline | string | Дата дедлайна по вакансии |
+| event.vacancy.deadline | date | Дата дедлайна по вакансии |
 | event.vacancy.account_division.id | number | Идентификатор подразделения (если подразделения подключены) |
 | event.vacancy.account_division.name | string | Название подразделения (если подразделения подключены) |
 | event.vacancy.body | string | Обязанности в формате HTML |
@@ -315,8 +315,8 @@
 | event.vacancy.grade.id | number | Идентификатор значения из справочника |
 | event.vacancy.grade.name | string | Название значения из справочника |
 | event.vacancy.grade.foreign | string | Идентификатор значения во внешней системе (может быть `null`) |
-| event.vacancy.created | string | Дата и время создания вакансии |
-| event.created | string	| Дата и время создания события |
+| event.vacancy.created | datetime | Дата и время создания вакансии |
+| event.created | datetime	| Дата и время создания события |
 | account.id | number | Идентификатор организации |
 | account.name | string | Название организации |
 
