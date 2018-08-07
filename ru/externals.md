@@ -229,23 +229,23 @@
 }
 ```
 
-Путь |  Описание
----- | --------
-id | Идентификатор резюме
-auth_type | Тип резюме
-files[].id | Идентификатор файла загруженного резюме
-files[].name | Имя файла резюме
-files[].url | URL файла резюме
-files[].content_type | MIME-тип файла резюме
-portfolio[].small | URL уменьшенного изображения портфолио
-portfolio[].medium | URL изображения среднего размера
-portfolio[].description | Описание изображения портфолио
-updated | Дата последнего редактирования резюме
-created | Дата создания резюме
-account_source | Идентификатор [источника резюме](dicts.md#applicant_sources)
-foreign | Внешний идентификатор резюме
-data | Объект резюме (формат зависит от auth_type)
-data.body | Текст резюме (для резюме с auth_type = NATIVE)
+Путь | Тип | Описание
+---- | --- | --------
+id | number | Идентификатор резюме
+auth_type | string | Тип резюме
+files[].id | number | Идентификатор файла загруженного резюме
+files[].name | string | Имя файла резюме
+files[].url | string | URL файла резюме
+files[].content_type | string | MIME-тип файла резюме
+portfolio[].small | string | URL уменьшенного изображения портфолио
+portfolio[].medium | string | URL изображения среднего размера
+portfolio[].description | string | Описание изображения портфолио
+updated | datetime | Дата и время последнего редактирования резюме
+created | datetime | Дата в время создания резюме
+account_source | number | Идентификатор [источника резюме](dicts.md#applicant_sources)
+foreign | number | Внешний идентификатор резюме
+data | object | Объект резюме (формат зависит от auth_type)
+data.body | string | Текст резюме (для резюме с auth_type = NATIVE)
 
 
 <a name="auth_types"></a>
