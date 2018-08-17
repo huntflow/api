@@ -255,8 +255,7 @@ html | HTML-редактор
         "name": "Стажер",
         "foreign": null,
         "meta": null
-    },
-    ...
+    }
 }
 
 Поле |  Описание
