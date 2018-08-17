@@ -26,7 +26,6 @@
                     "order": 1,
                     "id": 1,
                     "value": null,
-                    "account": 2,
                     "key": "position"
                 },
                 "company": {
@@ -36,7 +35,6 @@
                     "order": 2,
                     "id": 2,
                     "value": null,
-                    "account": 2,
                     "key": "company"
                 },
                 "money": {
@@ -46,7 +44,6 @@
                     "order": 3,
                     "id": 3,
                     "value": null,
-                    "account": 2,
                     "key": "money",
                     "delimiter": true
                 },
@@ -57,7 +54,6 @@
                     "order": 4,
                     "id": 4,
                     "value": null,
-                    "account": 2,
                     "key": null
                 },
                 "soft_skills": {
@@ -67,7 +63,6 @@
                     "order": 5,
                     "id": 5,
                     "value": null,
-                    "account": 2,
                     "key": null,
                     "delimiter": true
                 },
@@ -78,7 +73,6 @@
                     "order": 6,
                     "id": 6,
                     "value": null,
-                    "account": 2,
                     "key": null
                 }
             },
@@ -96,7 +90,7 @@
 ---- | --------
 id | Идентификатор схемы заявки
 name | Название схемы
-attendee_required | Флаг наличия поля "Отправить на согласование" при создании заявки
+attendee_required | Флаг наличия поля "Отправить на согласование" при создании заявки (`null` –– поле отсутствует, `false` —— поле необязательное, `true` —— поле обязательное)
 attendee_hint | Подсказка под полем  "Отправить на согласование"
 active | Флаг активности схемы
 schema | [Описание полей схемы](schema.md)
