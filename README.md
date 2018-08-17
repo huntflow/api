@@ -37,4 +37,5 @@
 * [Вакансии](ru/vacancies.md)
 * [Кандидаты](ru/applicants.md)
 * [Резюме](ru/externals.md)
+* [Анкеты кандидатов](ru/questionaries.md)
 * [Метки](ru/tags.md)
