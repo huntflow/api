@@ -261,9 +261,9 @@ html | HTML-редактор
 Поле |  Описание
 ---- | --------
 id | идентификатор значения
-name | значение (для полей с типом dictionary)
-foreign | внешний идентификатор значения (для полей с типом dictionary)
-meta | дополнительная информация о значении (для полей с типом dictionary)
+name | значение (для полей с типом dictionary, region, division)
+foreign | внешний идентификатор значения (для полей с типом dictionary, region, division)
+meta | дополнительная информация о значении (для полей с типом dictionary, region, division)
 
 <a name="edit"></a>
 
