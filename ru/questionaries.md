@@ -215,18 +215,8 @@ html | HTML-редактор
 
 ```json
 {
-    "resource": {
-        "id": 667,
-        "name": "Тестирование 2017",
-        "foreign": null,
-        "meta": null
-    },
-    "position": {
-        "id": 33255,
-        "name": "Стажер",
-        "foreign": null,
-        "meta": null
-    },
+    "resource": 667,
+    "position": 33255,
     "expected_trial": {
         "income": "9",
         "type": "Gross"
@@ -245,6 +235,29 @@ html | HTML-редактор
     }
 }
 ```
+
+Чтобы нормализовать значения полей с типом справочник, добавьте к запросу параметр `normalize=true`:
+
+`GET /account/{account_id}/applicants/{applicant_id}/questionary?normalize=true`
+
+Пример ответа:
+
+```json
+{
+    "resource": {
+        "id": 667,
+        "name": "Тестирование 2017",
+        "foreign": null,
+        "meta": null
+    },
+    "position": {
+        "id": 33255,
+        "name": "Стажер",
+        "foreign": null,
+        "meta": null
+    },
+    ...
+}
 
 Поле |  Описание
 ---- | --------
