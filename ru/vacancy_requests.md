@@ -247,6 +247,31 @@ rejected | Отказано
 }
 ```
 
+Пример запроса с согласованием заявки:
+
+```
+{
+    "position": "Директор",
+    "money": "25000",
+    "hard_skills": "Опыт руководства производством не менее 80 лет",
+    "soft_skills": "Коммуникабельность, целеустремленность, стрессоустойчивость",
+    "comment": "ASAP",
+    "attendees": [
+        {
+            "email": "test@example.com",
+            "displayName": "Ivanov Ivan"
+        },
+        {
+            "email": "sendnext@example.com",
+            "displayName": "Petrov Petr"
+        }
+    ]
+}
+```
+
+Поле `attendees[].displayName` опционально. Заявка будет отправлена сначала первому согласующему, а после подтверждения – второму.
+
+
 <a name="vacancy-request-start"></a>
 ## Взятие заявки в работу
 Заявка берется в работу путем [создания вакансии по этой заявке](vacancies.md#add) с указанием идентификатора заявки в поле `vacancy_request`.
