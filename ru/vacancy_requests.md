@@ -239,12 +239,12 @@ rejected | Отказано
 
 ```
 {
+    "account_vacancy_request": 1
     "position": "Директор",
     "money": "25000",
     "hard_skills": "Опыт руководства производством не менее 80 лет",
     "soft_skills": "Коммуникабельность, целеустремленность, стрессоустойчивость",
     "comment": "ASAP"
-    "account_vacancy_request": 1
 }
 ```
 
@@ -252,12 +252,12 @@ rejected | Отказано
 
 ```
 {
+    "account_vacancy_request": 1,    
     "position": "Директор",
     "money": "25000",
     "hard_skills": "Опыт руководства производством не менее 80 лет",
     "soft_skills": "Коммуникабельность, целеустремленность, стрессоустойчивость",
     "comment": "ASAP",
-    "account_vacancy_request": 1,    
     "attendees": [
         {
             "email": "test@example.com",
@@ -273,7 +273,7 @@ rejected | Отказано
 
 Поле `attendees[].displayName` опционально. Заявка будет отправлена сначала первому согласующему, а после подтверждения – второму.
 
-`account_vacancy_request` – идентификатор формы заявки, которую можно получить [здесь](#vacancy-request-list).
+`account_vacancy_request` – идентификатор формы заявки на вакансию, которую можно получить [здесь](#account-vacancy-request-list).
 
 
 <a name="vacancy-request-start"></a>
