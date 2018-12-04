@@ -261,7 +261,13 @@ links[].changed | Дата последнего изменения этапа п
 
 `GET /account/{account_id}/applicants/{applicant_id}/log` вернёт список логов кандидата.
 
+
+Принимаемые параметры:
+
+* `count`, `page` — [параметры постраничного вывода](general.md#pagination).
+
 Пример ответа:
+
 ```
 {
     "count": 30,
