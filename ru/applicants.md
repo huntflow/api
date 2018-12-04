@@ -261,6 +261,93 @@ links[].changed | Дата последнего изменения этапа п
 
 `GET /account/{account_id}/applicants/{applicant_id}/log` вернёт список логов кандидата.
 
+Пример ответа:
+```
+{
+    "count": 30,
+    "items": [
+        {
+            "comment": "Комментарий",
+            "files": [
+                {
+                    "url": "http://huntflow.ru/uploads/named/e/x/a/example.docx",
+                    "id": 2844,
+                    "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                    "name": "example.docx"
+                }
+            ],
+            "vacancy": 3,
+            "account_info": {
+                "name": "Пример",
+                "id": 1
+            },
+            "rejection_reason": null,
+            "calendar_event": {
+                "event_type": "interview",
+                "creator": null,
+                "vacancy": 3,
+                "meta": {
+                    "hide_salary": true,
+                    "external": "64231",
+                    "NATIVE": {
+                        "url": "http://huntflow.ru/my/example#vacancy/3/filter/workon/id/34276",
+                        "name": "Ссылка на кандидата: "
+                    }
+                },
+                "timezone": "Europe/Saratov",
+                "calendar": 1,
+                "id": 18,
+                "state_reason": null,
+                "end": "2018-11-28 17:00:00",
+                "interview_type": 49,
+                "sms": null,
+                "recurrence": null,
+                "start": "2018-11-28 16:00:00",
+                "state": "QUEUED",
+                "etag": null,
+                "location": "Саратов",
+                "status": "confirmed",
+                "description": "Описание",
+                "sms_reminder_template": null,
+                "recurrence_link": null,
+                "attendees": [
+                    {
+                        "displayName": "Пример",
+                        "email": "example@example.ru",
+                        "responseStatus": "needsAction"
+                    }
+                ],
+                "removed": null,
+                "data": null,
+                "name": "Интервью в центральном офисе: Пример – Тест",
+                "created": "2018-11-28 15:46:13",
+                "applicant": 34276,
+                "reminders": [
+                    {
+                        "minutes": 15,
+                        "method": "popup",
+                        "value": 15,
+                        "multiplier": "minutes"
+                    }
+                ],
+                "all_day": false,
+                "foreign": null,
+                "transparency": "busy",
+                "action": "ADD"
+            },
+            "id": 180368,
+            "employment_date": null,
+            "status": 2,
+            "account": 1,
+            "created": "2018-11-28T15:46:13+03:00",
+            "type": "COMMENT"
+        }
+    ],
+    "total": 1,
+    "page": 1
+}
+```
+
 Путь |  Описание
 ---- | --------
 account | Идентификатор пользователя от имени которого создан лог
