@@ -371,51 +371,30 @@ account_info | string | Информация о пользователе от и
 account_info.id | number | Идентификатор пользователя |
 account_info.name | string | Имя пользователя |
 calendar_event | object | Событие календаря прикреплённое к логу |
-calendar_event.action | string | ??? |
 calendar_event.all_day | bool | Признак того что событие запланировано на весь день |
-calendar_event.applicant | number | Идентификатор кандидата для которого создано событие |
 calendar_event.attendees[] | list | Список приглашенных на событие |
 calendar_event.attendees[].displayName | string | Отображаемое имя приглашенного |
 calendar_event.attendees[].email | string | Электронная почта приглашенного |
 calendar_event.attendees[].responseStatus | string | Ответ приглашенного на приглашение |
-calendar_event.calendar | number | Идентификатор календаря к которому привязано событие |
 calendar_event.created | datetime | Дата создания события |
 calendar_event.creator | object | Информация о создателе события |
 calendar_event.creator.self | bool | ??? |
 calendar_event.creator.displayName | string | Отображаемое имя создателя события |
 calendar_event.creator.email | string | Электронная почта создателя события |
-calendar_event.data | object | ??? |
 calendar_event.description | string | Описание события |
 calendar_event.end | datetime | Дата и время окончания события |
-calendar_event.etag | string | ??? |
+calendar_event.etag | string | ETag события |
 calendar_event.event_type | string | Тип события календаря |
 calendar_event.foreign | string | Внешний идентификатор события |
-calendar_event.id | number | Идентификатор события календаря |
-calendar_event.interview_type | number | Идентификатор типа интервью события |
 calendar_event.location | string | Место проведения события |
-calendar_event.meta | object | Мета-информация о событии |
-calendar_event.meta.<auth_type> | string | Информация о прикрепленном кандидате |
-calendar_event.meta.hide_salary | bool | Скрыть зарплату в прикрепленном резюме |
-calendar_event.meta.name | string | Текст для ссылки на кандидата |
-calendar_event.meta.url | string | Ссылка на кандидата |
 calendar_event.name | string | Название события |
-calendar_event.recurrence | object | Описание повторяемости события |
-calendar_event.recurrence_link | string | ??? |
 calendar_event.reminders[] | list | Список напоминаний о событии |
 calendar_event.reminders[].method | string | Метод напоминания |
 calendar_event.reminders[].minutes | number | За какое количество минут напомнить о событии |
-calendar_event.reminders[].multiplier | number | Множитель значения |
-calendar_event.reminders[].value | number | ??? |
-calendar_event.removed | datetime | Дата удаления события |
-calendar_event.sms | number | Идентификатор отправленного SMS-напоминания об интервью |
-calendar_event.sms_reminder_template | number | Идентификатор шаблона SMS-напоминания |
 calendar_event.start | datetime | Дата и время начала события |
-calendar_event.state | string | Состояние события |
-calendar_event.state_reason |  | ??? |
 calendar_event.status | string | Статус события |
 calendar_event.timezone | string | Часовой пояс в котором заданы дата начала и конца события |
 calendar_event.transparency |string | Занятость во время события |
-calendar_event.vacancy | number | Идентификатор вакансии |
 comment | string |Текст комментария |
 created | datetime | Дата создания лога |
 employment_date | datetime | Дата принятия кандидата на работу |
