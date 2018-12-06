@@ -20,6 +20,7 @@
     "company": "Tesla",
     "money": "$100k",
     "deadline": "2017-09-03",
+    "applicants_to_hire": 2,
     "priority": 1,
     "account_division": 6,
     "coworkers": [1],
@@ -28,7 +29,8 @@
     "conditions": "<p>Different text</p>",
     "hidden": false,
     "state": "OPEN",
-    "files": [1, 2, 3]
+    "files": [1, 2, 3],
+    "vacancy_request": 11
 }
 ```
 
@@ -39,6 +41,7 @@
  position | string | Да | Название вакансии (должности)
  company | string | Нет | Отдел, подразделение (игнорируется, если подключены подразделения)
  money | string | Нет | Зарплата
+ applicants_to_hire | number | Нет | Сколько человек нужно нанять (>= 1)
  deadline | date | Нет | Дата дедлайна по вакансии
  priority | number | Нет | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий))
  account_division | number | Нет | Идентификатор подразделения (если подразделения подключены)
@@ -49,6 +52,7 @@
  hidden | bool | Нет | Скрыта ли вакансия от коллег
  state | string | Нет | [Состояние вакансии](#vacancy-states). По умолчанию `OPEN`
  files | array | Нет | Список файлов, прикрепленных к вакансии ([загрузка файлов](upload.md))
+ vacancy_request | number | Нет | Идентификатор [заявки на вакансию](vacancy_requests.md)
 
 ### Поля ответа
 
@@ -65,7 +69,7 @@
 Имя | Тип | Описание
 --- | --- | ---
 id | number | Идентификатор вакансии
-created | string | Дата+время создания вакансии
+created | datetime | Дата и время создания вакансии
 
 <a name="edit"></a>
 ## Редактирование вакансии
@@ -121,6 +125,7 @@ status | bool | Флаг успешной операции
             "company": "Отдел продаж",
             "money": "30 000 + 3% от продаж",
             "deadline": "2017-04-27",
+            "applicants_to_hire": 1,
             "created": "2017-03-22T18:16:27+03:00",
             "vacancy_request": null,
             "priority": 0,
@@ -133,6 +138,7 @@ status | bool | Флаг успешной операции
             "company": "Отдел разработки",
             "money": "80 000 руб",
             "deadline": null,
+            "applicants_to_hire": 1,
             "created": "2017-03-22T18:16:27+03:00",
             "vacancy_request": null,
             "priority": 0,
@@ -155,7 +161,8 @@ status | bool | Флаг успешной операции
  company | string | Отдел, подразделение
  money | string | Зарплата
  deadline | date | Дата дедлайна по вакансии
- created | date+time | Дата и время создания вакансии
+ applicants_to_hire | number | Количество кандидатов к найму
+ created | datetime | Дата и время создания вакансии
  vacancy_request | number | Идентификатор заявки на вакансию, из которой вакансия была создана
  priority | number | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий))
  hidden | bool | Скрыта ли вакансия от коллег
@@ -174,6 +181,7 @@ status | bool | Флаг успешной операции
     "company": "Отдел продаж",
     "money": "30 000 + 3% от продаж",
     "deadline": "2017-04-27",
+    "applicants_to_hire": 1,
     "created": "2017-03-22T18:16:27+03:00",
     "vacancy_request": null,
     "priority": 0,
