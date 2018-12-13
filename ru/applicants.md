@@ -369,17 +369,17 @@ calendar_event.creator.self | bool |  Флаг указывающий на то,
 calendar_event.description | string | Описание события |
 calendar_event.end | datetime | Дата и время окончания события |
 calendar_event.etag | string | ETag события |
-calendar_event.event_type | string | Тип события календаря |
+calendar_event.event_type | string | [Тип события]((webhooks.md#event-type) |
 calendar_event.foreign | string | Внешний идентификатор события |
 calendar_event.location | string | Место проведения события |
 calendar_event.name | string | Название события |
-calendar_event.reminders[] | list | Список напоминаний о событии |
-calendar_event.reminders[].method | string | Метод напоминания |
+calendar_event.reminders[] | list |  Список повторений [RFC 5545](https://tools.ietf.org/html/rfc5545) |
+calendar_event.reminders[].method | string | [Способ напоминания]((webhooks.md#event-reminder-method) |
 calendar_event.reminders[].minutes | number | За какое количество минут напомнить о событии |
 calendar_event.start | datetime | Дата и время начала события |
-calendar_event.status | string | Статус события |
+calendar_event.status | string | [Статус события]((webhooks.md#event-status) |
 calendar_event.timezone | string | Часовой пояс в котором заданы дата начала и конца события |
-calendar_event.transparency |string | Занятость во время события |
+calendar_event.transparency |string | [Доступность события]((webhooks.md#event-transparency) |
 comment | string |Текст комментария |
 created | datetime | Дата создания лога |
 employment_date | datetime | Дата принятия кандидата на работу |
