@@ -290,6 +290,12 @@ tags[].tag | number | Идентификатор метки
                     "id": 2844,
                     "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                     "name": "example.docx"
+                },
+                {
+                    "url": "http://huntflow.ru/uploads/named/e/x/a/example2.docx",
+                    "id": 2845,
+                    "content_type": "image/png",
+                    "name": "example.png"
                 }
             ],
             "vacancy": 3,
@@ -301,31 +307,14 @@ tags[].tag | number | Идентификатор метки
             "calendar_event": {
                 "event_type": "interview",
                 "creator": null,
-                "vacancy": 3,
-                "meta": {
-                    "hide_salary": true,
-                    "external": "64231",
-                    "NATIVE": {
-                        "url": "http://huntflow.ru/my/example#vacancy/3/filter/workon/id/34276",
-                        "name": "Ссылка на кандидата: "
-                    }
-                },
                 "timezone": "Europe/Saratov",
-                "calendar": 1,
-                "id": 18,
-                "state_reason": null,
-                "end": "2018-11-28 17:00:00",
-                "interview_type": 49,
-                "sms": null,
+                "end": "2018-12-13T17:00:00+03:00",
                 "recurrence": null,
-                "start": "2018-11-28 16:00:00",
-                "state": "QUEUED",
+                "start": "2018-12-13T16:00:00+03:00",
                 "etag": null,
                 "location": "Саратов",
                 "status": "confirmed",
                 "description": "Описание",
-                "sms_reminder_template": null,
-                "recurrence_link": null,
                 "attendees": [
                     {
                         "displayName": "Пример",
@@ -333,11 +322,8 @@ tags[].tag | number | Идентификатор метки
                         "responseStatus": "needsAction"
                     }
                 ],
-                "removed": null,
-                "data": null,
                 "name": "Интервью в центральном офисе: Пример – Тест",
-                "created": "2018-11-28 15:46:13",
-                "applicant": 34276,
+                "created": "2018-11-28 15:46:13+03:00",
                 "reminders": [
                     {
                         "minutes": 15,
@@ -348,14 +334,13 @@ tags[].tag | number | Идентификатор метки
                 ],
                 "all_day": false,
                 "foreign": null,
-                "transparency": "busy",
-                "action": "ADD"
+                "transparency": "busy"
             },
             "id": 180368,
             "employment_date": null,
             "status": 2,
             "account": 1,
-            "created": "2018-11-28T15:46:13+03:00",
+            "created": "2018-12-13T15:34:12+03:00",
             "type": "COMMENT"
         }
     ],
@@ -371,16 +356,16 @@ account_info | string | Информация о пользователе от и
 account_info.id | number | Идентификатор пользователя |
 account_info.name | string | Имя пользователя |
 calendar_event | object | Событие календаря прикреплённое к логу |
-calendar_event.all_day | bool | Признак того что событие запланировано на весь день |
-calendar_event.attendees[] | list | Список приглашенных на событие |
-calendar_event.attendees[].displayName | string | Отображаемое имя приглашенного |
-calendar_event.attendees[].email | string | Электронная почта приглашенного |
-calendar_event.attendees[].responseStatus | string | Ответ приглашенного на приглашение |
-calendar_event.created | datetime | Дата создания события |
+calendar_event.all_day | bool | Флаг указывающий на то, что событие запланировано на весь день |
+calendar_event.attendees[] | list | Участники события |
+calendar_event.attendees[].displayName | string | Имя участника события |
+calendar_event.attendees[].email | string | Email участника события |
+calendar_event.attendees[].responseStatus | string | [Статус участника события](webhooks.md#event-status) |
+calendar_event.created | datetime | Дата и время создания события |
 calendar_event.creator | object | Информация о создателе события |
-calendar_event.creator.self | bool | ??? |
-calendar_event.creator.displayName | string | Отображаемое имя создателя события |
-calendar_event.creator.email | string | Электронная почта создателя события |
+calendar_event.creator.displayName | string | Имя создателя события |
+calendar_event.creator.email | string |  Email создателя события |
+calendar_event.creator.self | bool |  Флаг указывающий на то, что вы создатель события |
 calendar_event.description | string | Описание события |
 calendar_event.end | datetime | Дата и время окончания события |
 calendar_event.etag | string | ETag события |
