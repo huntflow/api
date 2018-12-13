@@ -374,12 +374,12 @@ calendar_event.foreign | string | Внешний идентификатор со
 calendar_event.location | string | Место проведения события |
 calendar_event.name | string | Название события |
 calendar_event.reminders[] | list |  Список повторений [RFC 5545](https://tools.ietf.org/html/rfc5545) |
-calendar_event.reminders[].method | string | [Способ напоминания]((webhooks.md#event-reminder-method) |
+calendar_event.reminders[].method | string | [Способ напоминания](webhooks.md#event-reminder-method) |
 calendar_event.reminders[].minutes | number | За какое количество минут напомнить о событии |
 calendar_event.start | datetime | Дата и время начала события |
 calendar_event.status | string | [Статус события]((webhooks.md#event-status) |
 calendar_event.timezone | string | Часовой пояс в котором заданы дата начала и конца события |
-calendar_event.transparency |string | [Доступность события]((webhooks.md#event-transparency) |
+calendar_event.transparency |string | [Доступность события](webhooks.md#event-transparency) |
 comment | string |Текст комментария |
 created | datetime | Дата создания лога |
 employment_date | datetime | Дата принятия кандидата на работу |
