@@ -3,7 +3,7 @@
 * [Добавление кандидата в базу](#add)
 * [Добавление кандидата на вакансию](#vacancy_applicant)
 * [Список кандидатов](#applicants)
-* [Логи кандидата](#applicant_logs)
+* [История работы с кандидатом](#applicant_logs)
 
 <a name="add"></a>
 ## Добавление кандидата в базу
@@ -267,7 +267,7 @@ tags[].tag | number | Идентификатор метки
 
 <a name="applicant_logs"></a>
 
-## Получение логов кандидата
+## Получение истории работы с кандидатом
 
 `GET /account/{account_id}/applicants/{applicant_id}/log` вернёт список логов кандидата.
 
@@ -369,7 +369,7 @@ calendar_event.creator.self | bool |  Флаг указывающий на то,
 calendar_event.description | string | Описание события |
 calendar_event.end | datetime | Дата и время окончания события |
 calendar_event.etag | string | ETag события |
-calendar_event.event_type | string | [Тип события]((webhooks.md#event-type) |
+calendar_event.event_type | string | [Тип события](webhooks.md#event-type) |
 calendar_event.foreign | string | Внешний идентификатор события |
 calendar_event.location | string | Место проведения события |
 calendar_event.name | string | Название события |
@@ -377,7 +377,7 @@ calendar_event.reminders[] | list |  Список повторений [RFC 5545
 calendar_event.reminders[].method | string | [Способ напоминания](webhooks.md#event-reminder-method) |
 calendar_event.reminders[].minutes | number | За какое количество минут напомнить о событии |
 calendar_event.start | datetime | Дата и время начала события |
-calendar_event.status | string | [Статус события]((webhooks.md#event-status) |
+calendar_event.status | string | [Статус события](webhooks.md#event-status) |
 calendar_event.timezone | string | Часовой пояс в котором заданы дата начала и конца события |
 calendar_event.transparency |string | [Доступность события](webhooks.md#event-transparency) |
 comment | string |Текст комментария |
