@@ -351,10 +351,23 @@ tags[].tag | number | Идентификатор метки
 
 Имя | Тип | Описание |
 --- | --- | -------- |
+id | number | Идентификатор записи лога |
+type | string | [Тип лога](webhooks.md#типы-действий-над-кандидатом) |
+vacancy | number | Идентификатор вакансии к которой относится лог (если null, значит лог относится к кандидату в целом) |
+status | number | Идентификатор статуса |
+rejection_reason | number | Идентификатор причины отказа |
+created | datetime | Дата создания лога |
+employment_date | datetime | Дата принятия кандидата на работу |
 account | number | Идентификатор пользователя от имени которого создан лог |
 account_info | string | Информация о пользователе от имени которого создан лог |
 account_info.id | number | Идентификатор пользователя |
 account_info.name | string | Имя пользователя |
+comment | string |Текст комментария |
+files | list | Файлы прикрепленные к логу |
+files[].content_type | string | Content Type файла |
+files[].id | number | Идентификатор файла |
+files[].name | string | Исходное имя файла |
+files[].url | string | Ссылка для скачивания файла |
 calendar_event | object | Событие календаря прикреплённое к логу |
 calendar_event.all_day | bool | Флаг указывающий на то, что событие запланировано на весь день |
 calendar_event.attendees[] | list | Участники события |
@@ -380,16 +393,3 @@ calendar_event.start | datetime | Дата и время начала событ
 calendar_event.status | string | [Статус события](webhooks.md#event-status) |
 calendar_event.timezone | string | Часовой пояс в котором заданы дата начала и конца события |
 calendar_event.transparency |string | [Доступность события](webhooks.md#event-transparency) |
-comment | string |Текст комментария |
-created | datetime | Дата создания лога |
-employment_date | datetime | Дата принятия кандидата на работу |
-files | list | Файлы прикрепленные к логу |
-files[].content_type | string | Content Type файла |
-files[].id | number | Идентификатор файла |
-files[].name | string | Исходное имя файла |
-files[].url | string | Ссылка для скачивания файла |
-id | number | Идентификатор лога |
-rejection_reason | number | Идентификатор причины отказа |
-status | number | Идентификатор статуса |
-type | string | Тип лога |
-vacancy | number | Идентификатор вакансии к которой относится лог (если null, значит лог относится к кандидату в целом) |
