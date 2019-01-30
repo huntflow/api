@@ -3,6 +3,7 @@
 * [Добавление кандидата в базу](#add)
 * [Добавление кандидата на вакансию](#vacancy_applicant)
 * [Список кандидатов](#applicants)
+* [История работы с кандидатом](#applicant_logs)
 
 <a name="add"></a>
 ## Добавление кандидата в базу
@@ -263,3 +264,132 @@ links[].updated | datetime | Дата и время обновления по к
 links[].changed | datetime | Дата и время последнего изменения этапа подбора
 tags[].id | number | Идентификатор метки кандидата
 tags[].tag | number | Идентификатор метки
+
+<a name="applicant_logs"></a>
+
+## Получение истории работы с кандидатом
+
+`GET /account/{account_id}/applicants/{applicant_id}/log` вернёт список логов кандидата.
+
+
+Принимаемые параметры:
+
+* `count`, `page` — [параметры постраничного вывода](general.md#pagination).
+
+Пример ответа:
+
+```
+{
+    "count": 30,
+    "items": [
+        {
+            "comment": "Комментарий",
+            "files": [
+                {
+                    "url": "http://huntflow.ru/uploads/named/e/x/a/example.docx",
+                    "id": 2844,
+                    "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                    "name": "example.docx"
+                },
+                {
+                    "url": "http://huntflow.ru/uploads/named/e/x/a/example2.docx",
+                    "id": 2845,
+                    "content_type": "image/png",
+                    "name": "example.png"
+                }
+            ],
+            "vacancy": 3,
+            "account_info": {
+                "name": "Пример",
+                "id": 1
+            },
+            "rejection_reason": null,
+            "calendar_event": {
+                "event_type": "interview",
+                "creator": null,
+                "timezone": "Europe/Saratov",
+                "end": "2018-12-13T17:00:00+03:00",
+                "recurrence": null,
+                "start": "2018-12-13T16:00:00+03:00",
+                "etag": null,
+                "location": "Саратов",
+                "status": "confirmed",
+                "description": "Описание",
+                "attendees": [
+                    {
+                        "displayName": "Пример",
+                        "email": "example@example.ru",
+                        "responseStatus": "needsAction"
+                    }
+                ],
+                "name": "Интервью в центральном офисе: Пример – Тест",
+                "created": "2018-11-28 15:46:13+03:00",
+                "reminders": [
+                    {
+                        "minutes": 15,
+                        "method": "popup",
+                        "value": 15,
+                        "multiplier": "minutes"
+                    }
+                ],
+                "all_day": false,
+                "foreign": null,
+                "transparency": "busy"
+            },
+            "id": 180368,
+            "employment_date": null,
+            "status": 2,
+            "account": 1,
+            "created": "2018-12-13T15:34:12+03:00",
+            "type": "COMMENT"
+        }
+    ],
+    "total": 1,
+    "page": 1
+}
+```
+
+Имя | Тип | Описание |
+--- | --- | -------- |
+id | number | Идентификатор записи лога |
+type | string | [Тип лога](webhooks.md#типы-действий-над-кандидатом) |
+vacancy | number | Идентификатор вакансии к которой относится лог (если null, значит лог относится к кандидату в целом) |
+status | number | Идентификатор статуса |
+rejection_reason | number | Идентификатор причины отказа |
+created | datetime | Дата создания лога |
+employment_date | datetime | Дата принятия кандидата на работу |
+account | number | Идентификатор пользователя от имени которого создан лог |
+account_info | string | Информация о пользователе от имени которого создан лог |
+account_info.id | number | Идентификатор пользователя |
+account_info.name | string | Имя пользователя |
+comment | string |Текст комментария |
+files | list | Файлы прикрепленные к логу |
+files[].content_type | string | Content Type файла |
+files[].id | number | Идентификатор файла |
+files[].name | string | Исходное имя файла |
+files[].url | string | Ссылка для скачивания файла |
+calendar_event | object | Событие календаря прикреплённое к логу |
+calendar_event.all_day | bool | Флаг указывающий на то, что событие запланировано на весь день |
+calendar_event.attendees[] | list | Участники события |
+calendar_event.attendees[].displayName | string | Имя участника события |
+calendar_event.attendees[].email | string | Email участника события |
+calendar_event.attendees[].responseStatus | string | [Статус участника события](webhooks.md#event-status) |
+calendar_event.created | datetime | Дата и время создания события |
+calendar_event.creator | object | Информация о создателе события |
+calendar_event.creator.displayName | string | Имя создателя события |
+calendar_event.creator.email | string |  Email создателя события |
+calendar_event.creator.self | bool |  Флаг указывающий на то, что вы создатель события |
+calendar_event.description | string | Описание события |
+calendar_event.end | datetime | Дата и время окончания события |
+calendar_event.etag | string | ETag события |
+calendar_event.event_type | string | [Тип события](webhooks.md#event-type) |
+calendar_event.foreign | string | Внешний идентификатор события |
+calendar_event.location | string | Место проведения события |
+calendar_event.name | string | Название события |
+calendar_event.reminders[] | list |  Список повторений [RFC 5545](https://tools.ietf.org/html/rfc5545) |
+calendar_event.reminders[].method | string | [Способ напоминания](webhooks.md#event-reminder-method) |
+calendar_event.reminders[].minutes | number | За какое количество минут напомнить о событии |
+calendar_event.start | datetime | Дата и время начала события |
+calendar_event.status | string | [Статус события](webhooks.md#event-status) |
+calendar_event.timezone | string | Часовой пояс в котором заданы дата начала и конца события |
+calendar_event.transparency |string | [Доступность события](webhooks.md#event-transparency) |
