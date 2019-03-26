@@ -40,3 +40,4 @@
 * [Резюме](ru/externals.md)
 * [Анкеты кандидатов](ru/questionaries.md)
 * [Метки](ru/tags.md)
+* [Производственный календарь](ru/production_calendar.md)
