@@ -6,7 +6,7 @@
 * [Deadline date evaluation taking into account the non-working days](#deadline)
 * [Bulk request for deadline date evaluation](#deadline-bulk)
 * [Start date evaluation taking into account the non-working days](#start)
-* [Bulk request for start ate evaluation](#start-bulk)
+* [Bulk request for start date evaluation](#start-bulk)
 
 <a name="production_calendar"></a>
 ## General calendar info
@@ -162,7 +162,7 @@ A date to start reverse counting. Optional. Default is today.
 "2018-09-25"
 ```
 
-## Bulk request for start ate evaluation
+## Bulk request for start date evaluation
 <a name="start-bulk"></a> 
 
 `POST /production_calendar/{calendar_id}/start` bulk version of the previous request.
