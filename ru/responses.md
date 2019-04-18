@@ -47,10 +47,7 @@
     "body": "<p>Пишу я вам, чего же <strong>боле</strong></p>",
     "requirements": "<p>Что я могу ещё <strong>сказать</strong></p>",
     "conditions": "<p>Теперь я знаю в вашей воле <strong>воле</strong></p>",
-    "some_dictionary": {
-      "name": "Отдел разработки",
-      "foreign": "external_id"
-    }
+    "some_field_id": "external_id"
 }
 ```
 
@@ -82,10 +79,7 @@
     "body": "<p>Пишу я вам, чего же <strong>боле</strong></p>",
     "requirements": "<p>Что я могу ещё <strong>сказать</strong></p>",
     "conditions": "<p>Теперь я знаю в вашей воле <strong>воле</strong></p>",
-    "some_dictionary": {
-      "name": "Отдел разработки",
-      "foreign": "external_id"
-    }
+    "some_field_id": "external_id"
 }
 ```
 
