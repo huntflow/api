@@ -29,15 +29,16 @@
 
 ## Перечень методов
 
-* [Публикация вакансии](#publication)
-* [Редактирование вакансии](#edit)
-* [Снятие вакансии с публикации](#unpublish)
+* [Публикация вакансии](#vacancy-add)
+* [Получение вакансии](#vacancy-get)
+* [Редактирование вакансии](#vacancy-edit)
+* [Снятие вакансии с публикации](#vacancy-delete)
 
 
-<a name="publication"></a>
+<a name="vacancy-add"></a>
 ## Публикация вакансии
 
-`POST /publish`
+`POST /vacancies`
 
 В теле запроса будет передан JSON вида:
 
@@ -64,10 +65,28 @@
 Далее этот идентификатор будет использоваться для редактирования, снятия с публикации и получения откликов.
 
 
-<a name="edit"></a>
+<a name="vacancy-get"></a>
+## Получение вакансии
+
+`GET /vacancies/{vacancy_id}`
+
+где `{vacancy_id}` – идентификатор вакансии на карьерном сайте, полученный ранее при публикации.
+
+В теле запроса будет передан JSON вида:
+
+```json
+{
+    "id": 1,
+    "status": "PUBLISHED"
+}
+```
+Возможные статусы вакансии: `PUBLISHED`, `UNPUBLISHED`
+
+
+<a name="vacancy-edit"></a>
 ## Редактирование вакансии
 
-`PUT /vacancy/{vacancy_id}`
+`PUT /vacancies/{vacancy_id}`
 
 где `{vacancy_id}` – идентификатор вакансии на карьерном сайте, полученный ранее при публикации.
 
@@ -85,10 +104,10 @@
 
 Ожидаемый ответ: HTTP-код 200 или 204. Тело ответа игнорируется.
 
-<a name="unpublish"></a>
+<a name="vacancy-delete"></a>
 ## Снятие вакансии с публикации
 
-`DELETE /vacancy/{vacancy_id}`
+`DELETE /vacancies/{vacancy_id}`
 
 где `{vacancy_id}` – идентификатор вакансии на карьерном сайте, полученный ранее при публикации.
 
@@ -98,7 +117,7 @@
 <a name="responses"></a>
 ## Получение откликов по вакансии
 
-`GET /vacancy/{vacancy_id}/response`
+`GET /vacancies/{vacancy_id}/responses`
 
 где `{vacancy_id}` – идентификатор вакансии на карьерном сайте, полученный ранее при публикации.
 
@@ -117,6 +136,7 @@
       "phone": "89261234444",
       "email": "test@example.com",
       "created": "2018-12-20T18:00:00Z",
+      "photo": "https://someexternalurl.ru/uploads/ivanov.jpg"
       "resume": [
         {
           "files": [
@@ -139,6 +159,7 @@
       "phone": "89261232222",
       "email": "resp@example.com",
       "created": "2018-12-19T18:00:00Z",
+      "photo": "https://someexternalurl.ru/uploads/petrov.jpg"
       "resume": [
         {
           "files": [
@@ -175,16 +196,17 @@ middle_name | string | Нет | Отчество
 phone | string | Нет | Телефон
 email | string | Нет | Электронная почта
 created | datetime | Да | Дата и время отклика
+photo | string | Нет | Ссылка на фотографию
 resume.files | array | Нет | Массив файлов с резюме
 resume.files[].name | string | Нет | Название файла с резюме
 resume.files[].url | string | Да | Ссылка на файл с резюме
 resume.data.body | string | Нет | Дополнительный текст резюме
 
 
-<a name="responses-logs"></a>
+<a name="responses-letters"></a>
 ## Получение сопроводительных писем по отклику
 
-`GET /vacancy/{vacancy_id}/response/{response_id}`
+`GET /vacancies/{vacancy_id}/responses/{response_id}/letters`
 
 где `{vacancy_id}` – идентификатор вакансии на карьерном сайте, `{response_id}` – идентификатор отклика
 
