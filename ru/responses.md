@@ -89,17 +89,13 @@
 
 где `{vacancy_id}` – идентификатор вакансии на карьерном сайте, полученный ранее при публикации.
 
-Ожидаемый ответ – идентификатор вакансии и ее [статус](#vacancy-statuses):
 
 ```json
 {
-    "id": 1,
-    "status": "PUBLISHED"
+    "id": 1
 }
 ```
-<a name="vacancy-statuses"></a>
-Возможные статусы вакансии: `PUBLISHED`, `UNPUBLISHED`
-
+Если запрашиваемой вакансии нет, либо она удалена -- ожидается HTTP код 404.
 
 <a name="vacancy-edit"></a>
 ## Редактирование вакансии
@@ -151,11 +147,11 @@
             "id": 2,
             "first_name": "Иван",
             "last_name": "Иванов",
-           "middle_name": "Иванович",
-            "phone": "89261234444",
+            "middle_name": "Иванович",
+            "phone": "79261234444",
             "email": "test@example.com",
             "created": "2018-12-20T18:00:00Z",
-            "photo": "https://someexternalurl.ru/uploads/ivanov.jpg"
+            "photo": "https://someexternalurl.ru/uploads/ivanov.jpg",
             "resume": [
                 {
                     "files": [
@@ -175,10 +171,10 @@
             "first_name": "Петр",
             "last_name": "Петров",
             "middle_name": "Петрович",
-            "phone": "89261232222",
+            "phone": "79261232222",
             "email": "resp@example.com",
             "created": "2018-12-19T18:00:00Z",
-            "photo": "https://someexternalurl.ru/uploads/petrov.jpg"
+            "photo": "https://someexternalurl.ru/uploads/petrov.jpg",
             "resume": [
                 {
                     "files": [
@@ -208,13 +204,14 @@
 
 Путь | Тип | Обязательный | Описание
 ---- | -------- | ------------ | --------
-id | number|string | Да | Идентификатор отклика
+id |string | Да | Идентификатор отклика
 last_name | string | Да | Фамилия
 first_name | string | Да | Имя
 middle_name | string | Нет | Отчество
+birthday | date | Нет | Дата рождения в формате [ISO 8601](https://ru.wikipedia.org/wiki/ISO_8601)
 phone | string | Нет | Телефон
 email | string | Нет | Электронная почта
-created | datetime | Да | Дата и время отклика
+created | datetime | Да | Дата и время отклика в формате [ISO 8601](https://ru.wikipedia.org/wiki/ISO_8601)
 photo | string | Нет | Ссылка на фотографию
 resume.files | array | Нет | Массив файлов с резюме
 resume.files[].name | string | Нет | Название файла с резюме
