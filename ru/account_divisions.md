@@ -149,15 +149,13 @@ POST /account/3/all_divisions
 
 ## Проверка статуса выполнения задачи обновления подразделений
 
-```GET /account/{account_id}/delayed_task/{task_id}```
+`GET /account/{account_id}/delayed_task/{task_id}`
 
 Идентификатор задачи (`task_id`) - идентификатор в поле `payload.task_id` в ответе на запрос обновления подразделений.
 
 ### Пример запроса
 
-```
-GET /account/3/delayed_task/b5174006-b46f-49fd-a16b-6fc0baf69d5f
-```
+`GET /account/3/delayed_task/b5174006-b46f-49fd-a16b-6fc0baf69d5f`
 
 ### Пример ответа
 
