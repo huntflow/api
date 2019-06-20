@@ -41,3 +41,4 @@
 * [Анкеты кандидатов](ru/questionaries.md)
 * [Метки](ru/tags.md)
 * [Производственный календарь](ru/production_calendar.md)
+* [Изменение структуры подразделений](ru/account_divisions.md)
