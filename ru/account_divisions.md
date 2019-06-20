@@ -152,30 +152,37 @@ GET /account/3/delayed_task/b5174006-b46f-49fd-a16b-6fc0baf69d5f
 
 ```json
 {
-    "created": 1560488235.9336956,
-    "updated": 1560488236.015671,
     "states_log": [
         {
+            "state": "enqueued",
             "comment": null,
-            "timestamp": 1560488235.9336956,
-            "state": "enqueued"
+            "datetime": "2019-06-20T04:55:01+00:00",
+            "timestamp": 1561006501.3160393
         },
         {
+            "state": "inprogress",
             "comment": null,
-            "timestamp": 1560488235.936202,
-            "state": "inprogress"
+            "datetime": "2019-06-20T04:55:01+00:00",
+            "timestamp": 1561006501.318867
         },
         {
+            "state": "success",
             "comment": null,
-            "timestamp": 1560488236.015671,
-            "state": "success"
+            "datetime": "2019-06-20T04:55:01+00:00",
+            "timestamp": 1561006501.391373
         }
     ],
     "state": "success",
-    "task_id": "b5174006-b46f-49fd-a16b-6fc0baf69d5f"
+    "task_id": "11271792-f244-47c4-95a3-3e5973e7ffdc",
+    "updated_datetime": "2019-06-20T04:55:01+00:00",
+    "created": 1561006501.3160393,
+    "created_datetime": "2019-06-20T04:55:01+00:00",
+    "updated": 1561006501.391373
 }
 ```
 * `state` - текущий статус задачи (`enqueued`/`inprogress`/`success`/`failed`)
 * `created`/`updated` - unix timestamp создания и последнего обновления статуса
+  задачи
+* `created_datetime`/`updated_datetime` - дата и время (в ISO8601) создания и последнего обновления статуса
   задачи
 * `states_log` - лог изменения статусов задачи
