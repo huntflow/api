@@ -43,7 +43,7 @@
 
 
 Путь | Тип | Описание
----- | -------- | --------
+---- | --- | --------
 state | string | Текущий статус задачи (`enqueued`/`inprogress`/`success`/`failed`) 
 created | unixtimestamp | Unix timestamp создания задачи
 updated | unixtimestamp | Unix timestamp последнего обновления задачи
