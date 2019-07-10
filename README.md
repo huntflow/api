@@ -43,3 +43,4 @@
 * [Производственный календарь](ru/production_calendar.md)
 * [Изменение структуры подразделений](ru/account_divisions.md)
 * [Справочники](ru/dictionaries.md)
+* [Отложенные задачи](ru/delayed_tasks.md)
