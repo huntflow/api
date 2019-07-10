@@ -121,7 +121,35 @@ items[].meta | objects | Мета-информация значения спра
 items[].active | boolean | Флаг активности значения справочника | Нет
 items[].items | array | Вложенные значения справчника (максимальная вложенность –– 5) | Нет
 
-Ответ аналогичен ответу на запрос [получения справочника](#get)
+Создание справочника выполняется отложенно, поэтому в ответе вы получите информацию о созданной задаче:
+
+```json
+{
+    "status": "ok",
+    "payload": {
+        "task_id": "a798029c-8353-4f5c-ae69-103d7b631172"
+    },
+    "meta": {
+        "data": {
+            "name": "control",
+            "items": [
+                {
+                    "foreign": "0001", 
+                    "name": "Backend",
+                    "items": [
+                        {"name": "Senior", "foreign": "0002", "meta": {"kpi_coefficient": 5, "level": 3}},
+                        {"name": "Middle", "foreign": "0003", "meta": {"kpi_coefficient": 3, "level": 3}},
+                        {"name": "Junior", "foreign": "0004", "meta": {"kpi_coefficient": 1, "level": 3}}
+                    ]
+                }
+            ],
+            "code": "control"
+        },
+        "account_id": 291
+    }
+}
+```
+где `payload.task_id` –– уникальный идентификатор задачи. [Как отслеживать статус задачи](delayed_tasks.py).
 
 
 <a name="edit"></a>
@@ -130,6 +158,6 @@ items[].items | array | Вложенные значения справчника
 
 `PUT /account/{account_id}/dictionary/{dictionary_code}`
 
-Тела запроса и ответа аналогичны [методу создания](#create) справочника
+Тела запроса и ответа аналогичны [методу создания](#create) справочника.
 
 
