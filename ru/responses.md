@@ -175,7 +175,7 @@
             "email": "resp@example.com",
             "created": "2018-12-19T18:00:00Z",
             "photo": "https://someexternalurl.ru/uploads/petrov.jpg",
-            "resume": [
+            "resumes": [
                 {
                     "files": [
                         {
@@ -213,10 +213,11 @@ phone | string | Нет | Телефон
 email | string | Нет | Электронная почта
 created | datetime | Да | Дата и время отклика в формате [ISO 8601](https://ru.wikipedia.org/wiki/ISO_8601)
 photo | string | Нет | Ссылка на фотографию
-resume.files | array | Нет | Массив файлов с резюме
-resume.files[].name | string | Нет | Название файла с резюме
-resume.files[].url | string | Да | Ссылка на файл с резюме
-resume.data.body | string | Нет | Дополнительный текст резюме
+resumes | array | Нет | Массив с объектами резюме
+resumes[].files | array | Нет | Массив файлов с резюме
+resumes[].files[].name | string | Нет | Название файла с резюме
+resumes[].files[].url | string | Да | Ссылка на файл с резюме
+resumes[].data.body | string | Нет | Дополнительный текст резюме
 
 
 <a name="responses-letters"></a>
