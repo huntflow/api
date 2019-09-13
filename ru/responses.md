@@ -152,7 +152,7 @@
             "email": "test@example.com",
             "created": "2018-12-20T18:00:00Z",
             "photo": "https://someexternalurl.ru/uploads/ivanov.jpg",
-            "resume": [
+            "resumes": [
                 {
                     "files": [
                         {
