@@ -10,7 +10,7 @@ You need to register an application for creating services that require user auth
 
 If you are going to use Huntflow API in scripts or server side applications it's also possible to simplify authorization process by getting [personal token](personal_token.md).
 
-Webhooks documentation available [here](webhooks.md).
+SLA: Our developers answer the questions at [Issues page](https://github.com/huntflow/api/issues) in 3 working days.
 
 <a name="toc"></a>
 ## Table of contents
@@ -36,3 +36,8 @@ Webhooks documentation available [here](webhooks.md).
 * [Vacancies](vacancies.md)
 * [Candidates](applicants.md)
 * [Production calendar](production_calendar.md)
+
+<a name="webhooks"></a>
+### Webhooks
+
+* [Documentation](webhooks.md)
