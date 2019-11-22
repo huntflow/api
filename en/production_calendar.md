@@ -140,10 +140,12 @@ Name | Type | Required | Description
 
  ###  Response example
 ```
-[
-    "2019-01-25",
-    "2019-03-01"
-]
+{
+    "items": [
+        "2019-01-25",
+        "2019-03-01"
+    ]
+}
 ```
 
 <a name="start"></a> 
@@ -184,10 +186,12 @@ Name | Type | Required | Description
 
  ###  Response example
 ```
-[
-    "2018-07-25",
-    "2018-03-01"
-]
+{
+    "items": [
+        "2018-07-25",
+        "2018-03-01"
+    ]
+}
 ```
 
 
