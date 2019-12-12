@@ -6,9 +6,7 @@ Huntflow is a professional ATS.
 
 Huntflow API is a service which helps to integrate [Huntflow](https://huntflow.ru) into your career site, intranet or any other program. 
 
-You need to register an application for creating services that require user authorization by sending a request to [support@huntflow.ru](support@huntflow.ru) and set up an [authorization process](authorization.md).
-
-If you are going to use Huntflow API in scripts or server side applications it's also possible to simplify authorization process by getting [personal token](personal_token.md).
+You need to send a request to [support@huntflow.ru](support@huntflow.ru) to receive an API token. After that [it can be used in requests to API](en/personal_token.md).    
 
 SLA: Our developers answer the questions at [Issues page](https://github.com/huntflow/api/issues) in 5 working days.
 
@@ -18,8 +16,7 @@ SLA: Our developers answer the questions at [Issues page](https://github.com/hun
 <a name="general"></a>
 ### General information
 
-* [General information](general.mdmailto:hello@huntflow.ru)
-* [Authorization](authorization.md)
+* [General information](general.md)
 * [Personal token](personal_token.md)
 * [Errors and response codes](errors.md)
 
