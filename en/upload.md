@@ -6,6 +6,19 @@
 To upload a file send a request `multipart/form-data` with a file in parameter `file`.
 
 To make sure that the file will be processed by the system of field recognition, one has to pass a header `X-File-Parse: true`. In this case the response will contain the fields `text`, `photo`, `fields`. 
+
+Example request:
+
+```
+curl -X POST \
+    -H "Content-Type: multipart/form-data" \
+    -H "X-File-Parse: true" \
+    -H "Authorization: Bearer <token>" \
+    -F "file=@resume.pdf" \
+    https://api.huntflow.ru/account/<account_id>/upload	
+```
+
+Example response:
  
  ```json
  {
