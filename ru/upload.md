@@ -12,11 +12,12 @@
 Пример запроса:
 
 ```
-curl -X POST -H "Content-Type: multipart/form-data" \
-	-H "X-File-Parse: true" \
-	-H "Authorization: Bearer <token>" \
-	-F "file=@resume.pdf" \
-	https://api.huntflow.ru/account/<token>/upload	
+curl -X POST \
+    -H "Content-Type: multipart/form-data" \
+    -H "X-File-Parse: true" \
+    -H "Authorization: Bearer <token>" \
+    -F "file=@resume.pdf" \
+    https://api.huntflow.ru/account/<account_id>/upload	
 ```
 
 Пример ответа:
