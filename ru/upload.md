@@ -9,6 +9,18 @@
 
 Для того, чтобы файл также был обработан системой распознавания полей, необходимо передать заголовок `X-File-Parse: true`. В этом случае, в ответе будут присутствовать поля `text`, `photo`, `fields`. 
 
+Пример запроса:
+
+```
+curl -X POST -H "Content-Type: multipart/form-data" \
+	-H "X-File-Parse: true" \
+	-H "Authorization: Bearer <token>" \
+	-F "file=@resume.pdf" \
+	https://api.huntflow.ru/account/<token>/upload	
+```
+
+Пример ответа:
+
 ```json
 {
     "id": 1329115,
