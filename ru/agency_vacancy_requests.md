@@ -1,10 +1,10 @@
 # Работа с заявками Кадрового Агенства
 
-* [Получние списка схем заявки на вакансию](#account-client-vacancy-request-list)
-* [Получение схемы заявки на вакансию](#account-client-vacancy-request-view)
-* [Получение заявки на вакансию](#client-vacancy-request-view)
-* [Создание заявки на вакансию](#client-vacancy-request-new)
-* [Взятие заявки в работу](#client-vacancy-request-start)
+* [Получние списка схем заявки на вакансию для Кадрового Агенства](#account-client-vacancy-request-list)
+* [Получение схемы заявки на вакансию для Кадрового Агенства](#account-client-vacancy-request-view)
+* [Получение заявки на вакансию для Кадрового Агенства](#client-vacancy-request-view)
+* [Создание заявки на вакансию для Кадрового Агенства](#client-vacancy-request-new)
+* [Взятие заявки на вакансию для Кадрового Агенства в работу](#client-vacancy-request-start)
 
 <a name="account-client-vacancy-request-list"></a>
 ## Получние списка схем заявки на вакансию для Кадрового Агенства
@@ -195,7 +195,7 @@ values | Значение заполненных полей заявки
 <a name="client-vacancy-request-new"></a>
 ## Создание заявки на вакансию для Кадрового Агенства
 
-`POST /account/{account_id}/vacancy_request`
+`POST /account/{account_id}/clients/{client_id}/client_vacancy_requests`
 
 
 Пример запроса:
@@ -218,11 +218,12 @@ values | Значение заполненных полей заявки
     "start_work": "07.12.2019",
     "comment": "Мои комментарии",
     "account_client_vacancy_request": 1
-}```
+}
+```
 
 `account_client_vacancy_request` – необязательный параметр. Идентификатор формы заявки на вакансию, которую можно получить [здесь](#account-client-vacancy-request-list). Если не указано, то используется последняя схема заявки.
 
 
 <a name="client-vacancy-request-start"></a>
-## Взятие заявки в работу
+## Взятие заявки на вакансию для Кадрового Агенства в работу
 Заявка берется в работу путем [создания вакансии для Кадрового Агентсва по этой заявке](agency_vacancies.md#add) с указанием идентификатора заявки в поле `client_vacancy_request`.
