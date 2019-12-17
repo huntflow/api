@@ -3,7 +3,7 @@
 API uses reporting by HTTP response codes that the application should process adequately. 
 
 Apart from the response code, the body of the response contains additional information 
-that helps the developer undestand the reason of an error. 
+that helps the developer understand the reason of an error. 
 
 Errors are passed as:
 
@@ -11,12 +11,12 @@ Errors are passed as:
 {
     "errors": [
         {
-            "type": "applicants",
-            "value": "first_name"
+            "type": "validation.email",
+            "value": ["error.invalid_email"]
         },
         {
-            "type": "applicants",
-            "value": "last_name"
+            "type": "common",
+            "value": ["invalid json"]
         }
     ]
 }
@@ -24,20 +24,6 @@ Errors are passed as:
 
 The key `type` is present on every object and contains text identifier of the error class. 
 The key `value` is optional. It specifies the error data.
-
-While sending `POST/PUT` requests, that require sending forms, the error response object 
-can contain the object `fields` with human friendly information about the error:
-
-```json
-{
-    "errors": [],
-    "fields": {
-        "first_name": [
-          "First name or last name required"
-        ]
-    }
-}
-```
 
 
 ## System error
