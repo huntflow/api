@@ -1,13 +1,13 @@
 # Работа с заявками Кадрового Агенства
 
-* [Получние списка схем заявки на вакансию для Кадрового Агенства](#account-client-vacancy-request-list)
+* [Получение списка схем заявки на вакансию для Кадрового Агенства](#account-client-vacancy-request-list)
 * [Получение схемы заявки на вакансию для Кадрового Агенства](#account-client-vacancy-request-view)
 * [Получение заявки на вакансию для Кадрового Агенства](#client-vacancy-request-view)
 * [Создание заявки на вакансию для Кадрового Агенства](#client-vacancy-request-new)
 * [Взятие заявки на вакансию для Кадрового Агенства в работу](#client-vacancy-request-start)
 
 <a name="account-client-vacancy-request-list"></a>
-## Получние списка схем заявки на вакансию для Кадрового Агенства
+## Получение списка схем заявки на вакансию для Кадрового Агенства
 
 `GET /account/{account_id}/account_client_vacancy_requests`
 
