@@ -4,6 +4,7 @@
 * [Создание заявки на вакансию](#client-vacancy-request-new)
 * [Получение заявки на вакансию](#client-vacancy-request-view)
 * [Взятие заявки на вакансию в работу](#client-vacancy-request-start)
+* [Удаление заявки на вакансию](#client-vacancy-request-delete)
 
 <a name="account-client-vacancy-request-list"></a>
 ## Получение списка схем заявки на вакансию
@@ -227,3 +228,8 @@ account_info.email | string | Email пользователя, создавшег
 <a name="client-vacancy-request-start"></a>
 ## Взятие заявки на вакансию в работу
 Заявка берется в работу путем [создания вакансии для Кадрового Агенства](agency_vacancies.md#vacancy-add) с указанием идентификатора заявки в поле `client_vacancy_request`.
+
+<a name="client-vacancy-request-delete"></a>
+## Удаление заявки на вакансию
+
+`DELETE GET /account/{account_id}/clients/{client_id}/client_vacancy_requests/{client_vacancy_requests_id}`

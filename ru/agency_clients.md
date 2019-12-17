@@ -3,6 +3,8 @@
 * [Добавление клиента](#client-add)
 * [Получение клиента](#client-view)
 * [Получение списка клиентов](#client-list)
+* [Удаление клиента](#client-delete)
+
 
 <a name="client-add"></a>
 ## Добавление клиента
@@ -238,3 +240,8 @@ contacts[].email | string | Эл. почта
 contacts[].skype | string | Скайп
 contacts[].comment | string | Комментарий
 contacts[].position | string | Должность
+
+<a name="client-delete"></a>
+## Удаление клиента
+
+`DELETE /account/{account_id}/clients/{client_id}`
