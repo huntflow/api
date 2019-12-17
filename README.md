@@ -48,6 +48,7 @@
   * [Клиенты](ru/agency_clients.md)
   * [Заявки на вакансии](ru/agency_vacancy_requests.md)
   * [Вакансии](ru/agency_vacancies.md)
+  * [Контакты](ru/agency_contacts.md)
 
 <a name="webhooks"></a>
 ### Вебхуки
