@@ -1,11 +1,11 @@
 # Работа с клиентами Кадрового Агенства
 
-* [Добавление клиента в базу](#add)
-* [Список клиентов](#clients)
-* [Получение клиента](#client)
+* [Добавление клиента](#client-add)
+* [Получение клиента](#client-view)
+* [Получение списка клиентов](#client-list)
 
-<a name="add"></a>
-## Добавление клиента в базу
+<a name="client-add"></a>
+## Добавление клиента
 
 `POST /account/{account_id}/clients`
 
@@ -14,7 +14,7 @@
 ```json
 {
     "name": "Мой клиент",
-    "condition": "Некоторый текст",
+    "condition": "Условия работы",
     "address": "Москва",
     "phone": "79111111111",
     "email": "hello@mail.ru",
@@ -27,7 +27,7 @@
         "work_phone": "79222222222",
         "email": "petrov@mail.ru",
         "skype": "petrov",
-        "comment": "Другой текст",
+        "comment": "Комментарий",
         "position": "CEO"
     }]
 }
@@ -79,7 +79,63 @@ contacts[].id | number | Идентификатор контакта
 contacts[].created | datetime | Дата и время создания контакта
 
 
-<a name="clients"></a>
+<a name="client-view"></a>
+## Получение клиента
+
+`GET /account/{account_id}/clients/{client_id}` вернёт клиента с идентификатором `{client_id}`
+
+```json
+{
+    "id": 1,
+    "created": "2017-04-10T21:34:01+03:00",
+    "name": "Мой клиент",
+    "condition": "Некоторый текст",
+    "address": "Москва",
+    "phone": "79111111111",
+    "email": "hello@mail.ru",
+    "contacts": [{
+        "id": 1,
+        "created": "2017-04-10T21:34:01+03:00",
+        "last_name": "Петров",
+        "first_name": "Виталий",
+        "middle_name": "Иванович",
+        "birthday": "1975-01-26",
+        "cell_phone": "79111111111",
+        "work_phone": "79222222222",
+        "email": "petrov@mail.ru",
+        "skype": "petrov",
+        "comment": "Другой текст",
+        "position": "CEO"
+    }]
+}
+```
+
+### Поля ответа
+
+Имя | Тип | Описание
+ --- | --- | ---
+ id | number | Идентификатор клиента
+ created | datetime | Дата и время создания клиента
+ name | string | Название клиента
+ condition | string | Условия работы
+ address | string | Адрес офиса
+ phone | string | Телефон
+ email | string | Эл. почта
+ contacts[].id | number | Идентификатор контакта
+ contacts[].created | datetime | Дата и время создания контакта
+ contacts[].last_name | string | Фамилия
+ contacts[].first_name | string | Имя
+ contacts[].middle_name | string | Отчество
+ contacts[].birthday | date | Дата рождения
+ contacts[].cell_phone | string | Мобильный телефон
+ contacts[].work_phone | string | Рабочий телефон
+ contacts[].email | string | Эл. почта
+ contacts[].skype | string | Скайп
+ contacts[].comment | string | Комментарий
+ contacts[].position | string | Должность
+
+
+<a name="client-list"></a>
 ## Получение списка клиентов
 
 `GET /account/{account_id}/clients` вернёт список клиентов.
@@ -133,7 +189,7 @@ contacts[].created | datetime | Дата и время создания конт
             "id": 1,
             "created": "2017-04-10T21:34:01+03:00",
             "name": "Мой клиент",
-            "condition": "Некоторый текст",
+            "condition": "Условия работы",
             "address": "Москва",
             "phone": "79111111111",
             "email": "hello@mail.ru",
@@ -148,7 +204,7 @@ contacts[].created | datetime | Дата и время создания конт
                 "work_phone": "79222222222",
                 "email": "petrov@mail.ru",
                 "skype": "petrov",
-                "comment": "Другой текст",
+                "comment": "Комментарий",
                 "position": "CEO"
             }]
         }
@@ -159,7 +215,7 @@ contacts[].created | datetime | Дата и время создания конт
 }
 ```
 
-<a name="clients-result"></a>
+### Поля ответа
 
 Имя | Тип | Описание
  --- | --- | ---
@@ -182,37 +238,3 @@ contacts[].created | datetime | Дата и время создания конт
  contacts[].skype | string | Скайп
  contacts[].comment | string | Комментарий
  contacts[].position | string | Должность
-
-
-<a name="client"></a>
-## Получение клиента
-
-`GET /account/{account_id}/clients/{client_id}` вернёт клиента с идентификатором `{client_id}`
-
-```json
-{
-    "id": 1,
-    "created": "2017-04-10T21:34:01+03:00",
-    "name": "Мой клиент",
-    "condition": "Некоторый текст",
-    "address": "Москва",
-    "phone": "79111111111",
-    "email": "hello@mail.ru",
-    "contacts": [{
-        "id": 1,
-        "created": "2017-04-10T21:34:01+03:00",
-        "last_name": "Петров",
-        "first_name": "Виталий",
-        "middle_name": "Иванович",
-        "birthday": "1975-01-26",
-        "cell_phone": "79111111111",
-        "work_phone": "79222222222",
-        "email": "petrov@mail.ru",
-        "skype": "petrov",
-        "comment": "Другой текст",
-        "position": "CEO"
-    }]
-}
-```
-
-Поля с результатом аналогичны данным из [списка клиентов](#clients-result)

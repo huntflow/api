@@ -1,13 +1,13 @@
 # Работа с заявками Кадрового Агенства
 
-* [Получение списка схем заявки на вакансию для Кадрового Агенства](#account-client-vacancy-request-list)
-* [Получение схемы заявки на вакансию для Кадрового Агенства](#account-client-vacancy-request-view)
-* [Получение заявки на вакансию для Кадрового Агенства](#client-vacancy-request-view)
-* [Создание заявки на вакансию для Кадрового Агенства](#client-vacancy-request-new)
-* [Взятие заявки на вакансию для Кадрового Агенства в работу](#client-vacancy-request-start)
+* [Получение списка схем заявки на вакансию](#account-client-vacancy-request-list)
+* [Получение схемы заявки на вакансию](#account-client-vacancy-request-view)
+* [Получение заявки на вакансию](#client-vacancy-request-view)
+* [Создание заявки на вакансию](#client-vacancy-request-new)
+* [Взятие заявки на вакансию в работу](#client-vacancy-request-start)
 
 <a name="account-client-vacancy-request-list"></a>
-## Получение списка схем заявки на вакансию для Кадрового Агенства
+## Получение списка схем заявки на вакансию
 
 `GET /account/{account_id}/account_client_vacancy_requests`
 
@@ -138,13 +138,13 @@ active | Флаг активности схемы
 schema | [Описание полей схемы](schema.md)
 
 <a name="account-client-vacancy-request-view"></a>
-## Получение схемы заявки на вакансию для Кадрового Агенства
+## Получение схемы заявки на вакансию
 
 `GET /account/{account_id}/account_client_vacancy_requests/{account_client_vacancy_requests}`
 
 
 <a name="client-vacancy-request-view"></a>
-## Получение заявки на вакансию для Кадрового Агенства
+## Получение заявки на вакансию
 
 `GET /account/{account_id}/clients/{client_id}/client_vacancy_requests/{client_vacancy_requests_id}`
 
@@ -193,7 +193,7 @@ values | Значение заполненных полей заявки
 
 
 <a name="client-vacancy-request-new"></a>
-## Создание заявки на вакансию для Кадрового Агенства
+## Создание заявки на вакансию
 
 `POST /account/{account_id}/clients/{client_id}/client_vacancy_requests`
 
@@ -225,5 +225,5 @@ values | Значение заполненных полей заявки
 
 
 <a name="client-vacancy-request-start"></a>
-## Взятие заявки на вакансию для Кадрового Агенства в работу
-Заявка берется в работу путем [создания вакансии для Кадрового Агентсва](agency_vacancies.md#add) по этой заявке с указанием идентификатора заявки в поле `client_vacancy_request`.
+## Взятие заявки на вакансию в работу
+Заявка берется в работу путем [создания вакансии](agency_vacancies.md#add) по этой заявке с указанием идентификатора заявки в поле `client_vacancy_request`.
