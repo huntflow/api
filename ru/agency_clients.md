@@ -113,26 +113,26 @@ contacts[].created | datetime | Дата и время создания конт
 ### Поля ответа
 
 Имя | Тип | Описание
- --- | --- | ---
- id | number | Идентификатор клиента
- created | datetime | Дата и время создания клиента
- name | string | Название клиента
- condition | string | Условия работы
- address | string | Адрес офиса
- phone | string | Телефон
- email | string | Эл. почта
- contacts[].id | number | Идентификатор контакта
- contacts[].created | datetime | Дата и время создания контакта
- contacts[].last_name | string | Фамилия
- contacts[].first_name | string | Имя
- contacts[].middle_name | string | Отчество
- contacts[].birthday | date | Дата рождения
- contacts[].cell_phone | string | Мобильный телефон
- contacts[].work_phone | string | Рабочий телефон
- contacts[].email | string | Эл. почта
- contacts[].skype | string | Скайп
- contacts[].comment | string | Комментарий
- contacts[].position | string | Должность
+--- | --- | ---
+id | number | Идентификатор клиента
+created | datetime | Дата и время создания клиента
+name | string | Название клиента
+condition | string | Условия работы
+address | string | Адрес офиса
+phone | string | Телефон
+email | string | Эл. почта
+contacts[].id | number | Идентификатор контакта
+contacts[].created | datetime | Дата и время создания контакта
+contacts[].last_name | string | Фамилия
+contacts[].first_name | string | Имя
+contacts[].middle_name | string | Отчество
+contacts[].birthday | date | Дата рождения
+contacts[].cell_phone | string | Мобильный телефон
+contacts[].work_phone | string | Рабочий телефон
+contacts[].email | string | Эл. почта
+contacts[].skype | string | Скайп
+contacts[].comment | string | Комментарий
+contacts[].position | string | Должность
 
 
 <a name="client-list"></a>
@@ -218,23 +218,23 @@ contacts[].created | datetime | Дата и время создания конт
 ### Поля ответа
 
 Имя | Тип | Описание
- --- | --- | ---
- id | number | Идентификатор клиента
- created | datetime | Дата и время создания клиента
- name | string | Название клиента
- condition | string | Условия работы
- address | string | Адрес офиса
- phone | string | Телефон
- email | string | Эл. почта
- contacts[].id | number | Идентификатор контакта
- contacts[].created | datetime | Дата и время создания контакта
- contacts[].last_name | string | Фамилия
- contacts[].first_name | string | Имя
- contacts[].middle_name | string | Отчество
- contacts[].birthday | date | Дата рождения
- contacts[].cell_phone | string | Мобильный телефон
- contacts[].work_phone | string | Рабочий телефон
- contacts[].email | string | Эл. почта
- contacts[].skype | string | Скайп
- contacts[].comment | string | Комментарий
- contacts[].position | string | Должность
+--- | --- | ---
+id | number | Идентификатор клиента
+created | datetime | Дата и время создания клиента
+name | string | Название клиента
+condition | string | Условия работы
+address | string | Адрес офиса
+phone | string | Телефон
+email | string | Эл. почта
+contacts[].id | number | Идентификатор контакта
+contacts[].created | datetime | Дата и время создания контакта
+contacts[].last_name | string | Фамилия
+contacts[].first_name | string | Имя
+contacts[].middle_name | string | Отчество
+contacts[].birthday | date | Дата рождения
+contacts[].cell_phone | string | Мобильный телефон
+contacts[].work_phone | string | Рабочий телефон
+contacts[].email | string | Эл. почта
+contacts[].skype | string | Скайп
+contacts[].comment | string | Комментарий
+contacts[].position | string | Должность

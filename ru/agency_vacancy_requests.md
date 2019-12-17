@@ -1,17 +1,14 @@
 # Работа с заявками Кадрового Агенства
 
 * [Получение списка схем заявки на вакансию](#account-client-vacancy-request-list)
-* [Получение схемы заявки на вакансию](#account-client-vacancy-request-view)
-* [Получение заявки на вакансию](#client-vacancy-request-view)
 * [Создание заявки на вакансию](#client-vacancy-request-new)
+* [Получение заявки на вакансию](#client-vacancy-request-view)
 * [Взятие заявки на вакансию в работу](#client-vacancy-request-start)
 
 <a name="account-client-vacancy-request-list"></a>
 ## Получение списка схем заявки на вакансию
 
-`GET /account/{account_id}/account_client_vacancy_requests`
-
-Пример ответа:
+`GET /account/{account_id}/account_client_vacancy_requests` вернёт список схем заявки на вакансию.
 
 ```
 {
@@ -130,25 +127,60 @@
 }
 ```
 
-Путь |  Описание
----- | --------
-id | Идентификатор схемы заявки
-name | Название схемы
-active | Флаг активности схемы
-schema | [Описание полей схемы](schema.md)
+Имя | Тип | Описание
+ --- | --- | ---
+id | number | Идентификатор схемы заявки
+name | string | Название схемы
+active | bool | Флаг активности схемы
+schema | object | [Описание полей схемы](schema.md)
 
-<a name="account-client-vacancy-request-view"></a>
-## Получение схемы заявки на вакансию
 
-`GET /account/{account_id}/account_client_vacancy_requests/{account_client_vacancy_requests}`
+<a name="client-vacancy-request-new"></a>
+## Создание заявки на вакансию
+
+`POST /account/{account_id}/clients/{client_id}/client_vacancy_requests`
+
+В теле запроса необходимо передать JSON вида:
+
+```
+{
+    "account_client_vacancy_request": 1,
+    "contacts": [{
+        "id": 1
+    }],
+    "position": "Моя должность",
+    "duties": "Мои обязанности",
+    "skills": "Мои профессиональные навыки",
+    "soft_skills": "Мои личностные качества",
+    "langs": "Мои иностранные языки",
+    "money": "10000",
+    "bonus": "0",
+    "fringe_benefits": "Мой социальный пакет",
+    "reason": "Новая вакансия",
+    "sources": "Мой источник",
+    "start_work": "07.12.2019",
+    "comment": "Мои комментарии"
+}
+```
+
+### Поля запроса
+
+* `[]` обозначает, что значение данного ключа является массивом
+* `a.b` обозначает объект `a` с ключом `b`
+
+Путь | Тип | Обязательный | Описание
+---- | -------- | ------------ | --------
+account_client_vacancy_request | number | Нет | Идентификатор [схемы заявки на вакансию](#account-client-vacancy-request-list). Если не указано, то используется последняя схема заявки Кадрового Агенства.
+contacts[].id | number | Да | Идентификатор контакта
+condition | string | Нет | Условия работы
+* | * | * | Поля согласно [схеме заявки на вакансию](#account-client-vacancy-request-list)
+
 
 
 <a name="client-vacancy-request-view"></a>
 ## Получение заявки на вакансию
 
-`GET /account/{account_id}/clients/{client_id}/client_vacancy_requests/{client_vacancy_requests_id}`
-
-Пример ответа:
+`GET /account/{account_id}/clients/{client_id}/client_vacancy_requests/{client_vacancy_requests_id}`  вернёт клиента с идентификатором `{client_vacancy_requests_id}`
 
 ```
 {
@@ -180,50 +212,18 @@ schema | [Описание полей схемы](schema.md)
 }
 ```
 
-Путь |  Описание
----- | --------
-id | Идентификатор заявки
-created | Дата и время создания заявки
-account_info.id | Идентификатор пользователя, создавшего заявку
-account_info.name | Имя пользователя, создавшего заявку
-account_info.email | Email пользователя, создавшего заявку
-account_client_vacancy_request | Идентификатор схемы заявки
-contacts[].id | Идентификатор контакта, привязанного к заявке
-values | Значение заполненных полей заявки
-
-
-<a name="client-vacancy-request-new"></a>
-## Создание заявки на вакансию
-
-`POST /account/{account_id}/clients/{client_id}/client_vacancy_requests`
-
-
-Пример запроса:
-
-```
-{
-    "contacts": [{
-        "id": 1
-    }],
-    "position": "Моя должность",
-    "duties": "Мои обязанности",
-    "skills": "Мои профессиональные навыки",
-    "soft_skills": "Мои личностные качества",
-    "langs": "Мои иностранные языки",
-    "money": "10000",
-    "bonus": "0",
-    "fringe_benefits": "Мой социальный пакет",
-    "reason": "Новая вакансия",
-    "sources": "Мой источник",
-    "start_work": "07.12.2019",
-    "comment": "Мои комментарии",
-    "account_client_vacancy_request": 1
-}
-```
-
-Необязательный параметр `account_client_vacancy_request` --- идентификатор формы заявки на вакансию, которую можно получить [здесь](#account-client-vacancy-request-list). Если не указано, то используется последняя схема заявки.
+Имя | Тип | Описание
+--- | --- | ---
+id | number | Идентификатор заявки
+created | datetime | Дата и время создания заявки
+account_client_vacancy_request | number | Идентификатор схемы заявки
+contacts[].id | number | Идентификатор контакта, привязанного к заявке
+values | object | Значение заполненных полей заявки
+account_info.id | number | Идентификатор пользователя, создавшего заявку
+account_info.name | string | Имя пользователя, создавшего заявку
+account_info.email | string | Email пользователя, создавшего заявку
 
 
 <a name="client-vacancy-request-start"></a>
 ## Взятие заявки на вакансию в работу
-Заявка берется в работу путем [создания вакансии](agency_vacancies.md#add) по этой заявке с указанием идентификатора заявки в поле `client_vacancy_request`.
+Заявка берется в работу путем [создания вакансии для Кадрового Агенства](agency_vacancies.md#vacancy-add) с указанием идентификатора заявки в поле `client_vacancy_request`.
