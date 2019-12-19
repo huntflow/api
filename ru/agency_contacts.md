@@ -9,7 +9,7 @@
 
 Контакт добавляется при [добавлении клиента](agency_clients.md#client-add)
 
-Или методом `POST /account/{account_id}/clients`
+Или методом `POST /account/{account_id}/clients/{client_id}/contacts`
 
 В теле запроса необходимо передать JSON вида:
 
