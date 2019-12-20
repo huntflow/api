@@ -42,7 +42,7 @@
 | Путь | Тип | Обязательный | Описание
 | ---- | -------- | ------------ | --------
 | contacts[].id | number | Да | Идентификатор контакта
-| condition | string | Нет | Условия работы
+| position | string | Да | Должность
 | * | * | * | Поля согласно [схеме заявки на вакансию](#account-client-vacancy-request-list)
 
 
@@ -56,6 +56,7 @@
 {
     "id": 1,
     "created": "2019-12-12T07:22:39+03:00",
+    "position": "Моя должность",
     "contacts": [{
         "id": 1
     }],
@@ -85,6 +86,7 @@
 --- | --- | ---
 id | number | Идентификатор заявки
 created | datetime | Дата и время создания заявки
+position | string | Должность
 contacts[].id | number | Идентификатор контакта, привязанного к заявке
 values | object | Значение заполненных полей заявки
 account_info.id | number | Идентификатор пользователя, создавшего заявку
@@ -94,7 +96,7 @@ account_info.email | string | Email пользователя, создавшег
 
 <a name="client-vacancy-request-start"></a>
 ## Взятие заявки на вакансию в работу
-Заявка берется в работу путем [создания вакансии для Кадрового Агенства](agency_vacancies.md#vacancy-add) с указанием идентификатора заявки в поле `client_vacancy_request`.
+Заявка берется в работу путем [создания вакансии](agency_vacancies.md#vacancy-add) с указанием идентификатора заявки в поле `client_vacancy_request`.
 
 <a name="client-vacancy-request-delete"></a>
 ## Удаление заявки на вакансию
@@ -115,14 +117,6 @@ account_info.email | string | Email пользователя, создавшег
         "attendee_hint": null,
         "id": 4,
         "schema": {
-            "position": {
-                "title": "Должность",
-                "required": true,
-                "type": "string",
-                "order": 1,
-                "value": null,
-                "id": 37
-            },
             "duties": {
                 "title": "Обязанности",
                 "required": true,
