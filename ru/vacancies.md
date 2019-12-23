@@ -11,6 +11,8 @@
 <a name="add"></a>
 ## Добавление вакансии в базу
 
+Если организация --- Кадровое Агенство, то используется [другой набор полей](agency_vacancies.md#vacancy-add).
+
 `POST /account/{account_id}/vacancies`
 
 В теле запроса необходимо передать JSON вида:
@@ -75,6 +77,8 @@ created | datetime | Дата и время создания вакансии
 <a name="edit"></a>
 ## Редактирование вакансии
 
+Если организация --- Кадровое Агенство, то используется [другой набор полей](agency_vacancies.md#vacancy-edit).
+
 `PUT /account/{account_id}/vacancies/{vacancy_id}`
 
 ### Поля запроса
@@ -104,6 +108,8 @@ status | bool | Флаг успешной операции
 
 <a name="vacancies"></a>
 ## Получение списка вакансий
+
+Если организация --- Кадровое Агенство, то возвращается [другой набор полей](agency_vacancies.md#vacancy-list).
 
 `GET /account/{account_id}/vacancies` вернёт список вакансий компании.
 
@@ -172,6 +178,8 @@ status | bool | Флаг успешной операции
 
 <a name="vacancy"></a>
 ## Получение вакансии
+
+Если организация --- Кадровое Агенство, то возвращается [другой набор полей](agency_vacancies.md#vacancy-view).
 
 `GET /account/{account_id}/vacancies/{vacancy_id}` вернёт вакансию с идентификатором `{vacancy_id}`
 

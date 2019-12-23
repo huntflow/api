@@ -9,6 +9,8 @@
 <a name="vacancy-add"></a>
 ## Добавление вакансии
 
+Если организация --- не Кадровое Агенство, то используется [другой набор полей](vacancies.md#add).
+
 `POST /account/{account_id}/vacancies`
 
 В теле запроса необходимо передать JSON вида:
@@ -59,6 +61,8 @@ position | string | Название вакансии (должности). Оп
 <a name="vacancy-edit"></a>
 ## Редактирование вакансии
 
+Если организация --- не Кадровое Агенство, то используется [другой набор полей](vacancies.md#edit).
+
 `PUT /account/{account_id}/vacancies/{vacancy_id}`
 
 ### Поля запроса
@@ -88,6 +92,8 @@ status | bool | Флаг успешной операции
 
 <a name="vacancy-list"></a>
 ## Получение списка вакансий
+
+Если организация --- не Кадровое Агенство, то возвращается [другой набор полей](vacancies.md#vacancies).
 
 `GET /account/{account_id}/vacancies` вернёт список вакансий компании.
 
@@ -144,6 +150,8 @@ status | bool | Флаг успешной операции
 
 <a name="vacancy-view"></a>
 ## Получение вакансии
+
+Если организация --- не Кадровое Агенство, то возвращается [другой набор полей](vacancies.md#vacancy).
 
 `GET /account/{account_id}/vacancies/{vacancy_id}` вернёт вакансию с идентификатором `{vacancy_id}`
 
