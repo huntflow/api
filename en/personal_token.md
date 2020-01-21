@@ -3,7 +3,7 @@
 
 Personal token simplifies integrations with the Huntflow API without additional authorization. The most frequent use is server scripts or applications integration with Huntflow (e.g. collecting responses from a corporate website).
 
-To get a personal token, send an application to [support@huntflow.ru](mailto:support@huntflow.ru). State a Huntflow username requiring a personal token in the email.
+To get a personal token, send an application to [support@huntflow.ru](mailto:support@huntflow.ru). State a Huntflow username requiring a personal token in the email. Your token will be linked with this username, and all the requests sent with the token  will be done on behalf of this username. Token will have the same permissions as linked username as well.
 
 Warning! Personal token usage requires higher level of security for storage and unauthorized access issues.
 
