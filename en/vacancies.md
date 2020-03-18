@@ -123,7 +123,6 @@ If passed, only the open vacancies will return.
             "deadline": "2017-04-27",
             "applicants_to_hire": 1,
             "created": "2017-03-22T18:16:27+03:00",
-            "vacancy_request": null,
             "priority": 0,
             "hidden": false,
             "state": "OPEN"
@@ -136,7 +135,6 @@ If passed, only the open vacancies will return.
             "deadline": null,
             "applicants_to_hire": 1,
             "created": "2017-03-22T18:16:27+03:00",
-            "vacancy_request": null,
             "priority": 0,
             "hidden": false,
             "state": "CLOSED"
@@ -158,8 +156,7 @@ Name | Type | Description
  money | string | Salary
  deadline | date | Due date for a vacancy
  applicants_to_hire | number | How many people to hire
- created | date+time | Date and time of creating a vacancy
- vacancy_request | number | The ID of a request for a vacancy that the vacancy was created from.
+ created | date+time | Date and time of creating a vacancy 
  priority | number | The priority of a vacancy (0 for usual or 1 for high)
  hidden | bool | Is the vacancy hidden from the colleagues?
  state | string | [The state of a vacancy](#vacancy-states)
@@ -179,7 +176,6 @@ Name | Type | Description
     "deadline": "2017-04-27",
     "applicants_to_hire": 1,
     "created": "2017-03-22T18:16:27+03:00",
-    "vacancy_request": null,
     "priority": 0,
     "hidden": false,
     "state": "OPEN",

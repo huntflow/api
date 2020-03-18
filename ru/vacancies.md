@@ -167,7 +167,6 @@ status | bool | Флаг успешной операции
             "deadline": "2017-04-27",
             "applicants_to_hire": 1,
             "created": "2017-03-22T18:16:27+03:00",
-            "vacancy_request": null,
             "priority": 0,
             "hidden": false,
             "state": "OPEN"
@@ -180,7 +179,6 @@ status | bool | Флаг успешной операции
             "deadline": null,
             "applicants_to_hire": 1,
             "created": "2017-03-22T18:16:27+03:00",
-            "vacancy_request": null,
             "priority": 0,
             "hidden": false,
             "state": "CLOSED"
@@ -203,7 +201,6 @@ status | bool | Флаг успешной операции
  deadline | date | Дата дедлайна по вакансии
  applicants_to_hire | number | Количество кандидатов к найму
  created | datetime | Дата и время создания вакансии
- vacancy_request | number | Идентификатор заявки на вакансию, из которой вакансия была создана
  priority | number | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий))
  hidden | bool | Скрыта ли вакансия от коллег
  state | string | [состояние вакансии](#vacancy-states)
@@ -225,7 +222,6 @@ status | bool | Флаг успешной операции
     "deadline": "2017-04-27",
     "applicants_to_hire": 1,
     "created": "2017-03-22T18:16:27+03:00",
-    "vacancy_request": null,
     "priority": 0,
     "hidden": false,
     "state": "OPEN",

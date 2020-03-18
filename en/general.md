@@ -11,11 +11,17 @@
 <a name="request_requirements"></a>
 ### Request requirements
 
-Request should contain the header `User-Agent` or `400 Bad Request` will return in the response. If you state the name of the application and email address in the header it will help us contact you as fast as possible if it is necessary.
+Request should contain the header `User-Agent` or `400 Bad Request` will be returned in the response. If you state the name of the application and email address in the header it will help us contact you as fast as possible if it is necessary.
 
 ```
 User-Agent: App/1.0 (incaseoffire@example.com)
 ```
+
+#### Request limits
+
+Every token has a limit of 10 requests per second (limits could not be applied to on-premise or dedicated deployment).
+
+If the limit is exceeded, a `429 Too Many Requests` response will be returned. 
 
 
 <a name="request_body"></a>
