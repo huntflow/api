@@ -6,7 +6,7 @@
 <a name="me"></a>
 ## Getting information about the current user
 
-`GET /me` returns information about the current user. In case of invalid authorization the server will return the message `403 Forbidden`.
+`GET /me` returns information about the current user. In case of invalid authorization the server will return the message `401 Unauthorized`.
 
 ```json
 {
@@ -61,4 +61,3 @@ Name | Type | Description
  name | string | The name of the organization
  nick | string | Short organization name (used on the website, e.g. /my/tellur)
  member_type | string | The role in the organization (the description of roles: [the guide on roles](dicts.md#member_type))
- 
