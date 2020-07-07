@@ -41,7 +41,8 @@
             "applicants_to_hire": 2,
             "vacancy_request": 11,
         }
-    ]
+    ],
+    "comment": "My comment"
 }
 ```
 
@@ -65,6 +66,7 @@
  files | array | Нет | Список файлов, прикрепленных к вакансии ([загрузка файлов](upload.md))
  ~vacancy_request~ | number | Нет | DEPRECATED Идентификатор [заявки на вакансию](vacancy_requests.md) (перенесено в структуру fill_quotas)
  fill_quotas | array | Нет | Список квот к найму, см. [Описание квот к найму](#fill-quotas)
+ comment | string | Нет | Комментарий к вакансии
 
  *Примечания*
 
