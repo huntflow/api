@@ -24,7 +24,8 @@
     "body": "<p>Some text</p>",
     "requirements": "<p>Another text</p>",
     "conditions": "<p>Different text</p>",
-    "files": [1, 2, 3]
+    "files": [1, 2, 3],
+    "comment": "My comment"
 }
 ```
 
@@ -39,6 +40,7 @@ body | string | Нет | Обязанности в формате HTML. Дост
 requirements | string | Нет | Требования в формате HTML. Доступные теги: **ul**, **ol**, **li**, **p**, **br**, **a**, **strong**, **em**, **u**, **b**, **i**
 conditions | string | Нет | Условия работы в формате HTML. Доступные теги: **ul**, **ol**, **li**, **p**, **br**, **a**, **strong**, **em**, **u**,**b**, **i**
 files | array | Нет | Список файлов, прикрепленных к вакансии ([загрузка файлов](upload.md))
+comment | string | Нет| Комментарий к вакансии
 
 ### Поля ответа
 
