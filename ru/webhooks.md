@@ -128,7 +128,7 @@
     "agreement": {
         "state": "not_sent",
         "decision_date": null
-    }
+    },
     "author": {
         "id": 4,
         "name": "Валентин Сергеев",
