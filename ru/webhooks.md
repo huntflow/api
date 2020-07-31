@@ -125,6 +125,10 @@
         },
         "created": "2017-08-22T18:16:27+03:00"
     },
+    "agreement": {
+        "state": "not_sent",
+        "decision_date": null
+    }
     "author": {
         "id": 4,
         "name": "Валентин Сергеев",
