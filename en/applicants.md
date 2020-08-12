@@ -77,7 +77,11 @@ In addition to the request fields the following fields are added:
         {
             "double": 123320
         }
-    ]
+    ],
+    "agreement": {
+        "state": "not_sent",
+        "decision_date": null
+    }
 }
 ```
 
@@ -86,6 +90,8 @@ Name | Type | Description
 id | number | Candidate’s ID
 created | string | Date and time of adding a candidate
 doubles[].double | number | The ID of a duplicated candidate 
+agreement.state | string | Agreement's state of candidate to personal data processing. Returned if the Personal Data module is enabled.
+agreement.decision_date | datetime | Date of candidate's decision to personal data processing. Returned if the Personal Data module is enabled.
 
 
 <a name="vacancy_applicant"></a>
@@ -146,6 +152,8 @@ Accepted parameters:
 * `status` — the stage of headhunting. If passed only the candidated at a certain stage of headhunting will return.
 
 * `vacancy` — vacancy. Used additionally to "status" for filtering the candidates at a certain stage of headhunting.
+
+* `agreement_state` — Agreement's state of candidate to personal data processing. Returned if the Personal Data module is enabled. Supported values: `not_sent`, `sent`, `accepted`, `declined`.
 
 * `count`, `page` — [parameters of page by page output](general.md#pagination).
 
@@ -221,7 +229,11 @@ The example of the response:
       ],
       "doubles": [],
       "created": "2017-12-19T21:35:09+03:00",
-      "position": "Photographer"
+      "position": "Photographer",
+      "agreement": {
+        "state": "declined",
+        "decision_date": "2020-07-30T21:35:09+03:00"
+      }
     }
   ],
   "total": 120,
@@ -253,3 +265,5 @@ links[].status | The stage of headhunting
 links[].vacancy | Vacancy
 links[].updated | The date of the candidate’s update at a vacancy
 links[].changed | The date of the latest changes at the current stage of headhunting
+agreement.state | string | Agreement's state of candidate to personal data processing. Returned if the Personal Data module is enabled.
+agreement.decision_date | datetime | Date of candidate's decision to personal data processing. Returned if the Personal Data module is enabled.

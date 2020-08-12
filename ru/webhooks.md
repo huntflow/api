@@ -125,6 +125,10 @@
         },
         "created": "2017-08-22T18:16:27+03:00"
     },
+    "agreement": {
+        "state": "not_sent",
+        "decision_date": null
+    },
     "author": {
         "id": 4,
         "name": "Валентин Сергеев",
@@ -191,6 +195,8 @@
 | event.calendar_event.location | string | Географическое местоположение события |
 | event.calendar_event.transparency | string | [Доступность события](#event-transparency) |
 | event.created | datetime	| Дата и время создания события |
+| event.agreement.state | string | [Состояние согласия на хранение Персональных Данных](#pd-agreement-state). Возвращается, если включен модуль Персональных Данных |
+| event.agreement.decision_date | datetime | Дата принятия решения по хранению Персональных Данных. Возвращается, если включен модуль Персональных Данных |
 | author.id | number | Идентификатор автора действия |
 | author.name | string | Имя автора действия |
 | author.email | string | Email автора действия |
@@ -209,6 +215,7 @@
 | COMMENT | Комментарий по кандидату |
 | REMOVED | Кандидат удален |
 | DOUBLE | Объединение дубликатов |
+| AGREEMENT | Действие с согласием на хранение Персональных Данных |
 
 <a name="event-status"></a>
 
@@ -247,6 +254,17 @@
 | --- | -------- |
 | free | Свободен
 | busy | Занят
+
+<a name="pd-agreement-state"></a>
+
+##### Состояния согласия на хранение Персональных Данных
+
+| Тип | Описание |
+| --- | -------- |
+| not_sent | запрос не отправлялся
+| sent | запрос отправлен, но ответ не получен
+| accepted | получено согласие на хранение
+| declined | получен отказ на хранение
 
 ### VACANCY
 
