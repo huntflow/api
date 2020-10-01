@@ -170,6 +170,7 @@
 | event.rejection_reason.id | number | Идентификатор причины отказа |
 | event.rejection_reason.name | string | Название причины отказа |
 | event.comment | string | Текст комментария |
+| event.calendar_event.id | number | Идентификатор события |
 | event.calendar_event.name | string | Название события |
 | event.calendar_event.description | string | Описание события |
 | event.calendar_event.status | string | [Статус события](#event-status) |
