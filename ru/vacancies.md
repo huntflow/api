@@ -7,12 +7,12 @@
 * [Получение квот вакансии](#fill-quotas)
 * [Удаление вакансии](#delete)
 * [Состояние вакансии](#vacancy-states)
-* [Работа с вакансиями Кадрового Агенства](agency_vacancies.md)
+* [Работа с вакансиями Кадрового Агентства](agency_vacancies.md)
 
 <a name="add"></a>
 ## Добавление вакансии в базу
 
-Если организация --- Кадровое Агенство, то используется [другой набор полей](agency_vacancies.md#vacancy-add).
+Если организация --- Кадровое Агентство, то используется [другой набор полей](agency_vacancies.md#vacancy-add).
 
 `POST /account/{account_id}/vacancies`
 
@@ -110,7 +110,7 @@ created | datetime | Дата и время создания вакансии
 <a name="edit"></a>
 ## Редактирование вакансии
 
-Если организация --- Кадровое Агенство, то используется [другой набор полей](agency_vacancies.md#vacancy-edit).
+Если организация --- Кадровое Агентство, то используется [другой набор полей](agency_vacancies.md#vacancy-edit).
 
 `PUT /account/{account_id}/vacancies/{vacancy_id}`
 
@@ -209,7 +209,7 @@ status | bool | Флаг успешной операции
 <a name="vacancy"></a>
 ## Получение вакансии
 
-Если организация --- Кадровое Агенство, то возвращается [другой набор полей](agency_vacancies.md#vacancy-view).
+Если организация --- Кадровое Агентство, то возвращается [другой набор полей](agency_vacancies.md#vacancy-view).
 
 `GET /account/{account_id}/vacancies/{vacancy_id}` вернёт вакансию с идентификатором `{vacancy_id}`
 
