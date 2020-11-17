@@ -87,6 +87,10 @@
                 "id": 1,
                 "name": "name"
             },
+            "account_region": {
+                "id": 1,
+                "name": "name"
+            },
             "created": "2017-06-22T18:16:27+03:00"
         },
         "status": {
@@ -164,6 +168,8 @@
 | event.vacancy.deadline | date | Дата дедлайна по вакансии |
 | event.vacancy.account_division.id | number | Идентификатор подразделения (если подразделения подключены) |
 | event.vacancy.account_division.name | string | Название подразделения (если подразделения подключены) |
+| event.vacancy.account_region.id | number | Идентификатор региона (если регионы подключены) |
+| event.vacancy.account_region.name | string | Название региона (если регионы подключены) |
 | event.vacancy.created | datetime | Дата и время создания вакансии |
 | event.status.id | number | Идентификатор этапа подбора |
 | event.status.name | string | Название этапа подбора |
@@ -283,6 +289,10 @@
                 "id": 1,
                 "name": "name"
             },
+            "account_region": {
+                "id": 1,
+                "name": "name"
+            },
             "grade": {
                 "foreign": "202301",
                 "id": 7,
@@ -329,6 +339,8 @@
 | event.vacancy.deadline | date | Дата дедлайна по вакансии |
 | event.vacancy.account_division.id | number | Идентификатор подразделения (если подразделения подключены) |
 | event.vacancy.account_division.name | string | Название подразделения (если подразделения подключены) |
+| event.vacancy.account_region.id | number | Идентификатор региона (если регионы подключены) |
+| event.vacancy.account_region.name | string | Название региона (если регионы подключены) |
 | event.vacancy.body | string | Обязанности в формате HTML |
 | event.vacancy.requirements | string | Требования в формате HTML |
 | event.vacancy.conditions | string | Условия в формате HTML |

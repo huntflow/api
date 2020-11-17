@@ -81,6 +81,10 @@ Technically, webhook is a POST request, that out system sends to your remote ser
                 "id": 1,
                 "name": "name"
             },
+            "account_region": {
+                "id": 1,
+                "name": "name"
+            },
             "created": "2017-06-22"
         },
         "status": {
@@ -133,6 +137,8 @@ Technically, webhook is a POST request, that out system sends to your remote ser
 | event.vacancy.deadline | date | Due date for a vacancy |
 | event.vacancy.account_division.id | number | Department identifier (if the DEPARTMENTS are enabled) |
 | event.vacancy.account_division.name | string | Department name (if the DEPARTMENTS are enabled) |
+| event.vacancy.account_region.id | number | Region identifier (if the REGIONS are enabled) |
+| event.vacancy.account_region.name | string | Region name (if the REGIONS are enabled |
 | event.vacancy.created | string | Date and time of creating a vacancy |
 | event.status.id | number | Stage of headhunting ID |
 | event.status.name | string | Stage of headhunting name |
@@ -171,6 +177,10 @@ Technically, webhook is a POST request, that out system sends to your remote ser
             "state": "OPEN",
             "deadline": null,
             "account_division": {
+                "id": 1,
+                "name": "name"
+            },
+            "account_region": {
                 "id": 1,
                 "name": "name"
             },
@@ -220,6 +230,8 @@ Technically, webhook is a POST request, that out system sends to your remote ser
 | event.vacancy.deadline | date | Due date for a vacancy |
 | event.vacancy.account_division.id | number | Department identifier (if the DEPARTMENTS are enabled) |
 | event.vacancy.account_division.name | string | Department name (if the DEPARTMENTS are enabled |
+| event.vacancy.account_region.id | number | Region identifier (if the REGIONS are enabled) |
+| event.vacancy.account_region.name | string | Region name (if the REGIONS are enabled |
 | event.vacancy.body | string | Responsibilities in HTML format|
 | event.vacancy.requirements | string | Requirements in HTML format |
 | event.vacancy.conditions | string | Conditions in HTML format |
