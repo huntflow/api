@@ -33,6 +33,8 @@
 ## Типы событий
  - APPLICANT — действия над кандидатом
  - VACANCY — действия по вакансиям
+ - VACANCY-REQUEST - действия по запросам вакансий
+ - RESPONSE - действия по откликам
  - PING — проверка на доступность вебхука
 
 
@@ -367,3 +369,71 @@
 | EDIT | Вакансия отредактирована |
 | JOIN | Пользователь присоединился к работе по вакансии (к событию будет добавлено поле `user`) |
 | LEAVE | Пользователь перестал работать по вакансии (к событию будет добавлено поле `user`) |
+
+
+### RESPONSE
+
+```json
+{
+    "event": {
+        "id": 723,
+        "vacancy_external_data": {
+            "id": 1,
+            "vacancy_id": 3,
+            "foreign": "1605530460",
+            "data": "Test Vac",
+            "state": "PUBLISHED",
+            "account_vacancy_external_data": {
+                "id": 34,
+                "auth_type": "NATIVE",
+                "name": "Mocked Site",
+                "account_source_data": {
+                    "id": 16,
+                    "name": "Artstation",
+                    "type": "system",
+                    "foreign": "ARTSTATION"
+                }
+            },
+            "created": "2020-11-16T15:41:00+03:00"
+        },
+        "foreign": "21",
+        "data": {
+            "id": "21",
+            "first_name": "Сергеев",
+            "last_name": "Валентин",
+            "middle_name": "Сергеевич",
+            "position": "Developer",
+            "phone": "79001234521",
+            "email": "sergeev@example.com",
+            "created": "2018-12-20T18:00:00Z",
+            "photo": null,
+            "resumes": [
+                {
+                    "files": [
+                        {
+                            "name": "example.pdf",
+                            "url": "https://huntflow.ru/static/i/template/appl1.jpeg"
+                        }
+                    ],
+                    "data": {
+                        "body": "lorem ipsum body for example"
+                    }
+                }
+            ]
+        },
+        "state": "TAKEN",
+        "created": "2020-11-17T13:41:29+03:00",
+        "updated": "2018-12-20T18:00:00+03:00",
+        "resume": null
+    }
+}
+
+- a.b обозначает объект a с ключом b
+
+
+|  Имя | Тип | Описание |
+| --- | --- | -------- |
+| event.id | number | Идентификатор действия |
+| event.state | string | Состояние события |
+| event.created | datetime	| Дата и время создания события |
+| event.updated | datetime	| Дата и время последнего обновления события |
