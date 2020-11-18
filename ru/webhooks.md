@@ -399,14 +399,14 @@
         "foreign": "21",
         "data": {
             "id": "21",
-            "first_name": "Сергеев",
-            "last_name": "Валентин",
+            "first_name": "Валентин",
+            "last_name": "Сергеев",
             "middle_name": "Сергеевич",
             "position": "Developer",
             "phone": "79001234521",
             "email": "sergeev@example.com",
             "created": "2018-12-20T18:00:00Z",
-            "photo": null,
+            "photo": "https://huntflow.ru/static/i/template/appl1.jpeg",
             "resumes": [
                 {
                     "files": [
@@ -434,7 +434,7 @@
 
 |  Имя | Тип | Описание |
 | --- | --- | -------- |
-| event.id | number | Идентификатор действия |
+| event.id | number | Идентификатор отклика |
 | event.vacancy_external_data | object | Пример внешней вакансии |
 | event.vacancy_external_data.id | number | Идентификатор внешней вакансии |
 | event.vacancy_external_data.vacancy_id | number | Идентификатор вакансии |
@@ -442,8 +442,41 @@
 | event.vacancy_external_data.data | string | Данные о внешней вакансии |
 | event.vacancy_external_data.state | string | Состояние внешней вакансии |
 | event.vacancy_external_data.created | datetime | Дата и время создания внешней вакансии |
-| event.vacancy_external_data.account_vacancy_external_data | object | Данные об организации внешней вакансии |
+| event.vacancy_external_data.account_vacancy_external_data | object | Пример организации внешней вакансии |
 | event.vacancy_external_data.account_vacancy_external_data.id | number | Идентификатор организации внешней вакансии |
-| event.state | string | Состояние события |
-| event.created | datetime | Дата и время создания события |
-| event.updated | datetime | Дата и время последнего обновления события |
+| event.vacancy_external_data.account_vacancy_external_data.auth_type | string | Тип авторизации |
+| event.vacancy_external_data.account_vacancy_external_data.name | string | Имя сайта внешней организации |
+| event.vacancy_external_data.account_vacancy_external_data.account_source_data | object | Данные о внешней организации |
+| event.vacancy_external_data.account_vacancy_external_data.account_source_data.id | number | Идентификатор |
+| event.vacancy_external_data.account_vacancy_external_data.account_source_data.name | string | Название организации |
+| event.vacancy_external_data.account_vacancy_external_data.account_source_data.type | string | Тип организации |
+| event.vacancy_external_data.account_vacancy_external_data.account_source_data.foreign | string | Внешнее название организации |
+| event.data | object | Данные об откликнувшемся кандидате |
+| event.data.id | string | Идентификатор кандидата |
+| event.data.first_name | string | Имя кандидата |
+| event.data.last_name | string | Фамилия кандидата |
+| event.data.middle_name | string | Отчество кандидата |
+| event.data.position | string | Должность |
+| event.data.phone | string | Номер телефона кандидата |
+| event.data.email | string | Email кандидата |
+| event.data.created | datetime | Дата и время создания |
+| event.data.photo | string | Ссылка на фото кандидата |
+| event.data.resumes | object | Данные о резюме кандидата |
+| event.data.resumes.files | list | Список файлов |
+| event.data.resumes.files.name | string | Название файла |
+| event.data.resumes.files.url | string | Ссылка на файл |
+| event.data.resumes.data | object | Описание резюме |
+| event.data.resumes.body | string | Основное описание |
+| event.foreign | string | Внешний идентификатор отклика |
+| event.state | string | Состояние отклика |
+| event.created | datetime | Дата и время создания отклика |
+| event.updated | datetime | Дата и время последнего обновления отклика |
+| event.resume | object | Резюме |
+
+
+##### Состояния откликов
+
+| Тип | Описание |
+| --- | -------- |
+| TAKEN | Отклик взят на вакансию |
+| REJECTED | Отклик отклонен |
