@@ -437,7 +437,9 @@
 | event.id | number | Идентификатор отклика |
 | event.vacancy_external | object | Пример внешней вакансии |
 | event.vacancy_external.id | number | Идентификатор внешней вакансии |
-| event.vacancy_external.vacancy_id | number | Идентификатор вакансии |
+| event.vacancy_external.vacancy | object | Информация о вакансии |
+| event.vacancy_external.vacancy.id | number | Идентификатор вакансии |
+| event.vacancy_external.vacancy.position | string | Название вакансии (должности) |
 | event.vacancy_external.foreign | string | Внешний идентификатор внешней вакансии |
 | event.vacancy_external.data | string | Данные о внешней вакансии |
 | event.vacancy_external.state | string | Состояние внешней вакансии |
