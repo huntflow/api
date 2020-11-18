@@ -33,8 +33,8 @@
 ## Типы событий
  - APPLICANT — действия над кандидатом
  - VACANCY — действия по вакансиям
- - VACANCY-REQUEST - действия по запросам вакансий
- - RESPONSE - действия по откликам
+ - VACANCY-REQUEST — действия по запросам вакансий
+ - RESPONSE — действия по откликам
  - PING — проверка на доступность вебхука
 
 
@@ -427,6 +427,7 @@
         "resume": null
     }
 }
+```
 
 - a.b обозначает объект a с ключом b
 
@@ -434,6 +435,15 @@
 |  Имя | Тип | Описание |
 | --- | --- | -------- |
 | event.id | number | Идентификатор действия |
+| event.vacancy_external_data | object | Пример внешней вакансии |
+| event.vacancy_external_data.id | number | Идентификатор внешней вакансии |
+| event.vacancy_external_data.vacancy_id | number | Идентификатор вакансии |
+| event.vacancy_external_data.foreign | string | Внешний идентификатор внешней вакансии |
+| event.vacancy_external_data.data | string | Данные о внешней вакансии |
+| event.vacancy_external_data.state | string | Состояние внешней вакансии |
+| event.vacancy_external_data.created | datetime | Дата и время создания внешней вакансии |
+| event.vacancy_external_data.account_vacancy_external_data | object | Данные об организации внешней вакансии |
+| event.vacancy_external_data.account_vacancy_external_data.id | number | Идентификатор организации внешней вакансии |
 | event.state | string | Состояние события |
-| event.created | datetime	| Дата и время создания события |
-| event.updated | datetime	| Дата и время последнего обновления события |
+| event.created | datetime | Дата и время создания события |
+| event.updated | datetime | Дата и время последнего обновления события |
