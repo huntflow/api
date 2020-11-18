@@ -442,31 +442,16 @@
 | event.vacancy_external_data.data | string | Данные о внешней вакансии |
 | event.vacancy_external_data.state | string | Состояние внешней вакансии |
 | event.vacancy_external_data.created | datetime | Дата и время создания внешней вакансии |
-| event.vacancy_external_data.account_vacancy_external_data | object | Пример организации внешней вакансии |
-| event.vacancy_external_data.account_vacancy_external_data.id | number | Идентификатор организации внешней вакансии |
+| event.vacancy_external_data.account_vacancy_external_data | object | Пример внешней организации, в которой размещена внешняя вакансия |
+| event.vacancy_external_data.account_vacancy_external_data.id | number | Идентификатор внешней организации |
 | event.vacancy_external_data.account_vacancy_external_data.auth_type | string | Тип авторизации |
 | event.vacancy_external_data.account_vacancy_external_data.name | string | Имя сайта внешней организации |
-| event.vacancy_external_data.account_vacancy_external_data.account_source_data | object | Данные о внешней организации |
-| event.vacancy_external_data.account_vacancy_external_data.account_source_data.id | number | Идентификатор |
-| event.vacancy_external_data.account_vacancy_external_data.account_source_data.name | string | Название организации |
-| event.vacancy_external_data.account_vacancy_external_data.account_source_data.type | string | Тип организации |
-| event.vacancy_external_data.account_vacancy_external_data.account_source_data.foreign | string | Внешнее название организации |
-| event.data | object | Данные об откликнувшемся кандидате |
-| event.data.id | string | Идентификатор кандидата |
-| event.data.first_name | string | Имя кандидата |
-| event.data.last_name | string | Фамилия кандидата |
-| event.data.middle_name | string | Отчество кандидата |
-| event.data.position | string | Должность |
-| event.data.phone | string | Номер телефона кандидата |
-| event.data.email | string | Email кандидата |
-| event.data.created | datetime | Дата и время создания |
-| event.data.photo | string | Ссылка на фото кандидата |
-| event.data.resumes | object | Данные о резюме кандидата |
-| event.data.resumes.files | list | Список файлов |
-| event.data.resumes.files.name | string | Название файла |
-| event.data.resumes.files.url | string | Ссылка на файл |
-| event.data.resumes.data | object | Описание резюме |
-| event.data.resumes.body | string | Основное описание |
+| event.vacancy_external_data.account_vacancy_external_data.account_source_data | object | Данные об источнике резюме |
+| event.vacancy_external_data.account_vacancy_external_data.account_source_data.id | number | Идентификатор источника резюме |
+| event.vacancy_external_data.account_vacancy_external_data.account_source_data.name | string | Название источника резюме |
+| event.vacancy_external_data.account_vacancy_external_data.account_source_data.type | string | Тип источника (user – созданный пользователем, system – системный источник) |
+| event.vacancy_external_data.account_vacancy_external_data.account_source_data.foreign | string | Связь источника (используется только для системных источников) |
+| event.data | object | Данные об откликнувшемся кандидате (специфично для каждого работного сайта). (Работа с резюме)[https://github.com/huntflow/api/blob/5326e2a5d6c6e6f5bb302f52931af6253cbd9107/ru/externals.md]|
 | event.foreign | string | Внешний идентификатор отклика |
 | event.state | string | Состояние отклика |
 | event.created | datetime | Дата и время создания отклика |
