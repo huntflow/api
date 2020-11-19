@@ -379,7 +379,10 @@
         "id": 723,
         "vacancy_external": {
             "id": 1,
-            "vacancy_id": 3,
+            "vacancy": {
+                "id": 3,
+                "position": "Test vacancy"
+            },
             "foreign": "1605530460",
             "data": "Test Vac",
             "state": "PUBLISHED",
