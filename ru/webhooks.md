@@ -427,6 +427,10 @@
         "created": "2020-11-17T13:41:29+03:00",
         "updated": "2018-12-20T18:00:00+03:00",
         "resume": null
+    },
+    "account": {
+        "id": 5,
+        "name": "Test organization"
     }
 }
 ```
@@ -461,6 +465,8 @@
 | event.created | datetime | Дата и время создания отклика |
 | event.updated | datetime | Дата и время последнего обновления отклика |
 | event.resume | object | Резюме |
+| account.id | number | Идентификатор организации |
+| account.name | string | Название организации |
 
 
 ##### Состояния откликов
