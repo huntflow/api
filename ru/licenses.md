@@ -99,11 +99,11 @@
 
 Поле | Тип | Описание | Обязательность
 ---- | --- | -------- | --------------
-begin_at | unixtimestamp | Фактическая дата начала действия лицензии | Да
-end_at | unixtimestamp | Фактическая дата окончания действия лицензии | Нет 
-scheduled_begin_at | unixtimestamp | Планируемая дата начала действия лицензии | Да
-scheduled_end_at | unixtimestamp | Планируемая дата окончания действия лицензии | Нет
-created_at | unixtimestamp | Дата создания лицензии | Да
+begin_at | datetime | Фактическая дата начала действия лицензии | Да
+end_at | datetime | Фактическая дата окончания действия лицензии | Нет 
+scheduled_begin_at | datetime | Планируемая дата начала действия лицензии | Да
+scheduled_end_at | datetime | Планируемая дата окончания действия лицензии | Нет
+created_at | datetime | Дата создания лицензии | Да
 id | integer | Идентификатор лицензии | Да
 tariff_description | string | Описание тарифа | Да
 tariff_name | string | Название тарифа | Да
