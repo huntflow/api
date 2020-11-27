@@ -1,4 +1,4 @@
-## Получение информации о лицензии пользователя
+## Получение информации о лицензии организации
 
 `GET /account/{account_id}/license`
 
@@ -114,4 +114,3 @@ services[].name | string | Название услуги | Да
 services[].limits[] | array | Список лимитов услуги | Нет
 services[].limits[].limit_type_code | string | Идентификатор лимита (`active_service_count`) | Нет
 services[].limits[].value | float | Значение лимита | Нет
-
