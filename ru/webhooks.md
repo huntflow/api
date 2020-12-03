@@ -441,7 +441,7 @@
 |  Имя | Тип | Описание |
 | --- | --- | -------- |
 | event.id | number | Идентификатор отклика |
-| event.vacancy_external | object | Пример внешней вакансии |
+| event.vacancy_external | object | Данные внешней вакансии |
 | event.vacancy_external.id | number | Идентификатор внешней вакансии |
 | event.vacancy_external.vacancy | object | Информация о вакансии |
 | event.vacancy_external.vacancy.id | number | Идентификатор вакансии |
