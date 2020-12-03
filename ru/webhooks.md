@@ -458,7 +458,7 @@
 | event.vacancy_external.account_vacancy_external.account_source.id | number | Идентификатор источника резюме |
 | event.vacancy_external.account_vacancy_external.account_source.name | string | Название источника резюме |
 | event.vacancy_external.account_vacancy_external.account_source.type | string | Тип источника (user – созданный пользователем, system – системный источник) |
-| event.vacancy_external.account_vacancy_external.account_source.foreign | string | Связь источника (используется только для системных источников) |
+| event.vacancy_external.account_vacancy_external.account_source.foreign | string | Внешний идентификатор источника (используется только для системных источников) |
 | event.data | object | Данные об откликнувшемся кандидате (специфично для каждого работного сайта). [Работа с резюме](https://github.com/huntflow/api/blob/5326e2a5d6c6e6f5bb302f52931af6253cbd9107/ru/externals.md) |
 | event.foreign | string | Внешний идентификатор отклика |
 | event.state | string | Состояние отклика |
