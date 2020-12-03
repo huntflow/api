@@ -33,6 +33,7 @@
 ## Типы событий
  - APPLICANT — действия над кандидатом
  - VACANCY — действия по вакансиям
+ - RESPONSE — действия по откликам
  - PING — проверка на доступность вебхука
 
 
@@ -368,3 +369,110 @@
 | EDIT | Вакансия отредактирована |
 | JOIN | Пользователь присоединился к работе по вакансии (к событию будет добавлено поле `user`) |
 | LEAVE | Пользователь перестал работать по вакансии (к событию будет добавлено поле `user`) |
+
+
+### RESPONSE
+
+```json
+{
+    "event": {
+        "id": 723,
+        "vacancy_external": {
+            "id": 1,
+            "vacancy": {
+                "id": 3,
+                "position": "Test vacancy"
+            },
+            "foreign": "1605530460",
+            "data": "Test Vac",
+            "state": "PUBLISHED",
+            "account_vacancy_external": {
+                "id": 34,
+                "auth_type": "NATIVE",
+                "name": "Mocked Site",
+                "account_source": {
+                    "id": 16,
+                    "name": "Artstation",
+                    "type": "system",
+                    "foreign": "ARTSTATION"
+                }
+            },
+            "created": "2020-11-16T15:41:00+03:00"
+        },
+        "foreign": "21",
+        "data": {
+            "id": "21",
+            "first_name": "Валентин",
+            "last_name": "Сергеев",
+            "middle_name": "Сергеевич",
+            "position": "Developer",
+            "phone": "79001234521",
+            "email": "sergeev@example.com",
+            "created": "2018-12-20T18:00:00Z",
+            "photo": "https://huntflow.ru/static/i/template/appl1.jpeg",
+            "resumes": [
+                {
+                    "files": [
+                        {
+                            "name": "example.pdf",
+                            "url": "https://huntflow.ru/static/i/template/appl1.jpeg"
+                        }
+                    ],
+                    "data": {
+                        "body": "lorem ipsum body for example"
+                    }
+                }
+            ]
+        },
+        "state": "TAKEN",
+        "created": "2020-11-17T13:41:29+03:00",
+        "updated": "2018-12-20T18:00:00+03:00",
+        "resume": null
+    },
+    "account": {
+        "id": 5,
+        "name": "Test organization"
+    }
+}
+```
+
+- a.b обозначает объект a с ключом b
+
+
+|  Имя | Тип | Описание |
+| --- | --- | -------- |
+| event.id | number | Идентификатор отклика |
+| event.vacancy_external | object | Данные внешней вакансии |
+| event.vacancy_external.id | number | Идентификатор внешней вакансии |
+| event.vacancy_external.vacancy | object | Информация о вакансии |
+| event.vacancy_external.vacancy.id | number | Идентификатор вакансии |
+| event.vacancy_external.vacancy.position | string | Название вакансии (должности) |
+| event.vacancy_external.foreign | string | Внешний идентификатор внешней вакансии |
+| event.vacancy_external.data | string | Данные о внешней вакансии |
+| event.vacancy_external.state | string | Состояние внешней вакансии |
+| event.vacancy_external.created | datetime | Дата и время создания внешней вакансии |
+| event.vacancy_external.account_vacancy_external | object | Пример внешней организации, в которой размещена внешняя вакансия |
+| event.vacancy_external.account_vacancy_external.id | number | Идентификатор внешней организации |
+| event.vacancy_external.account_vacancy_external.auth_type | string | Тип авторизации |
+| event.vacancy_external.account_vacancy_external.name | string | Имя сайта внешней организации |
+| event.vacancy_external.account_vacancy_external.account_source | object | Данные об источнике резюме |
+| event.vacancy_external.account_vacancy_external.account_source.id | number | Идентификатор источника резюме |
+| event.vacancy_external.account_vacancy_external.account_source.name | string | Название источника резюме |
+| event.vacancy_external.account_vacancy_external.account_source.type | string | Тип источника (user – созданный пользователем, system – системный источник) |
+| event.vacancy_external.account_vacancy_external.account_source.foreign | string | Внешний идентификатор источника (используется только для системных источников) |
+| event.data | object | Данные об откликнувшемся кандидате (специфично для каждого работного сайта). [Работа с резюме](https://github.com/huntflow/api/blob/5326e2a5d6c6e6f5bb302f52931af6253cbd9107/ru/externals.md) |
+| event.foreign | string | Внешний идентификатор отклика |
+| event.state | string | Состояние отклика |
+| event.created | datetime | Дата и время создания отклика |
+| event.updated | datetime | Дата и время последнего обновления отклика |
+| event.resume | object | Резюме |
+| account.id | number | Идентификатор организации |
+| account.name | string | Название организации |
+
+
+##### Состояния откликов
+
+| Тип | Описание |
+| --- | -------- |
+| TAKEN | Отклик взят на вакансию |
+| REJECTED | Отклик отклонен |
