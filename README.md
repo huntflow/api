@@ -40,6 +40,7 @@
 * [Изменение структуры подразделений](ru/account_divisions.md)
 * [Справочники](ru/dictionaries.md)
 * [Отложенные задачи](ru/delayed_tasks.md)
+* [Лицензии](ru/licenses.md)
 * <a name="agency">Кадровые Агентства</a>
   * [Клиенты](ru/agency_clients.md)
   * [Заявки на вакансии](ru/agency_vacancy_requests.md)
