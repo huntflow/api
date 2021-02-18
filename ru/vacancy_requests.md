@@ -1,6 +1,6 @@
 # Работа с заявками
 
-* [Получние списка схем заявки на вакансию](#account-vacancy-request-list)
+* [Получение списка схем заявки на вакансию](#account-vacancy-request-list)
 * [Получение схемы заявки на вакансию](#account-vacancy-request-view)
 * [Получение списка заявок на вакансию](#vacancy-request-list)
 * [Получение заявки на вакансию](#vacancy-request-view)
@@ -124,7 +124,15 @@ schema | [Описание полей схемы](schema.md)
                 "email": "demo@org.com"
             },
             "position": "position",
-            "id": 10
+            "id": 10,
+            "files": [
+                {
+                    "id": 42,
+                    "name": "Снимок экрана 2021-02-01 в 00.00.00.png",
+                    "content_type": "image/png",
+                    "url": "https://store.huntflow.ru/uploads/f/f/h/ffhov94xuqytbl16u8b9l3oeewdjpyoc.png"
+                }
+            ]
         },
         {
             "status": "approved",
@@ -215,6 +223,10 @@ account_info.name | Имя пользователя, создавшего зая
 account_info.email | Email пользователя, создавшего заявку
 position | Название позиции
 id | Идентификатор заявки
+files[].id | Идентификатор файла, прикрепленного к заявке на вакансию
+files[].name | Имя файла
+files[].content_type | Тип файла
+files[].url | Ссылка на файл
 
 <a name="vacancy-request-statuses"></a>
 ## Статусы заявки
@@ -246,7 +258,8 @@ rejected | Отказано
     "money": "25000",
     "hard_skills": "Опыт руководства производством не менее 80 лет",
     "soft_skills": "Коммуникабельность, целеустремленность, стрессоустойчивость",
-    "comment": "ASAP"
+    "comment": "ASAP",
+    "files": [1, 2, 3]
 }
 ```
 
@@ -276,6 +289,8 @@ rejected | Отказано
 Поле `attendees[].displayName` опционально. Заявка будет отправлена сначала первому согласующему, а после подтверждения – второму.
 
 `account_vacancy_request` – идентификатор формы заявки на вакансию, которую можно получить [здесь](#account-vacancy-request-list).
+
+`files` - список файлов, прикрепленных к вакансии ([загрузка файлов](upload.md)) 
 
 Допускается два варианта передачи полей справочников (в том числе подразделений):
 
