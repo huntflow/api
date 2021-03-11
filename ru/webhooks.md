@@ -476,3 +476,100 @@
 | --- | -------- |
 | TAKEN | Отклик взят на вакансию |
 | REJECTED | Отклик отклонен |
+
+
+### OFFER
+
+```json
+{
+  "event": {
+    "id": 17,
+    "applicant_offer": {
+      "id": 10,
+      "created": "2021-03-03 22:38:40",
+      "account_applicant_offer": {
+        "last_name": "Last",
+        "first_name": "First",
+        "middle_name": "qwe",
+        "cv_from": 2653,
+        "position_name": 8765,
+        "account_division": 7982,
+        "division": 10674,
+        "schedule": 8762,
+        "money": null,
+        "money_partly": null,
+        "grade": 8787,
+        "contract": 1234,
+        "probation": 4646,
+        "address": 10673,
+        "compensation": "<ul><li>compensation</li></ul>",
+        "_relocation": {
+          "relocation": "Нет",
+          "relocation_bonus": null
+        },
+        "offer_date": "03.03.2021",
+        "cost_center": 4665,
+        "approval": [
+          10527
+        ],
+        "approval_comment": null,
+        "evaluate": 10526,
+        "_guidelist": {
+          "guidelist": "Нет",
+          "replaced_name_decret": null,
+          "surcharge": null,
+          "func_manager": null,
+          "project_name": null,
+          "project_finish": null,
+          "dms": null,
+          "employment_date": null,
+          "reg_date": null,
+          "reg_time": null,
+          "guidelist_comment": null,
+          "reg_employee": null
+        },
+        "id": 14
+      }
+    },
+    "type": "EDIT",
+    "created": "2021-03-03T22:39:22+03:00"
+  },
+  "account": {
+    "id": 5,
+    "name": "Test organization"
+  },
+  "author": {
+    "id": 1,
+    "name": "Test author",
+    "email": "test@example.com",
+    "meta": null
+  }
+}
+```
+
+- a.b обозначает объект a с ключом b
+
+
+|  Имя | Тип | Описание |
+| --- | --- | -------- |
+| event.id | number | Идентификатор действия |
+| event.type | string | [Тип действия](#offer-action-types) |
+| event.applicant_offer.id | number | Идентификатор выставленного оффера |
+| event.applicant_offer.account_applicant_offer | object | Тело оффера организации |
+| event.applicant_offer.created | datetime | Дата и время выставления оффера |
+| event.created | datetime	| Дата и время создания события |
+| author.id | number | Идентификатор автора действия |
+| author.name | string | Имя автора действия |
+| author.email | string | Email автора действия |
+| account.id | number | Идентификатор организации |
+| account.name | string | Название организации |
+
+
+<a name="offer-action-types"></a>
+
+##### Тип действия с оффером
+
+| Тип | Описание |
+| --- | -------- |
+| ADD | Оффер выставлен |
+| EDIT | Оффер отредактирован |
