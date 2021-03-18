@@ -339,7 +339,7 @@ Technically, webhook is a POST request, that out system sends to your remote ser
 | event.type | string | [Action type](#offer-action-types) |
 | event.applicant_offer.id | number | Offer ID |
 | event.applicant_offer.account_applicant_offer | object | Body of the company offer |
-| event.applicant_offer.created | datetime | Date and time of creating when the offer was created
+| event.applicant_offer.created | datetime | Date and time when the offer was created
 | event.created | datetime	| Date and time of creating an event |
 | author.id | number | Action author ID |
 | author.name | string | Action author name |
