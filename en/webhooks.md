@@ -27,6 +27,7 @@ Technically, webhook is a POST request, that out system sends to your remote ser
 ## Event types
  - APPLICANT — actions with a candidate
  - VACANCY — actions with vacancies 
+ - OFFER - actions with offers
  - PING — check of validity of a webhook
 
 
@@ -258,3 +259,100 @@ Technically, webhook is a POST request, that out system sends to your remote ser
 | EDIT | The vacancy is edited |
 | JOIN | The user has joined the work on vacancy (event will have a field `user` added) |
 | LEAVE | The user stopped working on a vacancy (event will have a field `user` added) |
+
+
+### OFFER
+
+```json
+{
+  "event": {
+    "id": 17,
+    "applicant_offer": {
+      "id": 10,
+      "created": "2021-03-03 22:38:40",
+      "account_applicant_offer": {
+        "last_name": "Last",
+        "first_name": "First",
+        "middle_name": "qwe",
+        "cv_from": 2653,
+        "position_name": 8765,
+        "account_division": 7982,
+        "division": 10674,
+        "schedule": 8762,
+        "money": null,
+        "money_partly": null,
+        "grade": 8787,
+        "contract": 1234,
+        "probation": 4646,
+        "address": 10673,
+        "compensation": "<ul><li>compensation</li></ul>",
+        "_relocation": {
+          "relocation": "Нет",
+          "relocation_bonus": null
+        },
+        "offer_date": "03.03.2021",
+        "cost_center": 4665,
+        "approval": [
+          10527
+        ],
+        "approval_comment": null,
+        "evaluate": 10526,
+        "_guidelist": {
+          "guidelist": "Нет",
+          "replaced_name_decret": null,
+          "surcharge": null,
+          "func_manager": null,
+          "project_name": null,
+          "project_finish": null,
+          "dms": null,
+          "employment_date": null,
+          "reg_date": null,
+          "reg_time": null,
+          "guidelist_comment": null,
+          "reg_employee": null
+        },
+        "id": 14
+      }
+    },
+    "type": "EDIT",
+    "created": "2021-03-03T22:39:22+03:00"
+  },
+  "account": {
+    "id": 5,
+    "name": "Test organization"
+  },
+  "author": {
+    "id": 1,
+    "name": "Test author",
+    "email": "test@example.com",
+    "meta": null
+  }
+}
+```
+
+- a.b denotes an object 'a' with a 'b' key
+
+
+|  Name | Type | Description |
+| --- | --- | -------- |
+| event.id | number | Action ID |
+| event.type | string | [Action type](#offer-action-types) |
+| event.applicant_offer.id | number | Offer ID |
+| event.applicant_offer.account_applicant_offer | object | Body of the company offer |
+| event.applicant_offer.created | datetime | Date and time when the offer was created
+| event.created | datetime	| Date and time of creating an event |
+| author.id | number | Action author ID |
+| author.name | string | Action author name |
+| author.email | string | Action author email |
+| account.id | number | Company ID |
+| account.name | string | Company name |
+
+
+<a name="offer-action-types"></a>
+
+##### Offer action types
+
+| Type | Description |
+| --- | -------- |
+| ADD | Offer added |
+| EDIT | Offer edited |
