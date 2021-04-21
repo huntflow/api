@@ -1,0 +1,587 @@
+{
+	"info": {
+		"_postman_id": "e5c445c9-7cc3-4d29-aed9-bf7a6d3a1471",
+		"name": "api.huntflow.ru",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/me",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/me",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/accounts",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/production_calendar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/production_calendar",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"production_calendar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/account/{account_id}/tag",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/account/:account_id/tag",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"account",
+						":account_id",
+						"tag"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "count",
+							"value": "30",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/account/{account_id}/applicant/sources",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/account/:account_id/applicant/sources",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"account",
+						":account_id",
+						"applicant",
+						"sources"
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/account/{account_id}/rejection_reasons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/account/:account_id/rejection_reasons",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"account",
+						":account_id",
+						"rejection_reasons"
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/account/{account_id}/vacancy/statuses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/account/:account_id/vacancy/statuses",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"account",
+						":account_id",
+						"vacancy",
+						"statuses"
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/account/{account_id}/applicants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/account/:account_id/applicants?page=1&count=30",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"account",
+						":account_id",
+						"applicants"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "count",
+							"value": "30"
+						}
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/account/{account_id}/applicants/{applicant_id}/log",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/account/:account_id/applicants/:applicant_id/log?page=1&count=100",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"account",
+						":account_id",
+						"applicants",
+						":applicant_id",
+						"log"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "count",
+							"value": "100"
+						}
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": ""
+						},
+						{
+							"key": "applicant_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/account/{account_id}/applicants/{applicant_id}/external/{external_id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/account/:account_id/applicants/:applicant_id/external/:external_id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"account",
+						":account_id",
+						"applicants",
+						":applicant_id",
+						"external",
+						":external_id"
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": ""
+						},
+						{
+							"key": "applicant_id",
+							"value": ""
+						},
+						{
+							"key": "external_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/account/{account_id}/vacancies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/account/:account_id/vacancies?page=1&count=100",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"account",
+						":account_id",
+						"vacancies"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "count",
+							"value": "100"
+						}
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/account/{account_id}/vacancies/{vacancy_id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/account/:account_id/vacancies/:vacancy_id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"account",
+						":account_id",
+						"vacancies",
+						":vacancy_id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "count",
+							"value": "100",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": ""
+						},
+						{
+							"key": "vacancy_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/account/{account_id}/vacancy/{vacancy_id}/quotas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/account/:account_id/vacancy/:vacancy_id/quotas?page=1&count=100",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"account",
+						":account_id",
+						"vacancy",
+						":vacancy_id",
+						"quotas"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "count",
+							"value": "100"
+						}
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": ""
+						},
+						{
+							"key": "vacancy_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/account/{account_id}/applicants/questionary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/account/:account_id/applicants/questionary",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"account",
+						":account_id",
+						"applicants",
+						"questionary"
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/account/{account_id}/applicants/{applicant_id}/questionary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/account/:account_id/applicants/:applicant_id/questionary?normalize=True",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"account",
+						":account_id",
+						"applicants",
+						":applicant_id",
+						"questionary"
+					],
+					"query": [
+						{
+							"key": "normalize",
+							"value": "True"
+						}
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": ""
+						},
+						{
+							"key": "applicant_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/vacancies/{vacancy_id}/responses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/vacancies/:vacancy_id/responses",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"vacancies",
+						":vacancy_id",
+						"responses"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "count",
+							"value": "10",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "vacancy_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/vacancies/{vacancy_id}/responses/{response_id}/letters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/vacancies/:vacancy_id/responses/:response_id/letters",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"vacancies",
+						":vacancy_id",
+						"responses",
+						":response_id",
+						"letters"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "count",
+							"value": "10",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "vacancy_id",
+							"value": ""
+						},
+						{
+							"key": "response_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "api.huntflow.ru"
+		},
+		{
+			"key": "bearerToken",
+			"value": ""
+		}
+	]
+}
