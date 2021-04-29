@@ -406,7 +406,7 @@ Technically, webhook is a POST request, that out system sends to your remote ser
 | event.vacancy.grade.name | string | The name of the value from a directory |
 | event.vacancy.grade.foreign | string | Value ID in the external system (can be `null`) |
 | event.vacancy.created | string | Date and time of creating a vacancy |
-| event.created | datetime	| Date and time of creating an action |
+| event.created | datetime	| Date and time of creating an event |
 | author.id | number | Action author ID |
 | author.name | string | Action author name |
 | author.email | string | Action author email |
