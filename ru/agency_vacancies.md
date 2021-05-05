@@ -117,7 +117,8 @@ status | bool | Флаг успешной операции
             "applicants_to_hire": 1,
             "created": "2017-03-22T18:16:27+03:00",
             "priority": 0,
-            "state": "OPEN"
+            "state": "OPEN",
+            "company": "Название компании"
         },
         {
             "id": 4530,
@@ -126,7 +127,8 @@ status | bool | Флаг успешной операции
             "applicants_to_hire": 1,
             "created": "2017-03-22T18:16:27+03:00",
             "priority": 0,
-            "state": "CLOSED"
+            "state": "CLOSED",
+            "company": "Название компании"
         }
     ],
     "total": 2,
@@ -146,6 +148,7 @@ status | bool | Флаг успешной операции
  created | datetime | Дата и время создания вакансии
  priority | number | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий))
  state | string | Состояние вакансии
+ company | string| Название компании
 
 
 <a name="vacancy-view"></a>
@@ -167,6 +170,7 @@ status | bool | Флаг успешной операции
     "body": "Обязанности",
     "requirements": "Требования",
     "conditions": "Условия работы",
+    "client": 1,
     "files": [
         {
             "id": 15808,
@@ -186,3 +190,4 @@ status | bool | Флаг успешной операции
  requirements | string | Требования в формате HTML
  conditions | string | Условия работы в формате HTML
  files | array | Список файлов, прикрепленных к вакансии
+ client | number | Идентификатор клиента
