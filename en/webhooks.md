@@ -405,6 +405,13 @@ Technically, webhook is a POST request, that out system sends to your remote ser
 | event.vacancy.grade.id | number | The ID of the value from the directory |
 | event.vacancy.grade.name | string | The name of the value from a directory |
 | event.vacancy.grade.foreign | string | Value ID in the external system (can be `null`) |
+| event.vacancy.fill_quotas.id | number | Fill quota ID |
+| event.vacancy.fill_quotas.applicants_to_hire | number | Number of applicants to hire |
+| event.vacancy.fill_quotas.deadline | string | Date and time of deadline |
+| event.vacancy.fill_quotas.vacancy_request | object | Vacancy request ID |
+| event.vacancy.fill_quotas.created | string | Date and time of creating fill quota |
+| event.vacancy.fill_quotas.closed | string | Date and time of closing fill quota |
+| event.vacancy.frame_id | number | Frame ID |
 | event.vacancy.created | string | Date and time of creating a vacancy |
 | event.created | datetime	| Date and time of creating an event |
 | author.id | number | Action author ID |

@@ -623,6 +623,13 @@
 | event.vacancy.grade.id | number | Идентификатор значения из справочника |
 | event.vacancy.grade.name | string | Название значения из справочника |
 | event.vacancy.grade.foreign | string | Идентификатор значения во внешней системе (может быть `null`) |
+| event.vacancy.fill_quotas.id | number | Идентификатор квоты |
+| event.vacancy.fill_quotas.applicants_to_hire | number | Количество кандидатов к найму |
+| event.vacancy.fill_quotas.deadline | string | Дата и время дедлайна |
+| event.vacancy.fill_quotas.vacancy_request | object | Идентификатор запроса на вакансию |
+| event.vacancy.fill_quotas.created | string | Дата и время создания квоты |
+| event.vacancy.fill_quotas.closed | string | Дата и время закрытия квоты |
+| event.vacancy.frame_id | number | Идентификатор фрейма |
 | event.vacancy.created | datetime | Дата и время создания вакансии |
 | event.created | datetime	| Дата и время создания события |
 | author.id | number | Идентификатор автора действия |
