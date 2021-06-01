@@ -530,7 +530,47 @@
           "reg_employee": null
         },
         "id": 14
-      }
+      },
+      "applicant": {
+        "id": 1,
+        "first_name": "Иванов",
+        "last_name": "Иван",
+        "middle_name": "Иванович",
+        "birthday": "1970-01-01",
+        "photo": {
+          "id": 1307833,
+          "content_type": "image/png",
+          "name": "477233672.png",
+          "url": "https://store.huntflow.ru/uploads/named/4/8/5/485cc4914d214065784507b1275fc143.png/477233672.png?s=7hq2usgld1uqC9k5-AcwkA&e=1504005423"
+        }
+      },
+      "vacancy": {
+        "created": "2017-10-19",
+        "money": null,
+        "company": null,
+        "priority": 0,
+        "state": "OPEN",
+        "deadline": null,
+        "account_division": {
+          "id": 1,
+          "name": "name"
+        },
+        "account_region": {
+          "id": 1,
+          "name": "name"
+        },
+        "grade": {
+          "foreign": "202301",
+          "id": 7,
+          "name": "1.2"
+        },
+        "position": "Разработчик интерфейсов",
+        "body": "<p>Обязанности</p>",
+        "requirements": "<p>Требования</p>",
+        "conditions": "<p>Условия</p>",
+        "hidden": false,
+        "id": 28
+        }
     },
     "type": "EDIT",
     "created": "2021-03-03T22:39:22+03:00"
@@ -558,6 +598,39 @@
 | event.applicant_offer.id | number | Идентификатор выставленного оффера |
 | event.applicant_offer.account_applicant_offer | object | Тело оффера организации |
 | event.applicant_offer.created | datetime | Дата и время выставления оффера |
+| event.applicant.id | number | Идентификатор кандидата |
+| event.applicant.first_name | string | Имя кандидата |
+| event.applicant.last_name | string | Фамилия кандидата |
+| event.applicant.middle_name | string | Отчество кандидата |
+| event.applicant.birthday | date | Дата рождения кандидата |
+| event.applicant.photo.url | string | Ссылка на фотографию кандидата |
+| event.vacancy.id | number | Идентификатор вакансии |
+| event.vacancy.position | string | Название вакансии (должности) |
+| event.vacancy.company | string | Отдел, подразделение (`null`, если подключены подразделения) |
+| event.vacancy.money | string | Зарплата |
+| event.vacancy.state | string | Статус вакансии |
+| event.vacancy.hidden | bool | Скрыта ли вакансия от коллег |
+| event.vacancy.priority | number | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий)) |
+| event.vacancy.deadline | date | Дата дедлайна по вакансии |
+| event.vacancy.account_division.id | number | Идентификатор подразделения (если подразделения подключены) |
+| event.vacancy.account_division.name | string | Название подразделения (если подразделения подключены) |
+| event.vacancy.account_region.id | number | Идентификатор региона (если регионы подключены) |
+| event.vacancy.account_region.name | string | Название региона (если регионы подключены) |
+| event.vacancy.body | string | Обязанности в формате HTML |
+| event.vacancy.requirements | string | Требования в формате HTML |
+| event.vacancy.conditions | string | Условия в формате HTML |
+| event.vacancy.grade | object | Пример внедренного дополнительного поля вакансии типа элемент справочника
+| event.vacancy.grade.id | number | Идентификатор значения из справочника |
+| event.vacancy.grade.name | string | Название значения из справочника |
+| event.vacancy.grade.foreign | string | Идентификатор значения во внешней системе (может быть `null`) |
+| event.vacancy.fill_quotas.id | number | Идентификатор квоты |
+| event.vacancy.fill_quotas.applicants_to_hire | number | Количество кандидатов к найму |
+| event.vacancy.fill_quotas.deadline | string | Дата и время дедлайна |
+| event.vacancy.fill_quotas.vacancy_request | object | Идентификатор запроса на вакансию |
+| event.vacancy.fill_quotas.created | string | Дата и время создания квоты |
+| event.vacancy.fill_quotas.closed | string | Дата и время закрытия квоты |
+| event.vacancy.frame_id | number | Идентификатор фрейма |
+| event.vacancy.created | datetime | Дата и время создания вакансии |
 | event.created | datetime	| Дата и время создания события |
 | author.id | number | Идентификатор автора действия |
 | author.name | string | Имя автора действия |
