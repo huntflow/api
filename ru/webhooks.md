@@ -129,7 +129,8 @@
             "timezone": "Europe/Moscow",
             "name": "Интервью: Кораллов Михаил – Менеджер по продажам"
         },
-        "created": "2017-08-22T18:16:27+03:00"
+        "created": "2017-08-22T18:16:27+03:00",
+        "removed": null
     },
     "agreement": {
         "state": "not_sent",
@@ -204,6 +205,7 @@
 | event.calendar_event.location | string | Географическое местоположение события |
 | event.calendar_event.transparency | string | [Доступность события](#event-transparency) |
 | event.created | datetime	| Дата и время создания события |
+| event.removed | datetime	| Дата и время удаления события |
 | event.agreement.state | string | [Состояние согласия на хранение Персональных Данных](#pd-agreement-state). Возвращается, если включен модуль Персональных Данных |
 | event.agreement.decision_date | datetime | Дата принятия решения по хранению Персональных Данных. Возвращается, если включен модуль Персональных Данных |
 | author.id | number | Идентификатор автора действия |

@@ -97,7 +97,8 @@ Technically, webhook is a POST request, that out system sends to your remote ser
             "name": "Does not meet the qualifications"
         },
         "comment": null,
-        "created": "2017-08-22T18:16:27+03:00"
+        "created": "2017-08-22T18:16:27+03:00",
+        "removed": null
     },
     "agreement": {
         "state": "not_sent",
@@ -147,6 +148,7 @@ Technically, webhook is a POST request, that out system sends to your remote ser
 | event.rejection_reason.name | string | The name of the rejection reason |
 | event.comment | string | Comment text |
 | event.created | date+time	| Date and time of making an action |
+| event.removed | date+time	| Date and time of deleting an action |
 | author.id | number | Action author ID |
 | author.name | string | Action author name |
 | author.email | string | Action authoe email address |
