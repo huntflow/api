@@ -36,6 +36,13 @@
  - RESPONSE — действия по откликам
  - OFFER - действия по офферам
  - PING — проверка на доступность вебхука
+ 
+<a name="event-action-types"></a>
+ 
+## Типы действий над событиями
+ - ADD — событие добавлено
+ - EDIT — событие изменено
+ - DELETE — событие удалено
 
 
 ## Заголовки вебхука
@@ -144,7 +151,8 @@
     "account": {
         "id": 6,
         "name": "San Carlos Recruitment"
-    }
+    },
+    "action": "ADD"
 }
 ```
 
@@ -213,6 +221,7 @@
 | author.email | string | Email автора действия |
 | account.id | number | Идентификатор организации |
 | account.name | string | Название организации |
+| action | string | [Тип действия над событием](#event-action-types) |
 
 <a name="action-types"></a>
 

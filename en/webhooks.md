@@ -29,6 +29,13 @@ Technically, webhook is a POST request, that out system sends to your remote ser
  - VACANCY — actions with vacancies 
  - OFFER - actions with offers
  - PING — check of validity of a webhook
+ 
+<a name="event-action-types"></a>
+
+## Event action types
+ - ADD — event added
+ - EDIT — event edited
+ - DELETE — event deleted
 
 
 ## Webhook headers
@@ -112,7 +119,8 @@ Technically, webhook is a POST request, that out system sends to your remote ser
     "account": {
         "id": 6,
         "name": "San Carlos Recruitment"
-    }
+    },
+    "action": "ADD"
 }
 ```
 
@@ -154,6 +162,7 @@ Technically, webhook is a POST request, that out system sends to your remote ser
 | author.email | string | Action authoe email address |
 | account.id | number | Company ID |
 | account.name | string | Company name |
+| action | string | [Event action type](#event-action-types) |
 
 <a name="action-types"></a>
 
