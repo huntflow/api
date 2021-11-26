@@ -196,119 +196,176 @@
  
 <summary>APPLICANT</summary>
  
- ```
- {'changes': {},
- 'event': {'applicant': {'birthday': None,
-                         'company': None,
-                         'email': None,
-                         'first_name': 'test_name',
-                         'last_name': 'test',
-                         'middle_name': None,
-                         'money': None,
-                         'pd_agreement': None,
-                         'phone': None,
-                         'photo': None,
-                         'position': None,
-                         'questionary': '2021-10-05 10:57:42',
-                         'skype': None,
-                         'social': [{'id': 1,
-                                     'social_type': 'TELEGRAM',
-                                     'value': 'some_tg',
-                                     'verification_date': None,
-                                     'verified': False}],
-                         'values': {'_reason': {'reason': 'Замена',
-                                                'reason_replacement': 'sdG345'},
-                                    'category': {'foreign': '2',
-                                                 'id': 3219,
-                                                 'meta': {'show': True},
-                                                 'name': 'Руководитель'},
-                                    'category_1': 'sdgsg',
-                                    'category_2': 'sdgsdg',
-                                    'category_3': 'sdgsdg',
-                                    'multi': [{'foreign': '3',
-                                               'id': 3220,
-                                               'meta': {'show': False},
-                                               'name': 'Специалист'},
-                                              {'foreign': '4',
-                                               'id': 3221,
-                                               'meta': {'show': False},
-                                               'name': 'Рабочий персонал'}],
-                                    'multi_1': 'dfgsd',
-                                    'multi_2': 'sdfgsdfg',
-                                    'multi_3': 'dsfgii'}},
-           'applicant_log': {'calendar_event': {'all_day': False,
-                                                'attendees': [{'contact_id': 1,
-                                                               'displayName': 'tst_name',
-                                                               'email': 'tst@example.com',
-                                                               'member': 13,
-                                                               'name': 'tst_name',
-                                                               'order': 1,
-                                                               'resource': False,
-                                                               'responseStatus': 'needsAction'}],
-                                                'created': '2021-10-05T06:00:21+03:00',
-                                                'creator': {'displayName': None,
-                                                            'email': 'tst@example.com',
-                                                            'self': True},
-                                                'description': 'fgd',
-                                                'end': '2021-10-05T13:00:19+03:00',
-                                                'etag': '1633413621888',
-                                                'event_type': 'interview',
-                                                'foreign': '20211005T060021_HF_12_9_true',
-                                                'id': 2,
-                                                'interview_type': 45,
-                                                'location': None,
-                                                'name': 'Интервью: test '
-                                                        'test_name – fdg',
-                                                'recurrence': [],
-                                                'reminders': [{'method': 'popup',
-                                                               'minutes': 15}],
-                                                'start': '2021-10-05T12:00:19+03:00',
-                                                'state': 'SENT',
-                                                'status': 'confirmed',
-                                                'timezone': 'Europe/Moscow',
-                                                'transparency': 'busy'},
-                             'comment': None,
-                             'created': '2021-10-05T11:00:21+03:00',
-                             'employment_date': '2021-10-05T06:00:21+03:00',
-                             'files': [],
-                             'id': 37,
-                             'rejection_reason': None,
-                             'removed': None,
-                             'source': None,
-                             'status': None,
-                             'survey_answer_of_type_a': None,
-                             'type': 'COMMENT',
-                             'vacancy': {'account_division': None,
-                                         'account_region': None,
-                                         'applicants_to_hire': 1,
-                                         'company': 'jkl',
-                                         'created': '2021-10-05',
-                                         'deadline': None,
-                                         'fill_quotas': [{'applicants_to_hire': 1,
-                                                          'closed': None,
-                                                          'created': '2021-10-05 '
-                                                                     '10:49:22',
-                                                          'deadline': None,
-                                                          'id': 9,
-                                                          'vacancy_request': None}],
-                                         'frame_id': 9,
-                                         'hidden': False,
-                                         'id': 9,
-                                         'money': '325',
-                                         'multiple': False,
-                                         'parent': None,
-                                         'position': 'fdg',
-                                         'priority': 0,
-                                         'state': 'OPEN',
-                                         'values': {}},
-                             'vacancy_group_action': None}},
- 'meta': {'account': {'id': 14, 'name': 'tst', 'nick': 'tsthr'},
-          'author': {'email': 'tst@example.com', 'meta': {}, 'id': 13, 'name': 'tst_name'},
-          'event_type': 'APPLICANT',
-          'payload_id': 8,
-          'retry': 0,
-          'version': '2.0',
-          'webhook_action': 'ADD'}}
+ ```json
+ {
+   "changes": {},
+   "event": {
+     "applicant": {
+       "birthday": null,
+       "company": null,
+       "email": null,
+       "first_name": "test_name",
+       "last_name": "test",
+       "middle_name": null,
+       "money": null,
+       "pd_agreement": null,
+       "phone": null,
+       "photo": null,
+       "position": null,
+       "questionary": "2021-10-05 10:57:42",
+       "skype": null,
+       "social": [
+         {
+           "id": 1,
+           "social_type": "TELEGRAM",
+           "value": "some_tg",
+           "verification_date": null,
+           "verified": false
+         }
+       ],
+       "values": {
+         "_reason": {
+           "reason": "Замена",
+           "reason_replacement": "sdG345"
+         },
+         "category": {
+           "foreign": "2",
+           "id": 3219,
+           "meta": {
+             "show": true
+           },
+           "name": "Руководитель"
+         },
+         "category_1": "sdgsg",
+         "category_2": "sdgsdg",
+         "category_3": "sdgsdg",
+         "multi": [
+           {
+             "foreign": "3",
+             "id": 3220,
+             "meta": {
+               "show": false
+             },
+             "name": "Специалист"
+           },
+           {
+             "foreign": "4",
+             "id": 3221,
+             "meta": {
+               "show": false
+             },
+             "name": "Рабочий персонал"
+           }
+         ],
+         "multi_1": "dfgsd",
+         "multi_2": "sdfgsdfg",
+         "multi_3": "dsfgii"
+       }
+     },
+     "applicant_log": {
+       "calendar_event": {
+         "all_day": false,
+         "attendees": [
+           {
+             "contact_id": 1,
+             "displayName": "tst_name",
+             "email": "tst@example.com",
+             "member": 13,
+             "name": "tst_name",
+             "order": 1,
+             "resource": false,
+             "responseStatus": "needsAction"
+           }
+         ],
+         "created": "2021-10-05T06:00:21+03:00",
+         "creator": {
+           "displayName": null,
+           "email": "tst@example.com",
+           "self": true
+         },
+         "description": "fgd",
+         "end": "2021-10-05T13:00:19+03:00",
+         "etag": "1633413621888",
+         "event_type": "interview",
+         "foreign": "20211005T060021_HF_12_9_true",
+         "id": 2,
+         "interview_type": 45,
+         "location": null,
+         "name": "Интервью: test test_name – fdg",
+         "recurrence": [],
+         "reminders": [
+           {
+             "method": "popup",
+             "minutes": 15
+           }
+         ],
+         "start": "2021-10-05T12:00:19+03:00",
+         "state": "SENT",
+         "status": "confirmed",
+         "timezone": "Europe/Moscow",
+         "transparency": "busy"
+       },
+       "comment": null,
+       "created": "2021-10-05T11:00:21+03:00",
+       "employment_date": "2021-10-05T06:00:21+03:00",
+       "files": [],
+       "id": 37,
+       "rejection_reason": null,
+       "removed": null,
+       "source": null,
+       "status": null,
+       "survey_answer_of_type_a": null,
+       "type": "COMMENT",
+       "vacancy": {
+         "account_division": null,
+         "account_region": null,
+         "applicants_to_hire": 1,
+         "company": "jkl",
+         "created": "2021-10-05",
+         "deadline": null,
+         "fill_quotas": [
+           {
+             "applicants_to_hire": 1,
+             "closed": null,
+             "created": "2021-10-05 10:49:22",
+             "deadline": null,
+             "id": 9,
+             "vacancy_request": null
+           }
+         ],
+         "frame_id": 9,
+         "hidden": false,
+         "id": 9,
+         "money": "325",
+         "multiple": false,
+         "parent": null,
+         "position": "fdg",
+         "priority": 0,
+         "state": "OPEN",
+         "values": {}
+       },
+       "vacancy_group_action": null
+     }
+   },
+   "meta": {
+     "account": {
+       "id": 14,
+       "name": "tst",
+       "nick": "tsthr"
+     },
+     "author": {
+       "email": "tst@example.com",
+       "meta": {},
+       "id": 13,
+       "name": "tst_name"
+     },
+     "event_type": "APPLICANT",
+     "payload_id": 8,
+     "retry": 0,
+     "version": "2.0",
+     "webhook_action": "ADD"
+   }
+ }
  ```
  
  
