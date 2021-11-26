@@ -94,7 +94,7 @@
 
      - `version` (тип `str`) – версия схемы вебхука (например, `2.0`)
 
-     - `webhook_action` (тип `str`) – тип действия, вызвавшего вебхук (добавление – `ADD`, изменение – `EDIT`, удаление – `DELETE`). `EDIT` используется только в вебхуках типа `APPLICANT`.
+     - `webhook_action` (тип `str`) – тип действия, вызвавшего вебхук (добавление – `ADD`, изменение – `EDIT`, удаление – `DELETE`). `EDIT`, на данный момент, используется только в вебхуках типа `APPLICANT`.
  
 ### Пример
 
@@ -791,7 +791,7 @@
  
    
  <details>
-  <summary> APPLICANT_OFFER </summary>
+  <summary> OFFER </summary>
   
   ```
   {'changes': {},
@@ -1316,7 +1316,7 @@
 </details>
  
 <details>
-<summary> APPLICANT_OFFER  </summary>
+<summary> OFFER  </summary>
 
 ```json
 {
