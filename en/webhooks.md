@@ -312,7 +312,47 @@ Technically, webhook is a POST request, that out system sends to your remote ser
           "reg_employee": null
         },
         "id": 14
-      }
+      },
+      "applicant": {
+        "id": 1,
+        "first_name": "Иванов",
+        "last_name": "Иван",
+        "middle_name": "Иванович",
+        "birthday": "1970-01-01",
+        "photo": {
+          "id": 1307833,
+          "content_type": "image/png",
+          "name": "477233672.png",
+          "url": "https://store.huntflow.ru/uploads/named/4/8/5/485cc4914d214065784507b1275fc143.png/477233672.png?s=7hq2usgld1uqC9k5-AcwkA&e=1504005423"
+        }
+      },
+      "vacancy": {
+        "created": "2017-10-19",
+        "money": null,
+        "company": null,
+        "priority": 0,
+        "state": "OPEN",
+        "deadline": null,
+        "account_division": {
+          "id": 1,
+          "name": "name"
+        },
+        "account_region": {
+          "id": 1,
+          "name": "name"
+        },
+        "grade": {
+          "foreign": "202301",
+          "id": 7,
+          "name": "1.2"
+        },
+        "position": "Разработчик интерфейсов",
+        "body": "<p>Обязанности</p>",
+        "requirements": "<p>Требования</p>",
+        "conditions": "<p>Условия</p>",
+        "hidden": false,
+        "id": 28
+        }
     },
     "type": "EDIT",
     "created": "2021-03-03T22:39:22+03:00"
@@ -340,6 +380,39 @@ Technically, webhook is a POST request, that out system sends to your remote ser
 | event.applicant_offer.id | number | Offer ID |
 | event.applicant_offer.account_applicant_offer | object | Body of the company offer |
 | event.applicant_offer.created | datetime | Date and time when the offer was created
+| event.applicant.id | number | Candidate ID |
+| event.applicant.first_name | string | Candidate's first name |
+| event.applicant.last_name | string | Candidate's last name |
+| event.applicant.middle_name | string | Candidate's middle name |
+| event.applicant.birthday | string | Candidate's birthday date |
+| event.applicant.photo.url | string | Link to a candidate's photo |
+| event.vacancy.id | number | Vacancy ID |
+| event.vacancy.position | string | Occupation name |
+| event.vacancy.company | string | Department (`null`, if the departments are enabled) |
+| event.vacancy.money | string | Salary |
+| event.vacancy.state | string | The state of vacancy |
+| event.vacancy.hidden | bool | Is the vacancy hidden from the colleagues? |
+| event.vacancy.priority | number | The priority of a vacancy (0 for usual or 1 for high) |
+| event.vacancy.deadline | date | Due date for a vacancy |
+| event.vacancy.account_division.id | number | Department identifier (if the DEPARTMENTS are enabled) |
+| event.vacancy.account_division.name | string | Department name (if the DEPARTMENTS are enabled |
+| event.vacancy.account_region.id | number | Region identifier (if the REGIONS are enabled) |
+| event.vacancy.account_region.name | string | Region name (if the REGIONS are enabled |
+| event.vacancy.body | string | Responsibilities in HTML format|
+| event.vacancy.requirements | string | Requirements in HTML format |
+| event.vacancy.conditions | string | Conditions in HTML format |
+| event.vacancy.grade | object | The example of implemented additional vacancy field of the directory value type |
+| event.vacancy.grade.id | number | The ID of the value from the directory |
+| event.vacancy.grade.name | string | The name of the value from a directory |
+| event.vacancy.grade.foreign | string | Value ID in the external system (can be `null`) |
+| event.vacancy.fill_quotas.id | number | Fill quota ID |
+| event.vacancy.fill_quotas.applicants_to_hire | number | Number of applicants to hire |
+| event.vacancy.fill_quotas.deadline | string | Date and time of deadline |
+| event.vacancy.fill_quotas.vacancy_request | object | Vacancy request ID |
+| event.vacancy.fill_quotas.created | string | Date and time of creating fill quota |
+| event.vacancy.fill_quotas.closed | string | Date and time of closing fill quota |
+| event.vacancy.frame_id | number | Frame ID |
+| event.vacancy.created | string | Date and time of creating a vacancy |
 | event.created | datetime	| Date and time of creating an event |
 | author.id | number | Action author ID |
 | author.name | string | Action author name |

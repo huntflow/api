@@ -117,7 +117,8 @@ status | bool | Флаг успешной операции
             "applicants_to_hire": 1,
             "created": "2017-03-22T18:16:27+03:00",
             "priority": 0,
-            "state": "OPEN"
+            "state": "OPEN",
+            "company": "Название компании"
         },
         {
             "id": 4530,
@@ -126,7 +127,8 @@ status | bool | Флаг успешной операции
             "applicants_to_hire": 1,
             "created": "2017-03-22T18:16:27+03:00",
             "priority": 0,
-            "state": "CLOSED"
+            "state": "CLOSED",
+            "company": "Название компании"
         }
     ],
     "total": 2,
@@ -146,6 +148,7 @@ status | bool | Флаг успешной операции
  created | datetime | Дата и время создания вакансии
  priority | number | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий))
  state | string | Состояние вакансии
+ company | string| Название компании
 
 
 <a name="vacancy-view"></a>
@@ -167,12 +170,31 @@ status | bool | Флаг успешной операции
     "body": "Обязанности",
     "requirements": "Требования",
     "conditions": "Условия работы",
+    "client": 1,
     "files": [
         {
             "id": 15808,
             "name": "Снимок экрана 2017-04-10 в 11.00.13.png",
             "content_type": "image/png",
             "url": "https://store.huntflow.ru/uploads/f/f/h/ffhov94xuqytbl16u8b9l3oeewdjpyoc.png"
+        }
+    ],
+    "contacts": [
+        {
+            "birthday": null,
+            "cell_phone": null,
+            "client": 1,
+            "comment": null,
+            "created": "2017-03-22T18:16:27",
+            "email": "test@example.com",
+            "first_name": null,
+            "id": 2,
+            "last_name": "Test",
+            "middle_name": null,
+            "position": null,
+            "removed": null,
+            "skype": null,
+            "work_phone": null
         }
     ]
 }
@@ -186,3 +208,5 @@ status | bool | Флаг успешной операции
  requirements | string | Требования в формате HTML
  conditions | string | Условия работы в формате HTML
  files | array | Список файлов, прикрепленных к вакансии
+ client | number | Идентификатор клиента
+ contacts | array | Список контактных лиц
