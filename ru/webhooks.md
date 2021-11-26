@@ -159,7 +159,7 @@
 }
 ```
 
-Была изменена сущность (запись по кандидату c идентификатором `860`), поэтому `webhook_action` равен `EDIT`, а в `changes` описано, что какие поля изменились и их предыдущее значение.
+Была изменена сущность (запись по кандидату c идентификатором `860`), поэтому `webhook_action` равен `EDIT`, а в `changes` описано какие поля изменились и их предыдущие значения.
 
 Далее пользователь передумал и решил удалить свой комментарий, что вызовет следующий вебхук:
 
@@ -191,119 +191,7 @@
  
  
 ### Типы событий
- 
-<details>
-<summary>VACANCY</summary>
- 
- ```
- {'changes': {},
- 'event': {'vacancy': {'account_division': None,
-                       'account_region': None,
-                       'applicants_to_hire': 1,
-                       'body': None,
-                       'company': 'jkl',
-                       'conditions': None,
-                       'created': '2021-10-05',
-                       'deadline': None,
-                       'fill_quotas': [{'applicants_to_hire': 1,
-                                        'closed': None,
-                                        'created': '2021-10-05 10:49:22',
-                                        'deadline': None,
-                                        'id': 9,
-                                        'vacancy_request': None}],
-                       'frame_id': 9,
-                       'hidden': False,
-                       'id': 9,
-                       'money': '325',
-                       'multiple': False,
-                       'parent': None,
-                       'position': 'fdg',
-                       'priority': 0,
-                       'requirements': None,
-                       'state': 'OPEN',
-                       'values': {}},
-           'vacancy_log': {'created': '2021-10-05T10:49:22+03:00',
-                           'id': 27,
-                           'state': 'JOIN'}},
- 'meta': {'account': {'id': 14, 'name': 'tst', 'nick': 'tsthr'},
-          'author': {'id': 13, 'name': 'tst_name', 'email': 'tst@example.com', 'meta': {}},
-          'event_type': 'VACANCY',
-          'retry': 0,
-          'version': '2.0',
-          'webhook_action': 'ADD'}}
- ```
- 
- #### Лог вакансии (vacancy_log)
- 
-| Имя | Тип | Описание |
-| --- | -------- | --------- |
-| id | number | Идентификатор действия |
-| created | datetime | Дата и время создания события |
-| type | string | Тип действия |
   
- #### Вакансия (vacancy)
- 
-| Имя | Тип | Описание |
-| --- | -------- | --------- |
-| id | number | Идентификатор вакансии |
-| position | string | Название вакансии (должности) |
-| company | string | Отдел, подразделение (null, если подключены подразделения) |
-| money | string | Зарплата |
-| state | number | Статус вакансии |
-| hidden | bool | Скрыта ли вакансия от коллег |
-| priority | number | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий)) |
-| deadline | date | Дата дедлайна по вакансии |
-| account_division | object | Подразделение (если подразделения подключены) |
-| account_region | object | Регион |
-| body | string | Обязанности в формате HTML |
-| requirements | string | Требования в формате HTML |
-| conditions | string | Условия в формате HTML |
-| created | datetime | Дата и время создания вакансии |
-| values | object | Дополнительные поля вакансии |
-| frame_id | number | Идентификатор текущего фрейма вакансии |
-| fill_quotas | list | Список квот вакансии |
-| applicants_to_hire | number | Количество кандидатов к найму |
- 
-  #### Подразделения (vacancy.account_division)
- 
-| Имя | Тип | Описание |
-| --- | -------- | --------- |
-| id | number | Идентификатор подразделения |
-| name | string | Название подразделения |
- 
-   #### Регион (vacancy.account_region)
- 
-| Имя | Тип | Описание |
-| --- | -------- | --------- |
-| id | number | Идентификатор региона |
-| name | string | Название региона |
-   
-  #### Квоты (vacancy.fill_quotas)
- 
-| Имя | Тип | Описание |
-| --- | -------- | --------- |
-| id | number | Идентификатор квоты |
-| applicants_to_hire | number | Количество кандидатов к найму |
-| created | datetime | Дата создания квоты |
-| closed | datetime | Дата закрытия квоты |
-| deadline | date | Дата дедлайна квоты |
-| vacancy_request | number | Идентификатор запроса на создание вакансии |
- 
- 
-   #### Типы действий по вакансиям 
- 
-| Тип  | Описание |
-| ---  | --------- |
-| CREATED  | Вакансия создана |
-| OPEN  | Вакансия открыта / переоткрыта |
-| CLOSED  | Вакансия закрыта |
-| HOLD  | Работа по вакансии приостановлена |
-| RESUME  | Работа по вакансии возобновлена (после приостановки) |
-| EDIT  | Вакансия отредактирована |
-| JOIN  | Пользователь присоединился к работе по вакансии (к событию будет добавлено поле user) |
-| LEAVE  | Пользователь перестал работать по вакансии (к событию будет добавлено поле user) |
- </details>
- 
 <details>
  
 <summary>APPLICANT</summary>
@@ -643,6 +531,118 @@
 | declined | получен отказ на хранение
 
 </details>
+
+<details>
+<summary>VACANCY</summary>
+ 
+ ```
+ {'changes': {},
+ 'event': {'vacancy': {'account_division': None,
+                       'account_region': None,
+                       'applicants_to_hire': 1,
+                       'body': None,
+                       'company': 'jkl',
+                       'conditions': None,
+                       'created': '2021-10-05',
+                       'deadline': None,
+                       'fill_quotas': [{'applicants_to_hire': 1,
+                                        'closed': None,
+                                        'created': '2021-10-05 10:49:22',
+                                        'deadline': None,
+                                        'id': 9,
+                                        'vacancy_request': None}],
+                       'frame_id': 9,
+                       'hidden': False,
+                       'id': 9,
+                       'money': '325',
+                       'multiple': False,
+                       'parent': None,
+                       'position': 'fdg',
+                       'priority': 0,
+                       'requirements': None,
+                       'state': 'OPEN',
+                       'values': {}},
+           'vacancy_log': {'created': '2021-10-05T10:49:22+03:00',
+                           'id': 27,
+                           'state': 'JOIN'}},
+ 'meta': {'account': {'id': 14, 'name': 'tst', 'nick': 'tsthr'},
+          'author': {'id': 13, 'name': 'tst_name', 'email': 'tst@example.com', 'meta': {}},
+          'event_type': 'VACANCY',
+          'retry': 0,
+          'version': '2.0',
+          'webhook_action': 'ADD'}}
+ ```
+ 
+ #### Лог вакансии (vacancy_log)
+ 
+| Имя | Тип | Описание |
+| --- | -------- | --------- |
+| id | number | Идентификатор действия |
+| created | datetime | Дата и время создания события |
+| type | string | Тип действия |
+  
+ #### Вакансия (vacancy)
+ 
+| Имя | Тип | Описание |
+| --- | -------- | --------- |
+| id | number | Идентификатор вакансии |
+| position | string | Название вакансии (должности) |
+| company | string | Отдел, подразделение (null, если подключены подразделения) |
+| money | string | Зарплата |
+| state | number | Статус вакансии |
+| hidden | bool | Скрыта ли вакансия от коллег |
+| priority | number | Приоритет вакансии (может быть или 0 (обычный), или 1 (высокий)) |
+| deadline | date | Дата дедлайна по вакансии |
+| account_division | object | Подразделение (если подразделения подключены) |
+| account_region | object | Регион |
+| body | string | Обязанности в формате HTML |
+| requirements | string | Требования в формате HTML |
+| conditions | string | Условия в формате HTML |
+| created | datetime | Дата и время создания вакансии |
+| values | object | Дополнительные поля вакансии |
+| frame_id | number | Идентификатор текущего фрейма вакансии |
+| fill_quotas | list | Список квот вакансии |
+| applicants_to_hire | number | Количество кандидатов к найму |
+ 
+  #### Подразделения (vacancy.account_division)
+ 
+| Имя | Тип | Описание |
+| --- | -------- | --------- |
+| id | number | Идентификатор подразделения |
+| name | string | Название подразделения |
+ 
+   #### Регион (vacancy.account_region)
+ 
+| Имя | Тип | Описание |
+| --- | -------- | --------- |
+| id | number | Идентификатор региона |
+| name | string | Название региона |
+   
+  #### Квоты (vacancy.fill_quotas)
+ 
+| Имя | Тип | Описание |
+| --- | -------- | --------- |
+| id | number | Идентификатор квоты |
+| applicants_to_hire | number | Количество кандидатов к найму |
+| created | datetime | Дата создания квоты |
+| closed | datetime | Дата закрытия квоты |
+| deadline | date | Дата дедлайна квоты |
+| vacancy_request | number | Идентификатор запроса на создание вакансии |
+ 
+ 
+   #### Типы действий по вакансиям 
+ 
+| Тип  | Описание |
+| ---  | --------- |
+| CREATED  | Вакансия создана |
+| OPEN  | Вакансия открыта / переоткрыта |
+| CLOSED  | Вакансия закрыта |
+| HOLD  | Работа по вакансии приостановлена |
+| RESUME  | Работа по вакансии возобновлена (после приостановки) |
+| EDIT  | Вакансия отредактирована |
+| JOIN  | Пользователь присоединился к работе по вакансии (к событию будет добавлено поле user) |
+| LEAVE  | Пользователь перестал работать по вакансии (к событию будет добавлено поле user) |
+ </details>
  
  <details>
   <summary> VACANCY_REQUEST </summary>
@@ -883,7 +883,7 @@
 <details>
 <summary>Webhooks 1.0</summary>
 
-Данные версия вебхуов является устаревшей и ее поддержка закончится 1 июня 2022 года.
+Данная версия вебхуков является устаревшей и ее поддержка закончится **1 июня 2022 года**.
 Все новые вебхуки создаются с версией 2.0.
  
  ### Типы событий
