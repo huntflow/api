@@ -212,7 +212,7 @@
        "phone": null,
        "photo": null,
        "position": null,
-       "questionary": "2021-10-05 10:57:42",
+       "questionary": "2021-10-05T10:49:22+03:00",
        "skype": null,
        "social": [
          {
@@ -592,42 +592,65 @@
 <details>
 <summary>VACANCY</summary>
  
- ```
- {'changes': {},
- 'event': {'vacancy': {'account_division': None,
-                       'account_region': None,
-                       'applicants_to_hire': 1,
-                       'body': None,
-                       'company': 'jkl',
-                       'conditions': None,
-                       'created': '2021-10-05',
-                       'deadline': None,
-                       'fill_quotas': [{'applicants_to_hire': 1,
-                                        'closed': None,
-                                        'created': '2021-10-05 10:49:22',
-                                        'deadline': None,
-                                        'id': 9,
-                                        'vacancy_request': None}],
-                       'frame_id': 9,
-                       'hidden': False,
-                       'id': 9,
-                       'money': '325',
-                       'multiple': False,
-                       'parent': None,
-                       'position': 'fdg',
-                       'priority': 0,
-                       'requirements': None,
-                       'state': 'OPEN',
-                       'values': {}},
-           'vacancy_log': {'created': '2021-10-05T10:49:22+03:00',
-                           'id': 27,
-                           'state': 'JOIN'}},
- 'meta': {'account': {'id': 14, 'name': 'tst', 'nick': 'tsthr'},
-          'author': {'id': 13, 'name': 'tst_name', 'email': 'tst@example.com', 'meta': {}},
-          'event_type': 'VACANCY',
-          'retry': 0,
-          'version': '2.0',
-          'webhook_action': 'ADD'}}
+ ```json
+{
+    "changes": {},
+    "event": {
+        "vacancy": {
+            "account_division": null,
+            "account_region": null,
+            "applicants_to_hire": 1,
+            "body": null,
+            "company": "jkl",
+            "conditions": null,
+            "created": "2021-10-05",
+            "deadline": null,
+            "fill_quotas": [
+                {
+                    "applicants_to_hire": 1,
+                    "closed": null,
+                    "created": "2021-10-05T10:49:22+03:00",
+                    "deadline": null,
+                    "id": 9,
+                    "vacancy_request": null
+                }
+            ],
+            "frame_id": 9,
+            "hidden": false,
+            "id": 9,
+            "money": "325",
+            "multiple": false,
+            "parent": null,
+            "position": "fdg",
+            "priority": 0,
+            "requirements": null,
+            "state": "OPEN",
+            "values": {}
+        },
+        "vacancy_log": {
+            "created": "2021-10-05T10:49:22+03:00",
+            "id": 27,
+            "state": "JOIN"
+        }
+    },
+    "meta": {
+        "account": {
+            "id": 14,
+            "name": "tst",
+            "nick": "tsthr"
+        },
+        "author": {
+            "id": 13,
+            "name": "tst_name",
+            "email": "tst@example.com",
+            "meta": {}
+        },
+        "event_type": "VACANCY",
+        "retry": 0,
+        "version": "2.0",
+        "webhook_action": "ADD"
+    }
+}
  ```
  
  #### Лог вакансии (vacancy_log)
@@ -704,27 +727,46 @@
  <details>
   <summary> VACANCY_REQUEST </summary>
   
-  ```
-  {'changes': {},
- 'event': {'vacancy_request': {'account_vacancy_request': 16,
-                               'created': '2021-10-05T10:50:16+03:00',
-                               'id': 6,
-                               'position': 'ret',
-                               'values': {'body': '<p>wret</p>',
-                                          'comment': 'hg,gh',
-                                          'company': 'wert',
-                                          'money': 'wret',
-                                          'position': 'ret',
-                                          'requirements': '<p>wretk,</p>'}},
-           'vacancy_request_log': {'action': 'CREATE',
-                                   'created': '2021-10-05T10:50:16+03:00',
-                                   'id': 6}},
- 'meta': {'account': {'id': 14, 'name': 'tst', 'nick': 'tsthr'},
-          'author': {'id': 13, 'name': 'tst_name'},
-          'event_type': 'VACANCY-REQUEST',
-          'retry': 0,
-          'version': '2.0',
-          'webhook_action': 'ADD'}}
+  ```json
+{
+    "changes": {},
+    "event": {
+        "vacancy_request": {
+            "account_vacancy_request": 16,
+            "created": "2021-10-05T10:50:16+03:00",
+            "id": 6,
+            "position": "ret",
+            "values": {
+                "body": "<p>body</p>",
+                "comment": "comment",
+                "company": "test_company",
+                "money": "3000000000",
+                "position": "test_position",
+                "requirements": "<p>test_requirements</p>"
+            }
+        },
+        "vacancy_request_log": {
+            "action": "CREATE",
+            "created": "2021-10-05T10:50:16+03:00",
+            "id": 6
+        }
+    },
+    "meta": {
+        "account": {
+            "id": 14,
+            "name": "tst",
+            "nick": "tsthr"
+        },
+        "author": {
+            "id": 13,
+            "name": "tst_name"
+        },
+        "event_type": "VACANCY-REQUEST",
+        "retry": 0,
+        "version": "2.0",
+        "webhook_action": "ADD"
+    }
+}
   ```
   
   #### Заявка на вакансию (vacancy_request)
@@ -751,57 +793,80 @@
  <details>
   <summary> RESPONSE </summary>
   
-  ```
-  {'changes': {},
- 'event': {'applicant_external_response': {'created': '2021-10-05T11:37:30+03:00',
-                                           'data': {'body': 'lorem ipsum body '
-                                                            'for 23'},
-                                           'foreign': 'external-9-23',
-                                           'id': 179,
-                                           'resume': None,
-                                           'state': None,
-                                           'updated': '2018-12-20T23:00:00+03:00'},
-           'vacancy_external': {'account_vacancy_external': {'account_source': {'foreign': None,
-                                                                                'id': 361,
-                                                                                'name': 'mocked',
-                                                                                'type': 'user'},
-                                                             'auth_type': 'NATIVE',
-                                                             'id': 73,
-                                                             'name': 'Mocked '
-                                                                     'Site'},
-                                'created': '2021-10-05T11:37:25+03:00',
-                                'data': 'фвапфвап',
-                                'foreign': '1633415845',
-                                'id': 9,
-                                'state': 'PUBLISHED',
-                                'vacancy': {'account_division': None,
-                                            'account_region': None,
-                                            'applicants_to_hire': 1,
-                                            'company': 'фавпфап',
-                                            'created': '2021-10-05',
-                                            'deadline': None,
-                                            'fill_quotas': [{'applicants_to_hire': 1,
-                                                             'closed': None,
-                                                             'created': '2021-10-05 '
-                                                                        '10:23:10',
-                                                             'deadline': None,
-                                                             'id': 6,
-                                                             'vacancy_request': None}],
-                                            'frame_id': 6,
-                                            'hidden': False,
-                                            'id': 6,
-                                            'money': None,
-                                            'multiple': False,
-                                            'parent': None,
-                                            'position': 'фвапфвап',
-                                            'priority': 0,
-                                            'state': 'OPEN',
-                                            'values': {}}}},
- 'meta': {'account': {'id': 14, 'name': 'tst', 'nick': 'tsthr'},
-          'event_type': 'RESPONSE',
-          'retry': 0,
-          'version': '2.0',
-          'webhook_action': 'ADD'}}
+  ```json
+{
+    "changes": {},
+    "event": {
+        "applicant_external_response": {
+            "created": "2021-10-05T11:37:30+03:00",
+            "data": {
+                "body": "lorem ipsum body for 23"
+            },
+            "foreign": "external-9-23",
+            "id": 179,
+            "resume": null,
+            "state": null,
+            "updated": "2018-12-20T23:00:00+03:00"
+        },
+        "vacancy_external": {
+            "account_vacancy_external": {
+                "account_source": {
+                    "foreign": null,
+                    "id": 361,
+                    "name": "mocked",
+                    "type": "user"
+                },
+                "auth_type": "NATIVE",
+                "id": 73,
+                "name": "Mocked Site"
+            },
+            "created": "2021-10-05T11:37:25+03:00",
+            "data": "comment",
+            "foreign": "1633415845",
+            "id": 9,
+            "state": "PUBLISHED",
+            "vacancy": {
+                "account_division": null,
+                "account_region": null,
+                "applicants_to_hire": 1,
+                "company": "company",
+                "created": "2021-10-05",
+                "deadline": null,
+                "fill_quotas": [
+                    {
+                        "applicants_to_hire": 1,
+                        "closed": null,
+                        "created": "2021-10-05 10:23:10",
+                        "deadline": null,
+                        "id": 6,
+                        "vacancy_request": null
+                    }
+                ],
+                "frame_id": 6,
+                "hidden": false,
+                "id": 6,
+                "money": null,
+                "multiple": false,
+                "parent": null,
+                "position": "test_position",
+                "priority": 0,
+                "state": "OPEN",
+                "values": {}
+            }
+        }
+    },
+    "meta": {
+        "account": {
+            "id": 14,
+            "name": "tst",
+            "nick": "tsthr"
+        },
+        "event_type": "RESPONSE",
+        "retry": 0,
+        "version": "2.0",
+        "webhook_action": "ADD"
+    }
+}
   ```
   
   #### Отклик на вакансию с внешнего карьерного сайта (applicant_external_response)
@@ -850,68 +915,93 @@
  <details>
   <summary> OFFER </summary>
   
-  ```
-  {'changes': {},
- 'event': {'applicant': {'birthday': None,
-                         'company': None,
-                         'email': None,
-                         'first_name': 'test_first',
-                         'id': 10,
-                         'last_name': 'test_last',
-                         'middle_name': 'test_middle',
-                         'money': None,
-                         'pd_agreement': None,
-                         'phone': None,
-                         'photo': None,
-                         'position': None,
-                         'questionary': None,
-                         'skype': None,
-                         'social': [],
-                         'values': {}},
-           'applicant_offer': {'account_applicant_offer_log': {'id': 1,
-                                                               'type': 'ADD'},
-                               'applicant_offer_id': 12,
-                               'created': '2021-10-26T14:12:50+03:00',
-                               'id': 1,
-                               'values': {'offer_text': '<p>new_offer</p>',
-                                          'position_name': 'ghfgdh',
-                                          'whom_date': '26.10.2021',
-                                          'whom_name': 'test_last test_first '
-                                                       'test_middle'}},
-           'vacancy': {'account_division': None,
-                       'account_region': None,
-                       'applicants_to_hire': 1,
-                       'body': None,
-                       'company': None,
-                       'conditions': None,
-                       'created': '2021-10-26',
-                       'deadline': None,
-                       'fill_quotas': [{'applicants_to_hire': 1,
-                                        'closed': None,
-                                        'created': '2021-10-26 14:12:16',
-                                        'deadline': None,
-                                        'id': 4,
-                                        'vacancy_request': None}],
-                       'frame_id': 4,
-                       'hidden': False,
-                       'id': 4,
-                       'money': None,
-                       'multiple': False,
-                       'parent': None,
-                       'position': 'ghfgdh',
-                       'priority': 0,
-                       'requirements': None,
-                       'state': 'OPEN',
-                       'values': {}}},
- 'meta': {'account': {'id': 14, 'name': 'tst', 'nick': 'tsthr'},
-          'author': {'email': 'tst@example.com',
-                     'id': 13,
-                     'meta': {},
-                     'name': 'tst_name'},
-          'event_type': 'OFFER',
-          'retry': 0,
-          'version': '2.0',
-          'webhook_action': 'ADD'}}
+  ```json
+  {
+      "changes": {},
+      "event": {
+          "applicant": {
+              "birthday": null,
+              "company": null,
+              "email": null,
+              "first_name": "test_first",
+              "id": 10,
+              "last_name": "test_last",
+              "middle_name": "test_middle",
+              "money": null,
+              "pd_agreement": null,
+              "phone": null,
+              "photo": null,
+              "position": null,
+              "questionary": null,
+              "skype": null,
+              "social": [],
+              "values": {}
+          },
+          "applicant_offer": {
+              "account_applicant_offer_log": {
+                  "id": 1,
+                  "type": "ADD"
+              },
+              "applicant_offer_id": 12,
+              "created": "2021-10-26T14:12:50+03:00",
+              "id": 1,
+              "values": {
+                  "offer_text": "<p>new_offer</p>",
+                  "position_name": "ghfgdh",
+                  "whom_date": "26.10.2021",
+                  "whom_name": "test_last test_first test_middle"
+              }
+          },
+          "vacancy": {
+              "account_division": null,
+              "account_region": null,
+              "applicants_to_hire": 1,
+              "body": null,
+              "company": null,
+              "conditions": null,
+              "created": "2021-10-26",
+              "deadline": null,
+              "fill_quotas": [
+                  {
+                      "applicants_to_hire": 1,
+                      "closed": null,
+                      "created": "2021-10-26 14:12:16",
+                      "deadline": null,
+                      "id": 4,
+                      "vacancy_request": null
+                  }
+              ],
+              "frame_id": 4,
+              "hidden": false,
+              "id": 4,
+              "money": null,
+              "multiple": false,
+              "parent": null,
+              "position": "test_posititon",
+              "priority": 0,
+              "requirements": null,
+              "state": "OPEN",
+              "values": {}
+          }
+      },
+      "meta": {
+          "account": {
+              "id": 14,
+              "name": "tst",
+              "nick": "tsthr"
+          },
+          "author": {
+              "email": "tst@example.com",
+              "id": 13,
+              "meta": {},
+              "name": "tst_name"
+          },
+          "event_type": "OFFER",
+          "retry": 0,
+          "version": "2.0",
+          "webhook_action": "ADD"
+      }
+  }
 
 ```
   
