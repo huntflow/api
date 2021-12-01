@@ -8,7 +8,6 @@
 * [Удаление вакансии](#delete)
 * [Состояние вакансии](#vacancy-states)
 * [Работа с вакансиями Кадрового Агентства](agency_vacancies.md)
-* [Отщепление кандидата на подвакансию] (#vacancy-applicant-split)
 
 <a name="add"></a>
 ## Добавление вакансии в базу
@@ -341,39 +340,3 @@ status | bool | Флаг успешной операции
  created | string | дата создания квоты
  closed | string | дата закрытия квоты
  already_hired | number | сколько человек нанято по квоте на данный момент
-
-<a name="vacancy-applicant-split"></a>
-
-
-## Отщепление кандидата на подвакансию
-`PUT /account/{account_id}/vacancy/{vacancy_id}/split`
-
-В теле запроса необходимо передать JSON вида:
-```json
-{"applicant": 1, "status": 1}
-```
-
-### Поля запроса
-Имя | Тип | Обязательный | Описание
- --- | --- | --- | ---
- applicant | number | Да | Идентификатор кандидата
- status    | number | Да | [Этап подбора](dicts.md#vacancy_statuses) 
- 
-### Поля ответа
-```json
-{
-    "applicant": 1,
-    "id": 8,
-    "status": 1,
-    "vacancy": 4,
-    "vacancy_parent": 3
-}
-```
-
-Имя | Тип | Описание
---- | --- | ---
-applicant | number | Идентификатор кандидата
-id | number | Идентификатор лога кандидата
-status | number | [Этап подбора](dicts.md#vacancy_statuses)
-vacancy | number | Идентификатор подвакансии
-vacancy_parent | number | Идентификатор родительской вакансии

@@ -334,37 +334,3 @@ Name | Type | Description
  created | string | Fill quota creation date
  closed | string | Fill quota closing date
  already_hired | number | How many people already hired on the quota at the moment
-
-
-## Splitting an applicant to a child vacancy
-`PUT /account/{account_id}/vacancy/{vacancy_id}/split`
-
-Add a JSON to the body of the request:
-```json
-{"applicant": 1, "status": 1}
-```
-
-### Request fields
-Name | Type | Required | Description
- --- | --- | --- | ---
- applicant | number | Yes | Applicant ID
- status    | number | Yes | [The stage of headhunting](dicts.md#vacancy_statuses) 
- 
-### Response fields
-```json
-{
-    "applicant": 1,
-    "id": 8,
-    "status": 1,
-    "vacancy": 4,
-    "vacancy_parent": 3
-}
-```
-
-Name | Type | Description
---- | --- | ---
-applicant | number | Applicant ID
-id | number | Applicant log ID
-status | number | [The stage of headhunting](dicts.md#vacancy_statuses) 
-vacancy | number | Child vacancy ID
-vacancy_parent | number | Parent vacancy ID

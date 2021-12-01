@@ -4,6 +4,7 @@
 * [Добавление кандидата на вакансию](#vacancy_applicant)
 * [Список кандидатов](#applicants)
 * [История работы с кандидатом](#applicant_logs)
+* [Отщепление кандидата на подвакансию](#splitting)
 
 <a name="add"></a>
 ## Добавление кандидата в базу
@@ -416,3 +417,38 @@ calendar_event.start | datetime | Дата и время начала событ
 calendar_event.status | string | [Статус события](webhooks.md#event-status) |
 calendar_event.timezone | string | Часовой пояс в котором заданы дата начала и конца события |
 calendar_event.transparency |string | [Доступность события](webhooks.md#event-transparency) |
+
+
+<a name="splitting"></a>
+## Отщепление кандидата на подвакансию
+`PUT /account/{account_id}/applicants/vacancy/{vacancy_id}/split`
+
+В теле запроса необходимо передать JSON вида:
+```json
+{"applicant": 1, "status": 1}
+```
+
+### Поля запроса
+Имя | Тип | Обязательный | Описание
+ --- | --- | --- | ---
+ applicant | number | Да | Идентификатор кандидата
+ status    | number | Да | [Этап подбора](dicts.md#vacancy_statuses) 
+ 
+### Поля ответа
+```json
+{
+    "applicant": 1,
+    "id": 8,
+    "status": 1,
+    "vacancy": 4,
+    "vacancy_parent": 3
+}
+```
+
+Имя | Тип | Описание
+--- | --- | ---
+applicant | number | Идентификатор кандидата
+id | number | Идентификатор лога кандидата
+status | number | [Этап подбора](dicts.md#vacancy_statuses)
+vacancy | number | Идентификатор подвакансии
+vacancy_parent | number | Идентификатор родительской вакансии
