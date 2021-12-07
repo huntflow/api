@@ -307,7 +307,7 @@
        },
        "comment": null,
        "created": "2021-10-05T11:00:21+03:00",
-       "employment_date": "2021-10-05T06:00:21+03:00",
+       "employment_date": "2021-10-05",
        "files": [],
        "id": 37,
        "rejection_reason": null,
@@ -423,7 +423,7 @@
 |calendar_event|object|Встреча в календаре|
 |comment|string|Комментарий|
 |created|datetime|Дата создания лога|
-|employment_date|datetime|Дата найма|
+|employment_date|date|Дата найма|
 |files|list[objects]|Cписок файлов, прикрепленных к логу|
 |status|object|Статус кандидата на вакансии|
 |rejection_reason|object|Причина отказа|
