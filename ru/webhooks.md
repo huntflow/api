@@ -87,7 +87,9 @@
          - `name` (тип `str`) – имя автора
 
          - `meta` (тип `object`) – дополнительные данные автора
-
+ 
+     - `event_id` (тип `str`) - уникальный идентификатор события (вебхука)
+ 
      - `event_type` (тип `str`) – тип события, вызвавший отправку вебхука
 
      - `retry` (тип `number`) – количество повторных попыток отправки вебхука. На данный момент всегда `0` (переотправка вебхуков не производится, но планируется к реализации).
@@ -116,6 +118,7 @@
     }
   },
   "meta": {
+    "event_id": "15", 
     "event_type": "APPLICANT",    
     "version": "2.0",
     "retry": 0,
@@ -150,6 +153,7 @@
     }
   },
   "meta": {
+    "event_id": "16", 
     "event_type": "APPLICANT",    
     "version": "2.0",
     "retry": 0,
@@ -178,6 +182,7 @@
     }
   },
   "meta": {
+    "event_id": "17", 
     "event_type": "APPLICANT",    
     "version": "2.0",
     "retry": 0,
@@ -303,7 +308,21 @@
          "state": "SENT",
          "status": "confirmed",
          "timezone": "Europe/Moscow",
-         "transparency": "busy"
+         "transparency": "busy",
+         "conference": {
+           "id": 67,
+           "topic": "Interview: Иванов Иван – Тестировщик",
+           "auth_type": "ZOOM",
+           "created": "2021-12-23T15:52:59+03:00",
+           "changed": "2021-12-23T15:53:04+03:00",
+           "start_time": "2021-12-23T16:00:55+03:00",
+           "end_time": "2021-12-23T17:00:55+03:00",
+           "timezone": "Europe/Moscow",
+           "link": "https://zoom.us/j/123456789?pwd=VmtRL3qwedfqwedffqsdfqwefr",
+           "access_code": "Hdeees6e",
+           "state": "waiting",
+           "foreign": "123456789"
+         }
        },
        "comment": null,
        "created": "2021-10-05T11:00:21+03:00",
@@ -511,6 +530,7 @@
 |etag|string|ETag события|
 |location|string|Географическое местоположение события|
 |transparency|string||
+|conference|object|Конференция в Zoom|
  
 #### Участники встречи, назначенной в календаре (applicant_log.calendar_event.attendees) 
  
@@ -522,6 +542,22 @@
 |contact_id|number|member|
 |number|order|number|
 |resource|bool||
+
+ #### Конференция в календаре (applicant_log.calendar_event.conference)
+ |Имя|Тип|Описание|
+|--------|--------|--------|
+|id|number|Идентификатор конференции|
+|topic|string|Название конференции|
+|auth_type|string|Тип авторизации|
+|state|string|Статус конференции|
+|start_time|datetime|Дата и время начала конференции|
+|end_time|datetime|Дата и время окончания конференции|
+|timezone|string|Название часового пояса|
+|created|datetime|Дата и время создания конференции|
+|changed|datetime|Дата и время изменения конференции|
+|foreign|string|Внешний уникальный идентификатор конференции|
+|link|string|Ссылка на конференцию|
+|access_code|string|Код доступа|
  
 <a name="action-types"></a>
 
