@@ -364,7 +364,14 @@
          "values": {}
        },
        "vacancy_group_action": null
-     }
+     },
+     "applicant_tags": [
+       {
+         "id": 1,
+         "name": "Blacklist",
+         "color": "000000"
+       }
+     ]
    },
    "meta": {
      "account": {
@@ -432,6 +439,14 @@
 |social_type|string|Тип социальной сети|
 |verification_date|datetime|Дата последней верификации|
 |verified|bool|Аккаунт верифицирован (существует)|
+ 
+ #### Список меток/тегов кандидата (applicant_tags)
+ 
+| Имя | Тип | Описание |
+| --- | -------- | --------- |
+| id | number | Идентификатор метки |
+| name | string | Название метки |
+| color | string | Цвет метки |
  
  #### Лог кандидата (applicant_log)
  
