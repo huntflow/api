@@ -33,6 +33,7 @@ SLA: Our developers answer the questions at [Issues page](https://github.com/hun
 * [Vacancies](vacancies.md)
 * [Candidates](applicants.md)
 * [Production calendar](production_calendar.md)
+* [Tokens](en/robot_api.md)
 
 <a name="webhooks"></a>
 ### Webhooks

@@ -41,6 +41,7 @@
 * [Справочники](ru/dictionaries.md)
 * [Отложенные задачи](ru/delayed_tasks.md)
 * [Лицензии](ru/licenses.md)
+* [Токены](ru/robot_api.md)
 * <a name="agency">Кадровые Агентства</a>
   * [Клиенты](ru/agency_clients.md)
   * [Заявки на вакансии](ru/agency_vacancy_requests.md)
