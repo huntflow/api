@@ -6,13 +6,12 @@ Warning! This method works **only** for tokens from "Tokens" tab in Huntflow int
 
 Token can only be refreshed when access token expired.
 
-`POST /token/refresh`
+`POST /v2/token/refresh`
 
 Request body:
 ```json
 {
   "refresh_token": "%secret_refresh_token%",
-  "grant_type": "refresh_token"
 }
 ```
 Response example:

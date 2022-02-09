@@ -38,13 +38,12 @@ Authorization: Bearer <access_token>
 
 Новый access_token может быть получен только тогда, когда действие текущего access_token истекло.
 
-`POST /token/refresh`
+`POST /v2/token/refresh`
 
 В теле запроса необходимо передать JSON вида:
 ```json
 {
-  "refresh_token": "<refresh_token>",
-  "grant_type": "refresh_token"
+  "refresh_token": "<refresh_token>"
 }
 ```
 Пример ответа:

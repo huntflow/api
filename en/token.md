@@ -37,13 +37,12 @@ Authorization: Bearer <access_token>
 
 Token can only be refreshed when access token expired.
 
-`POST /token/refresh`
+`POST /v2/token/refresh`
 
 Request body:
 ```json
 {
-  "refresh_token": "<refresh_token>",
-  "grant_type": "refresh_token"
+  "refresh_token": "<refresh_token>"
 }
 ```
 Response example:
