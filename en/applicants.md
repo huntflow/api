@@ -282,7 +282,10 @@ Add a JSON to the body of the request:
 Name | Type | Required | Description
  --- | --- | --- | ---
  applicant | number | Yes | Applicant ID
- status    | number | Yes | [The stage of headhunting](dicts.md#vacancy_statuses) 
+ status    | number | Yes | [The stage of headhunting](dicts.md#vacancy_statuses)
+ fill_quota | number | No |  [Fill quota](vacancies.md#fill-quotas) for hiring (only for hired stage)
+ employment_date | string | No | Employment date in format DD.MM.YYYY (only for hired stage)
+ 
  
 ### Response fields
 ```json

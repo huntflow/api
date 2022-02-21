@@ -432,7 +432,9 @@ calendar_event.transparency |string | [Доступность события](we
 Имя | Тип | Обязательный | Описание
  --- | --- | --- | ---
  applicant | number | Да | Идентификатор кандидата
- status    | number | Да | [Этап подбора](dicts.md#vacancy_statuses) 
+ status    | number | Да | [Этап подбора](dicts.md#vacancy_statuses)
+ fill_quota | number | Нет |  [Квота к найму](vacancies.md#fill-quotas), по которой нанимается кандидат (только для этапа "Вышел на работу")
+ employment_date | string | Нет | Дата выхода кандидата на работу в формате ДД.ММ.ГГГГ (только для этапа "Вышел на работу")
  
 ### Поля ответа
 ```json
