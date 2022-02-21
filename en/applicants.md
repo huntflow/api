@@ -285,6 +285,7 @@ Name | Type | Required | Description
  status    | number | Yes | [The stage of headhunting](dicts.md#vacancy_statuses)
  fill_quota | number | No |  [Fill quota](vacancies.md#fill-quotas) for hiring (only for hired stage)
  employment_date | string | No | Employment date in format YYYY-MM-DD (only for hired stage)
+ rejection_reason | number | No | The reason of the rejection (if the candidate’s status is 'rejected')
  
  
 ### Response fields

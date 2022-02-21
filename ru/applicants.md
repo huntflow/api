@@ -435,6 +435,7 @@ calendar_event.transparency |string | [Доступность события](we
  status    | number | Да | [Этап подбора](dicts.md#vacancy_statuses)
  fill_quota | number | Нет |  [Квота к найму](vacancies.md#fill-quotas), по которой нанимается кандидат (только для этапа "Вышел на работу")
  employment_date | string | Нет | Дата выхода кандидата на работу в формате ГГГГ-ММ-ДД (только для этапа "Вышел на работу")
+ rejection_reason | number | Нет | Причина отказа (только для этапа "Отказ")
  
 ### Поля ответа
 ```json
