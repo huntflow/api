@@ -35,6 +35,7 @@
  - VACANCY — действия по вакансиям
  - RESPONSE — действия по откликам
  - OFFER - действия по офферам
+ - RECRUITMENT-EVALUATION - действия по опросу оценки работы рекрутеров
  - PING — проверка на доступность вебхука
 
 
@@ -1073,7 +1074,233 @@
  |id|number|Иденитфикатор лога|
  |type|string|Тип лога|
   
-  </details>  
+  </details>
+
+
+ <details>
+  <summary> RECRUITMENT-EVALUATION </summary>
+  
+  ```json
+  {
+    "changes": {},
+    "event": {
+      "recruitment_evaluation": {
+        "id": 1,
+        "account_survey": {
+          "id": 15,
+          "name": "Оценка найма",
+          "schema": {
+            "type": "object",
+            "required": [
+              "stars",
+              "comment"
+            ],
+            "properties": {
+              "stars": {
+                "type": "number",
+                "title": "Общее впечатление о подборе",
+                "maximum": 10,
+                "minimum": 1
+              },
+              "comment": {
+                "type": "string",
+                "title": "Комментарий",
+                "minLength": 3,
+                "isNotEmpty": true
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "survey_answer_requests": [
+          {
+            "id": 1,
+            "respondent": {
+              "id": 1,
+              "account_id": 1,
+              "custom_id": null,
+              "name": "test@example.com",
+              "email": "test@example.com"
+            },
+            "created": "2022-05-19T14:15:37+03:00",
+            "state": "SENT"
+          }
+        ],
+        "survey_answer": {
+          "id": 1,
+          "respondent": {
+            "id": 1,
+            "account_id": 1,
+            "custom_id": null,
+            "name": "test@example.com",
+            "email": "test@example.com"
+          },
+          "data": {
+            "comment": "Отличная работа! "
+          },
+          "created": "2022-05-19T14:16:23+03:00",
+          "updated": "2022-05-19T14:16:23+03:00"
+        },
+        "stars": 10,
+        "applicant": {
+          "id": 236,
+          "photo": null,
+          "first_name": "test_name",
+          "last_name": "test",
+          "middle_name": null,
+          "birthday": null,
+          "position": null,
+          "company": null,
+          "money": null,
+          "phone": null,
+          "email": null,
+          "skype": null,
+          "questionary": null,
+          "values": {},
+          "social": [
+            {
+              "id": 1,
+              "social_type": "TELEGRAM",
+              "value": "some_tg",
+              "verification_date": null,
+              "verified": false
+            }
+          ],
+          "pd_agreement": null
+        },
+        "vacancy": {
+          "id": 10,
+          "applicants_to_hire": 1,
+          "position": "QA",
+          "company": null,
+          "money": "1",
+          "state": "OPEN",
+          "hidden": false,
+          "priority": 0,
+          "deadline": null,
+          "account_division": {
+            "id": 2,
+            "name": "Отдел контроля качества"
+          },
+          "account_region": {
+            "id": 4,
+            "name": "name"
+          },
+          "created": "2022-05-19",
+          "multiple": false,
+          "parent": null,
+          "values": {
+            "reason": "Новая позиция",
+            "category": {
+              "id": 1,
+              "name": "Специалист",
+              "foreign": "Специалист",
+              "meta": {
+                "deadline": 35
+              }
+            }
+          },
+          "fill_quotas": [
+            {
+              "id": 1,
+              "applicants_to_hire": 1,
+              "deadline": "2022-05-19",
+              "vacancy_request": 9,
+              "created": "2022-05-19T14:15:14+03:00",
+              "closed": "2022-05-19T14:15:37+03:00"
+            }
+          ],
+          "frame_id": 1
+        }
+      }
+    },
+    "meta": {
+      "account": {
+        "id": 11,
+        "name": "Huntflow",
+        "nick": "huntflow"
+      },
+      "author": {
+        "id": 1,
+        "email": "test@example.com",
+        "name": "test@example.com",
+        "meta": null
+      },
+      "event_type": "RECRUITMENT-EVALUATION",
+      "version": "2.0",
+      "retry": 0,
+      "webhook_action": "ADD",
+      "event_id": "3"
+    }
+  }
+
+```
+
+  #### Оценка найма (recruitment_evaluation)
+  
+  | Имя                    | Тип          | Описание                     |
+|------------------------|--------------|------------------------------|
+| id                     | number       | Идентификатор оценки найма   |
+| account_survey         | object       | Опрос оценки найма           |
+| survey_answer_requests | list[object] | Список запросов оценки найма |
+| survey_answer          | object       | Ответ на запрос оценки найма |
+| stars                  | number       | Уровень оценки               |
+| applicant              | object       | см. вебхук APPLICANT         |
+| vacancy                | object       | см. вебхук VACANCY           |
+| created                | datetime     | Дата создания                |
+  
+  #### Опрос оценки найма (recruitment_evaluation.account_survey)
+  
+  | Имя                         | Тип          | Описание                          |
+|-----------------------------|--------------|-----------------------------------|
+| id                          | number       | Идентификатор опроса оценки найма |
+| name                        | string       | Название опроса оценки найма      |
+| schema                      | object       | Схема опроса оценки найма         |
+| schema.required             | list[string] | Обязательные поля         |
+| schema.properties           | object       | Описание полей схемы      |
+| schema.additionalProperties | bool         | Дополнительные поля схемы |
+
+  #### Запрос оценки найма (recruitment_evaluation.survey_answer_requests)
+  
+  | Имя        | Тип      | Описание                           |
+|------------|----------|------------------------------------|
+| id         | number   | Идентификатор запроса оценки найма |
+| respondent | object   | Респондент                         |
+| state      | string   | Состояние запроса оценки найма     |
+| created    | datetime | Дата создания                      |
+
+  #### Ответ на запрос оценки найма (recruitment_evaluation.survey_answer)
+  
+  | Имя          | Тип      | Описание                                    |
+|--------------|----------|---------------------------------------------|
+| id           | number   | Идентификатор ответа на запрос оценки найма |
+| respondent   | object   | Респондент                                  |
+| data.comment | string   | Комментарий                                 |
+| created      | datetime | Дата создания                               |
+| updated      | datetime | Дата обновления                             |
+
+  #### Респондент (recruitment_evaluation.survey_answer_requests.respondent, recruitment_evaluation.survey_answer_requests.respondent)
+  
+  | Имя        | Тип      | Описание                                              |
+|------------|----------|-------------------------------------------------------|
+| id         | number   | Идентификатор респондента                             |
+| account_id | number   | Идентификатор аккаунта респондента в Хантфлоу         |
+| custom_id  | number   | Идентификатор аккаунта респондента во внешней системе |
+| name       | string   | Имя респондента                                       |
+| email      | string   | Email респондента                                     |
+  
+  </details>
+
+<a name="action-types"></a>
+
+##### Состояния запроса оценки найма
+
+| Тип      | Описание      |
+|----------|---------------|
+| SENT     | Отправлено    |
+| NOT_SENT | Не отправлено |
+| FAILED   | Неудача       |
+
 </details>
 
 ---
