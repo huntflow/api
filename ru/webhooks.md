@@ -1288,8 +1288,6 @@
 | custom_id  | number   | Идентификатор аккаунта респондента во внешней системе |
 | name       | string   | Имя респондента                                       |
 | email      | string   | Email респондента                                     |
-  
-  </details>
 
 <a name="action-types"></a>
 
@@ -1300,7 +1298,8 @@
 | SENT     | Отправлено    |
 | NOT_SENT | Не отправлено |
 | FAILED   | Неудача       |
-
+  
+  </details>
 </details>
 
 ---
