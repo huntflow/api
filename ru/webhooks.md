@@ -1258,7 +1258,7 @@
 | schema                      | object       | Схема опроса оценки найма         |
 | schema.required             | list[string] | Обязательные поля         |
 | schema.properties           | object       | Описание полей схемы      |
-| schema.additionalProperties | bool         | Дополнительные поля схемы |
+| schema.additionalProperties | bool         | Разрешение на добавление в ответ на опрос полей, не указанных в properties. Всегда равен false |
 
   #### Запрос оценки найма (recruitment_evaluation.survey_answer_requests)
   
