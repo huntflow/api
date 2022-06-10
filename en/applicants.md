@@ -3,6 +3,7 @@
 * [Adding a candidate to the base](#add)
 * [Adding a candidate to the vacancy](#vacancy_applicant)
 * [The list of candidates](#applicants)
+* [Splitting an applicant to a child vacancy](#splitting)
 
 <a name="add"></a>
 ## Adding a candidate to the base
@@ -267,3 +268,41 @@ links[].updated | The date of the candidate’s update at a vacancy
 links[].changed | The date of the latest changes at the current stage of headhunting
 agreement.state | string | Agreement's state of candidate to personal data processing. Returned if the Personal Data module is enabled.
 agreement.decision_date | datetime | Date of candidate's decision to personal data processing. Returned if the Personal Data module is enabled.
+
+<a name="splitting"></a>
+## Splitting an applicant to a child vacancy
+`PUT /account/{account_id}/applicants/vacancy/{vacancy_id}/split`
+
+Add a JSON to the body of the request:
+```json
+{"applicant": 1, "status": 1}
+```
+
+### Request fields
+Name | Type | Required | Description
+ --- | --- | --- | ---
+ applicant | number | Yes | Applicant ID
+ status    | number | Yes | [The stage of headhunting](dicts.md#vacancy_statuses)
+ fill_quota | number | No |  [Fill quota](vacancies.md#fill-quotas) for hiring (only for hired stage)
+ employment_date | string | No | Employment date in format YYYY-MM-DD (only for hired stage)
+ rejection_reason | number | No | The reason of the rejection (if the candidate’s status is 'rejected')
+ 
+ 
+### Response fields
+```json
+{
+    "applicant": 1,
+    "id": 8,
+    "status": 1,
+    "vacancy": 4,
+    "vacancy_parent": 3
+}
+```
+
+Name | Type | Description
+--- | --- | ---
+applicant | number | Applicant ID
+id | number | Applicant log ID
+status | number | [The stage of headhunting](dicts.md#vacancy_statuses) 
+vacancy | number | Child vacancy ID
+vacancy_parent | number | Parent vacancy ID
