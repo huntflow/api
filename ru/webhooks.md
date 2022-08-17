@@ -777,7 +777,7 @@
  </details>
  
  <details>
-  <summary> VACANCY_REQUEST </summary>
+  <summary> VACANCY-REQUEST </summary>
   
   ```json
 {
