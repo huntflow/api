@@ -154,6 +154,11 @@ id | numeric | Идентификатор привязки
 changed | datetime | Дата и время изменения статуса
 
 <a name="applicants"></a>
+
+## Получение одного кандидата
+
+`GET /account/{account_id}/applicants/{applicant_id}`
+
 ## Получение списка кандидатов
 
 `GET /account/{account_id}/applicants` вернёт список кандидатов компании.
