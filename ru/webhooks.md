@@ -1143,6 +1143,7 @@
           "updated": "2022-05-19T14:16:23+03:00"
         },
         "stars": 10,
+        "applicant_log_id": 1050,
         "applicant": {
           "id": 236,
           "photo": null,
@@ -1247,6 +1248,7 @@
 | survey_answer          | object       | Ответ на запрос оценки найма |
 | stars                  | number       | Уровень оценки               |
 | applicant              | object       | см. вебхук APPLICANT         |
+| applicant_log_id       | number       | Идентификатор лога кандидата |
 | vacancy                | object       | см. вебхук VACANCY           |
 | created                | datetime     | Дата создания                |
   
