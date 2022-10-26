@@ -930,8 +930,8 @@
 |foreign|string|Внешний идентификатор отклика|
 |resume|object|Резюме кандидата|
 |state|string|Состояние отклика|
-|created|datetime|Дата создания отклика|
-|updated|datetime|Дата обновления отклика|
+|created|datetime|Дата сохранения отклика в базе|
+|updated|datetime|Дата создания/обновления отклика на карьерном сайте|
   
   #### Вакансия на внешнем карьерном сайте (vacancy_external)
   
@@ -1725,8 +1725,8 @@
 | event.data | object | Данные об откликнувшемся кандидате (специфично для каждого работного сайта). [Работа с резюме](https://github.com/huntflow/api/blob/5326e2a5d6c6e6f5bb302f52931af6253cbd9107/ru/externals.md) |
 | event.foreign | string | Внешний идентификатор отклика |
 | event.state | string | Состояние отклика |
-| event.created | datetime | Дата и время создания отклика |
-| event.updated | datetime | Дата и время последнего обновления отклика |
+| event.created | datetime | Дата и время сохранения отклика в базе |
+| event.updated | datetime | Дата и время создания/обновления отклика на карьерном сайте |
 | event.resume | object | Резюме |
 | account.id | number | Идентификатор организации |
 | account.name | string | Название организации |
