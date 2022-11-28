@@ -1,4 +1,6 @@
-# Huntflow API
+# Huntflow APIv1
+
+# APIv1 and this documentation is not supported anymore. Consider using actual API version and documentation at https://api.huntflow.ai/v2/docs#overview
 
 [Русский](../README.md) | **English** 
 
