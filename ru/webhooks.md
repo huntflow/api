@@ -509,7 +509,7 @@
 
 
  #### Анкета кандидата (applicant_log.survey_questionary)
- См. формат у события [SURVEY-QUESTIONARY](#Анкета-кандидата-(survey_questionary)), event.survey_questionary
+ См. формат у события [SURVEY-QUESTIONARY event.survey_questionary](#анкета-кандидата-survey_questionary)
  
  #### Причина отказа (applicant_log.rejection_reason)
  
