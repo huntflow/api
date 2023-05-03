@@ -41,6 +41,7 @@
  - OFFER - действия по офферам
  - RECRUITMENT-EVALUATION - действия по опросу оценки работы рекрутеров
  - PING — проверка на доступность вебхука
+ - SURVEY-QUESTIONARY — действия по анкетам кандидатов
 
 
 ## Заголовки вебхука
@@ -333,6 +334,7 @@
        "source": null,
        "status": null,
        "survey_answer_of_type_a": null,
+       "survey_questionary": null,
        "type": "COMMENT",
        "vacancy": {
          "account_division": null,
@@ -504,6 +506,10 @@
 |created|datetime|Дата создания опроса|
 |updated|datetime|Дата изменения опроса|
 |active|bool|Активен ли опрос|
+
+
+ #### Анкета кандидата (applicant_log.survey_questionary)
+ См. формат у события [SURVEY-QUESTIONARY event.survey_questionary](#анкета-кандидата-survey_questionary)
  
  #### Причина отказа (applicant_log.rejection_reason)
  
@@ -1298,6 +1304,212 @@
 | NOT_SENT | Не отправлено |
 | FAILED   | Неудача       |
   
+  </details>
+
+ 
+<details>
+  <summary> SURVEY-QUESTIONARY </summary>
+  
+  ```json
+  {
+    "changes": {},
+    "event": {
+      "survey_questionary": {
+        "id": 1,
+        "survey": {
+          "id": 15,
+          "name": "Оценка найма",
+          "schema": {
+            "type": "object",
+            "required": [
+              "d4hm5pRsbXPEQUSyiqXJA"
+            ],
+            "properties": {
+              "d4hm5pRsbXPEQUSyiqXJA": {
+                "type": "string",
+                "title": "Hard question",
+                "minLength": 3,
+                "isNotEmpty": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "ui_schema": {
+            "ui:order": ["d4hm5pRsbXPEQUSyiqXJA"],
+            "d4hm5pRsbXPEQUSyiqXJA": {
+              "ui:widget": "TextWidget",
+              "ui:description": "Hard question",
+              "ui:placeholder": "answer here"
+            }
+          },
+          "created": "2022-05-19T14:15:37+03:00",
+          "updated": "2022-05-19T14:15:37+03:00",
+          "title": "Hard Questionary",
+          "active": true,
+          "type": "type_q"
+        },
+        "created": "2022-05-19T14:15:37+03:00",
+        "respondent": {
+          "applicant_id": 123,
+          "name": "Some applicant"
+        },
+        "created_by": {
+          "account_id": 123,
+          "name": "Some recruiter"
+        },
+        "answer": {
+          "id": 123,
+          "created": "2022-05-19T14:15:37+03:00",
+          "data": {
+            "d4hm5pRsbXPEQUSyiqXJA": "Applicant's smart answer"
+          }
+        },
+        "link": "https://huntflow.ru/survey_questionary/11111111-1111-1111-1111-111111111111?lang=en_US"
+      },
+      "applicant_log_id": 123,
+      "applicant": {
+        "id": 236,
+        "photo": null,
+        "first_name": "test_name",
+        "last_name": "test",
+        "middle_name": null,
+        "birthday": null,
+        "position": null,
+        "company": null,
+        "money": null,
+        "phone": null,
+        "email": null,
+        "skype": null,
+        "questionary": null,
+        "values": {},
+        "social": [{
+          "id": 1,
+          "social_type": "TELEGRAM",
+          "value": "some_tg",
+          "verification_date": null,
+          "verified": false
+        }],
+        "pd_agreement": null
+      },
+      "vacancy": {
+        "id": 10,
+        "applicants_to_hire": 1,
+        "position": "QA",
+        "company": null,
+        "money": "1",
+        "state": "OPEN",
+        "hidden": false,
+        "priority": 0,
+        "deadline": null,
+        "account_division": {
+          "id": 2,
+          "name": "Отдел контроля качества"
+        },
+        "account_region": {
+          "id": 4,
+          "name": "name"
+        },
+        "created": "2022-05-19",
+        "multiple": false,
+        "parent": null,
+        "values": {
+          "reason": "Новая позиция",
+          "category": {
+            "id": 1,
+            "name": "Специалист",
+            "foreign": "Специалист",
+            "meta": {
+              "deadline": 35
+            }
+          }
+        },
+        "fill_quotas": [{
+          "id": 1,
+          "applicants_to_hire": 1,
+          "deadline": "2022-05-19",
+          "vacancy_request": 9,
+          "created": "2022-05-19T14:15:14+03:00",
+          "closed": "2022-05-19T14:15:37+03:00"
+        }],
+        "frame_id": 1
+      }
+    },
+    "meta": {
+      "account": {
+        "id": 11,
+        "name": "Huntflow",
+        "nick": "huntflow"
+      },
+      "author": {
+        "id": 1,
+        "email": "test@example.com",
+        "name": "test@example.com",
+        "meta": null
+      },
+      "event_type": "SURVEY-QUESTIONARY",
+      "version": "2.0",
+      "retry": 0,
+      "webhook_action": "ADD",
+      "event_id": "3"
+    }
+  }
+
+```
+
+  #### Анкета кандидата (survey_questionary)
+  
+| Имя        | Тип     | Описание                             |
+|------------|---------|--------------------------------------|
+| id         | integer | Идентификатор анкеты                 |
+| survey     | object  | Шаблон анкеты                        |
+| respondent | object  | Данные ответившего кандидата         |
+| created    | string  | Дата создания                        |
+| created_by | object  | Данные автора анкеты                 |
+| answer     | object  | Данные ответа кандидата на анкету    |
+| link       | string  | Ссылка на анкету                     |
+  
+  #### Шаблон анкеты (survey_questionary.survey)
+  
+| Имя       | Тип     | Описание                             |
+|-----------|---------|--------------------------------------|
+| id        | integer | Идентификатор анкеты                 |
+| title     | string  | Заголовок анкеты                     |
+| created   | string  | Дата создания                        |
+| updated   | string  | Дата последнего обновления           |
+| active    | bool    | Статус активности                    |
+| schema    | object  | Схема данных анкеты                  |
+| ui_schema | object  | Схема визуального отображения анкеты |
+| type      | string  | Тип анкеты (всегда равен type_q)     |
+
+
+  #### Ответ на анкету (survey_questionary.answer)
+  
+| Имя       | Тип     | Описание                             |
+|-----------|---------|--------------------------------------|
+| id        | integer | Идентификатор анкеты                 |
+| data      | object  | Данные ответа                        |
+| created   | string  | Дата создания                        |
+
+Данные хранятся в формате:
+```json
+{
+  "d4hm5pRsbXPEQUSyiqXJA": "Some answer"
+}
+```
+Где:
+* d4hm5pRsbXPEQUSyiqXJA - идентификатор вопроса (survey_questionary.survey.properties.d4hm5pRsbXPEQUSyiqXJA)
+* Значение (в примере - "Some answer") - ответ.
+В зависимости от типа вопроса может меняться тип ответа.
+
+Если вопрос подразумевает ответ в виде файла, то формат будет такой:
+```json
+{
+  "id": 123,
+  "url": "%file_url%",
+  "name": "some_file_with_answer.doc",
+  "content_type": "application/msword"
+}
+```
   </details>
 
  
