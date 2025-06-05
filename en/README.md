@@ -41,4 +41,4 @@ You can issue API token at Huntflow system settings ("API Tokens" tab). After th
 
 * [Documentation](webhooks.md)
 
-# If you have any questions about the API, webhooks, or any other Huntflow functionality, we’ll be happy to answer them in the Huntflow chat or via email at help@huntflow.ru.
+# If you have any questions about the API, webhooks, or any other Huntflow functionality, we’ll be happy to answer them in the Huntflow chat or via email at help@huntflow.ai.
