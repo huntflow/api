@@ -12,8 +12,6 @@ You can issue API token at Huntflow system settings ("API Tokens" tab). After th
 (token.md).
 
 
-SLA: Our developers answer the questions at [Issues page](https://github.com/huntflow/api/issues) in 5 working days.
-
 <a name="toc"></a>
 ## Table of contents
 
@@ -42,3 +40,5 @@ SLA: Our developers answer the questions at [Issues page](https://github.com/hun
 ### Webhooks
 
 * [Documentation](webhooks.md)
+
+# If you have any questions about the API, webhooks, or any other Huntflow functionality, we’ll be happy to answer them in the Huntflow chat or via email at help@huntflow.ru.
